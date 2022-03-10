@@ -1,0 +1,81 @@
+.mobile-list-view {
+  text-align: left;
+}
+
+.mobile-list-view-list {
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-list-item {
+  @include clickable;
+  padding: 1.5rem 0;
+  border-bottom: $subHeaderUnderline;
+
+  &.dotted-border {
+    border-bottom: 0.1rem dotted $secondaryBodyText;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.mobile-list-item-contents {
+  display: inline-block;
+  width: calc(100% - 3rem);  // Ensure there is enough space for the icon
+}
+
+.mobile-list-item-action {
+  @include clickable;
+  float: right;
+  position: relative;
+  font-size: 2.2rem;
+  color: $bodyText;
+  text-decoration: none;
+
+  // The various action icons are not the same height and need to be adjusted
+  // individually to be centered vertically.
+  &.icon-info {
+    top: 1.5rem;
+  }
+
+  &.icon-arrow-right {
+    top: 1rem;
+  }
+}
+
+.tabular-column {
+  * {
+    display: inline-block;
+  }
+
+  &.uniqueness {
+    font-weight: bold;
+  }
+}
+
+.tabular-column-name {
+  margin-right: 1rem;
+
+  &:after {
+    content: ':';
+  }
+}
+
+.item-header {
+  margin-bottom: 0.5rem;
+
+  &::before {
+    margin-right: 0.5rem;
+  }
+}
+
+.item-metadata {
+  // item-matadata is a semantically narrow component, only specific sorts of items will be inside it, but there can be
+  // several kinds in the future (divs, spans, a) and we want all of them to layout the same way.
+  * {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+}

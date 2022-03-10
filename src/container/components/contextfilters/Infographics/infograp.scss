@@ -1,0 +1,251 @@
+.advrse-evt-info{
+  #info-widget-section{
+    margin: 0px !important;
+  }
+}
+.DMInfoCards{
+  .item-wrapper-infographic {
+   height: 125px;
+   text-align: center; 
+  }
+}
+.advrse-evt-info .widget-title{
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.item-wrapper-infographic {
+  height: 125px;
+  text-align: center;
+}
+.infocomponent{
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: auto;
+}
+
+.item-infographic {
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  border-radius: 5%;
+}
+
+.item-wrapper-infographic {
+  height: 125px;
+  text-align: center;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+  height: 15px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  margin: -2px;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100rem;
+  height: 56rem;
+
+}
+
+/* The Close Button */
+.modalClose {
+  color: #aaaaaa;
+  float: right;
+  font-size: 36px;
+  font-weight: bold;
+  left: 84%;
+  cursor: pointer;
+}
+
+.modalClose:hover,
+.modalClose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mainSection {
+  display: flex;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.subSectionOne {
+  width: 50%;
+}
+
+.subSectiontwo {
+  width: 50%;
+}
+
+.reasonBtn {
+  color: #1D96DD;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-top: 14px;
+}
+
+.verticleSeprator {
+  border-left: 1px solid #ccc;
+  height: 45rem;
+  margin: 3rem;
+}
+
+.info-subtitle .info-align {
+  margin-top: 10px;
+  font-size: 13px !important;
+  color: #707070;
+  line-height: 17px !important;
+  margin: 25px 0px !important;
+  }
+  .infographic-title.title{
+  font-size: 33px;
+  line-height: normal;
+  text-align: center;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  font-weight: 500 !important;
+  color: #1d96dd;   
+  }
+ div#info-widget-section {
+  margin-top: -9px;
+ }
+.ieWrapper {
+  font-size: 17px !important;
+  margin-bottom: 10px;
+}
+.ieCount {
+  font-weight: 600;
+}
+.clearfix:after {
+  content: " "; /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.infographic-title.sub-hdr {
+  text-align: center;
+    margin: 3px 0px 8px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d96dd !important;
+}
+.infographic-title.hdr {
+    text-align: center;
+    padding: 2px 4px;
+    width: 100%;
+    height: 45px;
+    font-size: 15px !important;
+    color: #555555 !important;
+    line-height: 21px !important;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+}
+.info-align{
+  width: 100% !important;
+    padding: 0px 15px !important;
+    text-align: center !important;
+    line-height: 17px;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    font-size: 14px;
+    display: -webkit-box;
+    color: #555555;
+}
+.item-value-wrapper{
+  display: table;
+  width: 100%;
+  height: 65px;
+  margin-top: 5px;
+
+}
+.value{
+  display: -webkit-box;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 15px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+}
+

@@ -1,0 +1,89 @@
+.embedded-reports-view-widget {
+  height: 100% !important;
+  .session-filter{
+    display: block;
+  }
+  .show-filters{
+    display: block;
+  }
+}
+
+.home-embedded-reports-view-container{
+  .iframe-container-show-tasks {
+     width: 74% !important;
+     float: left;
+   }
+
+  .task-container {
+    width: 25% !important;
+    float: right;
+  }
+}
+
+.embedded-reports-view-container {
+  @include container(100vw);
+  width: 100%;
+  height: calc(100vh - 5.6rem);
+
+  .iframe-container-dashboard, .iframe-container-kpi-studio, .iframe-container-custom-analytics, .iframe-container-clinops-insights, .iframe-container-reports {
+    // Override the application defined margins from _dimensions.scss - We want to remove padding to have a seamless
+    // integration experience when viewing OEM dashboards / KPI studio
+    margin-top: -$minimized-study-filter-height !important;
+    margin-left: -$main-content-padding !important;
+    margin-right: -$main-content-padding !important;
+    height: 100%;
+  }
+
+  .iframe-inner-content {
+    position: absolute;
+    width: 100%;
+    height: 100% !important;
+  }
+
+  .iframe-inner-content-fullscreen {
+    position: absolute;
+    width: 100%;
+    height: 100% !important;
+  }
+
+  .iframe-container-custom-analytics {
+    height: 100% !important;
+  }
+
+  .iframe-container-outer-wrapper {
+    position: relative;
+    height: 100% !important;
+    width: 100% !important;
+
+    .mobile-embedded {
+      display: inline-block;
+      width: 100%;
+
+      .mobile-embedded-view {
+        margin: 2rem 0 2.5rem;
+
+        .header {
+          font-weight: $semibold;
+        }
+
+        .builtin-description {
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+
+  .iframe-container-show-tasks {
+    width: 74% !important;
+    float: left;
+  }
+
+  .task-container {
+    width: 25% !important;
+    float: right;
+  }
+
+  .embedded-reports-view-widget {
+    margin-top:11rem;
+  }
+}

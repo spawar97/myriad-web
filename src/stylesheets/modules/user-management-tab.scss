@@ -1,0 +1,67 @@
+.user-management-tab {
+  width: 100%;
+
+  .user-management-mode-buttons {
+    margin: 1rem 0 1rem 0;
+  }
+
+  .list-view {
+    .page-header {
+      .list-view-path {
+        @include span(12);
+      }
+
+      .header-buttons {
+        @include span(10 last);
+      }
+    }
+
+    .list-view-table .public_fixedDataTableCell_cellContent {
+      .icon-WarningCircle {
+        color: $orange;
+      }
+      .icon-lock {
+        color: $red;
+      }
+    }
+  }
+
+  &.user-management-add-user-email {
+    .text-input, .input-block {
+      width: 30rem;
+    }
+
+    .input-block, .sso-user-toggle, .api-access-toggle {
+      margin: 2rem 0;
+    }
+
+    .input-title {
+      font-weight: bold;
+    }
+
+    .status {
+      margin-left: 1rem;
+    }
+  }
+
+  &.user-management-user-detail {
+    .text-input, .roles-dropdown {
+      width: 30rem;
+    }
+
+    .input-block {
+      margin: 2rem 0;
+      width: 30rem;
+    }
+
+    .input-hint {
+      float: right;
+      color: $hyperlinkBlue;
+      text-decoration: underline;
+      @include clickable;
+    }
+    .input-title {
+      font-weight: bold;
+    }
+  }
+}

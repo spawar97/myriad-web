@@ -1,0 +1,193 @@
+body.login {
+  display: flex;
+  justify-content: flex-end;
+
+  #container {
+    height: 100vh;
+    width: 100%;
+    .container-division {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .left-container {
+        height: 100%;
+        width: 70%;
+        color: $white;
+        padding-left: 10rem;
+        .left-content {
+          width: 50%;
+          .content1 {
+            margin-top: 3.1rem;
+            font-size: 2.8rem;
+            line-height: 3.1rem;
+            letter-spacing: 0.2rem;
+            margin-left: 2.5rem;
+          }
+          .content2 {
+            margin-top: 3.1rem;
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+            letter-spacing: 0.1rem;
+            margin-left: 2.5rem;
+          }
+        }
+      }
+      .right-container {
+        background: url(data:image/png;base64,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);
+        background-repeat: no-repeat;
+        background-position: right -2.5rem;
+        background-size: 40%;
+        height: 100vh;
+        width: 30%;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: -5px 2px 14px 0 rgba(0, 0, 0, 0.5);
+        background-color: rgba(242, 242, 242, 0.85);
+        opacity: 0.9;
+        justify-content: center;
+        align-items: center;
+        position:relative;
+        display: flex;
+        .copyrightText {
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight:$semibold;
+          position: absolute;
+          bottom: .5rem;
+          justify-content: center;
+          margin:0;
+          padding: 0;
+          left:0;
+          width:100%;
+        }
+        .messageContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0rem 2rem;
+          .warning-icon {
+            padding-right: 2rem;
+            font-size: 5rem;
+            color: $red;
+          }
+        }
+        .cookieless {
+          font-weight: 400;
+          font-size: 2.3rem;
+          color: #333333;
+          line-height: 3rem;
+        }
+        .login-box {
+          width: 80%;
+
+          p.text-input-error {
+            margin: 0 0 1.4rem;
+          }
+          .saama-logo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              height: 5rem;
+              margin-bottom: 0.7rem;
+            }
+          }
+          .logo-header {
+            font-weight: $semibold;
+            font-size: 2.7rem;
+            color: $black;
+            text-align: center;
+          }
+
+          div.buttons-end {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+          }
+
+          button {
+            width: 47%;
+            padding-left:0;
+            padding-right: 0;
+          }
+          .login-container {
+            background-color: $white;
+            padding: 1.2rem 1.8rem;
+            width: 85%;
+            border-top: 0.4rem solid #244d6d;
+            .welcome-container {
+              width: 100%;
+              display: inline-block;
+              padding-top: 1rem;
+              .left-sec {
+                display: inline-block;
+                width: 70%;
+                .welcome-header {
+                  color: $loginHeader;
+                  font-size: 3rem;
+                  font-weight: $semibold;
+                  margin-bottom: 0.3rem;
+                }
+                .welcome-text {
+                  font-size: 2rem;
+                }
+              }
+              .right-sec {
+                display: inline-block;
+                width: 30%;
+                img {
+                  height: 5rem;
+                  margin: 0rem;
+                }
+              }
+            }
+            form {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              
+              &#samlForm {
+                margin-top: -5.6rem;
+              }
+              .form-username,
+              .form-password {
+                font-weight: $semibold;
+              }
+              .ssoBtn{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+              }
+            }
+            
+          }
+          div.form-bottom {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            .forgot-password {
+              display: block;
+              margin-top: 1rem;
+              text-decoration: none;
+              font-size: 1.5rem;
+              font-weight: $semibold;
+
+              &:hover {
+                color: $gray70;
+                text-decoration: underline;
+              }
+            }
+          }
+
+          .embedded-session-refresher {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

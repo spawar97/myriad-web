@@ -1,0 +1,307 @@
+$search-icon-width: 2rem;
+
+$desktop-search-box-width: 40rem;
+$desktop-search-box-menu-width: 40rem;
+$desktop-search-box-right-position: 0;
+
+$mobile-search-box-width: 15rem;
+$mobile-search-box-menu-width: 20rem;
+$mobile-search-box-right-position: 12rem;
+
+// Multi platform specific styles
+.top-nav-search-container {
+  @include breakpoint($only-desktop) {
+    .search-box {
+      margin-right: -$search-icon-width - 1rem;
+
+      .search-selector {
+        width: $desktop-search-box-width + $search-icon-width + 1rem;
+
+        .Select-placeholder, input {
+          max-width: $desktop-search-box-width - $search-icon-width + 2rem;
+        }
+
+        .Select-placeholder {
+          margin-top: -4px;
+        }
+
+        .Select-menu-outer {
+          //min-width: $desktop-search-box-menu-width !important;
+          z-index: $search-selector-z-index;
+
+          width:500px;
+          -webkit-box-shadow: 1px 2px 10px 0px lighten($color: $brandColor, $amount: 30);
+          -moz-box-shadow: 1px 2px 10px 0px lighten($color: $brandColor, $amount: 30);
+          box-shadow: 1px 2px 10px 0px lighten($color: $brandColor, $amount: 30);
+        }
+      }
+    }
+  }
+
+  @include breakpoint($only-phone) {
+    .search-box {
+      margin-right: -$search-icon-width - 2rem;
+
+      .search-selector {
+        width: $mobile-search-box-width + $search-icon-width + 1rem;
+
+        .Select-placeholder, input {
+          max-width: $mobile-search-box-width - $search-icon-width;
+          font-size: 14px;
+        }
+
+        .Select-placeholder {
+          margin-top: 2px;
+        }
+
+        .Select-menu-outer {
+          min-width: $mobile-search-box-menu-width !important;
+          z-index: $search-selector-mobile-z-index;
+        }
+      }
+    }
+  }
+  .search-combobox{
+    .Select-control{
+      border-radius: .5rem;
+    }
+  }
+
+}
+
+// mobile specific styles
+.mobile-entity-search-container {
+  position: absolute;
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  float: right;
+
+  @include breakpoint($only-phone) {
+    width: $mobile-search-box-width + 4;
+    right: $mobile-search-box-right-position;
+  }
+}
+
+// Platform generic styles
+.top-nav-search-container {
+  display: flex;
+  margin-top: -1.1rem;
+  margin-right:1rem;
+  width:345px;
+  position: relative;
+  @include breakpoint($only-wide-desktop) {
+    width: auto;
+  }
+  .icon-search {
+    padding-left: 1rem;
+    padding-top: 1.4rem;
+    z-index: $search-selector-z-index;;
+    color:lighten($color: $brandColor, $amount: 70);
+    position: absolute;
+    right: 6px;
+    display: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .icon-dalia{
+    position: absolute;
+    left: 1rem;
+    top: 1.3rem;
+    color: $brandColor;
+    z-index: 1;
+    font-size: 1.6rem;
+  }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .icon-dalia{
+      top: 1.2rem;
+    }
+  }
+  #faqOuterBox {
+    right: 2rem;
+    background-color: white;
+    border: 1px solid #a0d4f3;
+    color: #a0d4f3;
+    border-radius: 2px;
+    z-index: 1;
+    font-size: 1rem;
+    float: right;
+    width: 6%;
+    text-align: center;
+  }
+  #suggestion-box {
+    width: auto;
+    padding: 5px 8px;
+    height: auto;
+    border: 0.8px solid #F8A9DE;
+    margin: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  #chunk-title {
+    color: #7a7a75;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  #chunk-value {
+    font-size: 13px;
+    font-weight: 400;
+  }
+  #suggestive-ques-section {
+    display: flex;
+    flex-flow: row wrap
+  }
+  .search-combobox.is-focused, .search-combobox:hover {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(0, 126, 255, 0.1);
+  }
+
+  .search-box {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+
+    .search-selector {
+      .Select{
+        position: relative;
+        .Select-control {
+          border: 1px solid lighten($color: $brandColor, $amount: 30);
+          -webkit-box-shadow: inset 0px 0px 3px 0px lighten($color: $brandColor, $amount: 30);
+          -moz-box-shadow: inset 0px 0px 3px 0px lighten($color: $brandColor, $amount: 30);
+          box-shadow: inset 0px 0px 3px 0px lighten($color: $brandColor, $amount: 30);
+        }
+
+        .Select-control, .Select-input {
+          height: 4rem !important;
+          line-height: 4rem !important;
+          padding-left:17px;
+          padding-right: 5px;
+        }
+        .Select-input{
+          width: 100%;
+          input {
+            font-size: 1.6rem;
+            color:$gray80;
+            font-weight: 500;
+            color:$gray80;
+            float: left;
+            width: 100% !important;
+          }
+        }
+
+        .Select-placeholder {
+          margin-top: 1px;
+          font-size: 1.6rem;
+          font-weight: 400;
+          padding-left:35px;
+          line-height: 4rem;
+          color: $gray60;
+        }
+
+        .Select-arrow-zone {
+          display: none;
+        }
+
+        .search-option {
+          padding-left: 0.75rem;
+        }
+
+        .Select-menu-outer {
+          font-size: 14px;
+          border-color:lighten($color: $brandColor, $amount: 30);
+          right: 0;
+          border-radius: 5px 0 5px 5px;
+          font-size: 1.5rem;
+          max-height: 400px !important;
+          padding: 4px 0;
+          
+          .Select-menu{
+            max-height: 380px !important;
+            overflow-x:hidden;
+          }
+          .Select-option[title="Powered by DaLIA"]{
+            width: 100%;
+            bottom: 0;
+            right: 0;
+            background: $white;
+            z-index: 1;
+            font-size: 1rem;
+            font-style: italic;
+            padding: 5px 10px;
+            color: $gray60;
+            text-align: right;
+            cursor: auto;
+            .search-bot-option{
+              color: $gray60;
+              padding-top: 3px;
+              padding-right: 4px;
+              font-size: 1.2rem;
+              pointer-events: none;
+            }
+            .icon-dalia{
+              font-size: 1.6rem;
+              line-height: 2rem;
+            }
+          }
+          .Search-option{
+            color:$brandColor;
+            word-wrap: break-word;
+            white-space: normal;
+            flex-wrap: wrap;
+
+            &:after{
+              content: ".";
+              font-size: 0;
+              line-height: 0;
+              height: 0;
+              display:block;
+              visibility: hidden;
+              clear: both
+            }
+            &>div{
+              position: relative;
+              padding:0 8px;
+            }
+          }
+          span[class^="icon-"]{
+            color:$gray60 !important;
+            font-size: 1.4rem;
+            float: left;
+            width: 20px;
+            margin-top:3px;
+
+            &.icon-dalia{
+              color: #1D96DD !important;
+              position: relative;
+              left:0;
+              top:0;
+              display: flex;
+              font-size: 1.3rem;
+            }
+            &.icon-kpi-studio{
+              font-size: 1.3rem;
+            }
+          }
+          .search-option{
+            color:$brandColor;
+            font-weight: 400;
+            white-space: normal;
+            overflow: hidden;
+            max-width: 90%;
+          }
+          .search-bot-option{
+            color: $gray60;
+            font-weight: 400;
+            word-wrap: break-word;
+            white-space: normal;
+            flex-wrap: wrap;
+            overflow: hidden;
+            display: inline-block;
+            padding-left: 68%;
+            margin-top: 1px;
+            pointer-events: none;
+          }
+        }
+      }      
+    }
+  }
+}

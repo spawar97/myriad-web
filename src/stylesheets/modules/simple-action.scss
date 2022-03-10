@@ -1,0 +1,26 @@
+.simple-action {
+  font-size: 1.4rem;
+  // font-family needs to be explicitly set here for IE9, otherwise it seems to
+  // fail to inherit the settings and displays a default font.
+  font-family: 'proxima-nova', Arial, 'sans-serif';
+  height: 100%;
+  @include clickable;
+
+  &:before {
+    font-family: 'comprehend';
+    font-size: 1.6rem;
+    padding-right: .3rem;
+  }
+
+  &.cloud-upload:before {
+    content: '\f0ee';
+  }
+
+  &.file:before {
+    content: '\f0f6';
+  }
+
+  &.pencil:before {
+    content: '\f040';
+  }
+}

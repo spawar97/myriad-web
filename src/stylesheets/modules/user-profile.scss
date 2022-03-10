@@ -1,0 +1,33 @@
+.users-profile {
+    .not-filled {
+        border-color: red !important;
+    }
+    .organization-role-input {
+        width: 500px;
+        height: 100px;
+    }
+    .user-profile-buttons {
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        top:-6px;
+    }
+    .user-detailes-section {
+        display: flex;
+        flex-flow: column nowrap;
+        .input-block {
+            margin: 1rem 0;
+            width: 30rem;
+
+            .input-title {
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+            input{
+                width: 100%;
+                line-height: 2.6rem;
+                border-color: #d9d9d9 #ccc;
+            }
+        }
+    }
+}

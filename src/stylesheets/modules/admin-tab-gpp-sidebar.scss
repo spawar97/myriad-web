@@ -1,0 +1,98 @@
+.admin-tab-gpp-sidebar {
+  display: inline-block;
+  vertical-align: top;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    border-bottom: .2rem solid $black;
+  }
+
+  .patient-info-panel {
+    padding-top: 1rem;
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+
+      [class^='icon-'],
+      [class*=' icon-'] {
+        padding-right: .5rem
+      }
+
+      .icon-remove {
+        float: right;
+        vertical-align: middle;
+      }
+
+      .item-opener, .title-text {
+        vertical-align: middle;
+      }
+    }
+
+    .no-teams-title {
+      border-bottom: none;
+      padding-top: 0px;
+    }
+
+    .patient-info-main {
+      .patient-info {
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding: 1rem 0 1rem;
+        display: block;
+
+        > span {  // The span contains the title. There is only a single level span under patient-info.
+          display: inline-block;
+          padding-bottom: .5rem;
+
+          &[class^='icon-'],
+          &[class*=' icon-'] {
+            padding-right: .5rem;
+          }
+        }
+
+        .patient-selection-wrapper {
+          padding-top: 4rem;
+
+          .tag {
+            margin: .5rem 0;
+          }
+        }
+
+        .error {
+          font-weight: normal;
+          color: $red;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin: .5rem 6rem;
+  }
+
+  .item-opener-button-group {
+    display: block;
+
+    .btn {
+      display: inline-block;
+      line-height: 2.8rem;
+      padding: .5rem 2.5rem;
+      margin-left: 0;
+
+      > div {
+        vertical-align: middle;
+      }
+    }
+
+    .btn:nth-child(2) {
+      float: right;
+      margin-right: 0;
+    }
+  }
+}

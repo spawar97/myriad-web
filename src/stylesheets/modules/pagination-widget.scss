@@ -1,0 +1,158 @@
+.pagination-widget {
+  border-radius: 0.4rem;
+  display: inline-block;
+  width: 100%;
+  margin: 4rem 0 3rem 0;
+  @include span(24);
+
+  // This is an attempt to get the row dropdown to cover the FixedDataTable header
+  z-index: $pagination-z-index;
+  * {
+    z-index: $pagination-z-index;
+  }
+
+  &.compact {
+    .paging-widget-container, .pagination-widget-compact-row {
+      @include span(24);
+    }
+
+    .pagination-widget-compact-row {
+      margin-top: 1.5rem;
+    }
+
+    .spacer {
+      @include span(6);
+      // We need to set the min-height to force the div to render.
+      min-height: .1rem;
+    }
+
+    .display-info-container {
+      @include span(7);
+      margin-right: 1.5rem;
+
+      .display-info {
+        text-align: right;
+      }
+    }
+
+    .rows-per-page-dropdown-container .rows-per-page-dropdown {
+      float: left;
+    }
+  }
+
+  .display-info-container {
+    // breakpoint for mobile is set in _breakpoints.scss.
+    @include span(6);
+
+    .display-info {
+      text-align: left;
+      position: relative;
+      top: .4rem;
+    }
+  }
+
+  .paging-widget-container {
+    // breakpoint for mobile is set in _breakpoints.scss.
+    @include span(12);
+    text-align: center;
+
+    .paging-widget {
+      display: inline-block;
+    }
+  }
+
+  .rows-per-page-dropdown-container {
+    // breakpoint for mobile is set in _breakpoints.scss.
+    @include span(6);
+    margin-right: 0;
+
+    .rows-per-page-dropdown {
+      float: right;
+
+      // Width is being set explicitly to circumvent an IE9 rendering bug where when the dropdown opens it would fill
+      // the container. We do not know why it happens but setting this fixed width addresses the issues and looks good
+      // cross-browser.
+      width: 9.5rem;
+
+      &.rw-widget {
+        height: 2.7rem;
+      }
+
+      .rw-i-caret-down {
+        bottom: .4rem;
+        position: relative;
+      }
+
+      .rw-input {
+        padding: 0 2rem;
+        height: 2.7rem;
+        bottom: .4rem;
+        position: relative;
+      }
+    }
+  }
+
+  .paging-widget {
+    // Some paging-widget settings are being overidden in _breakpoint.scss.
+
+    > .virtual-table {
+      border: $table-border;
+      border-radius: 0.5rem;
+      overflow: hidden;
+
+      &.single-page {
+        border-color: $almostGray;
+      }
+
+      > .virtual-table-row {
+        .disabled {
+          color: $grey2;
+        }
+
+        > .virtual-table-cell {
+          border-right: $table-border;
+          padding: 0 1.5rem;
+
+          &.single-page {
+            border-color: $almostGray;
+          }
+
+          // Only the non-disabled icons are clickable.
+          &:not(.disabled) {
+            &.icon-first-page, &.icon-previous-page, &.icon-next-page, &.icon-last-page {
+              @include clickable;
+            }
+          }
+
+          &:last-child {
+            border-right: 0;
+          }
+
+          > .virtual-table {
+            padding: 0 0.8rem;
+            height: 2.5rem;
+
+            // page number input field
+            input {
+              height: 1.8rem;
+              vertical-align: middle;
+              display: inline-block;
+              margin: 0;
+              padding: 0;
+              text-align: center;
+              font-size: 1.3rem;
+              // Only the input is clickable, but not the text around it.
+              @include clickable;
+            }
+
+            .page-number-container {
+              margin: 0 1rem;
+              text-align: center;
+              @include clickable;
+            }
+          }
+        }
+      }
+    }
+  }
+}

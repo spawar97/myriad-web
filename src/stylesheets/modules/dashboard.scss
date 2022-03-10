@@ -1,0 +1,258 @@
+.main-content {
+  /* Pulled out breakpoints to _breakpoints.scss */
+  @include container(100vw);
+  @include pad($main-content-left-pad $main-content-padding);
+  height: $main-content-height;
+  margin-top: ($minimized-study-filter-height);
+  .show-tasks {
+    .toggle-tasks {
+      color: $comprehendBlue;
+
+      &:hover {
+        color: $blue3;
+      }
+    }
+  }
+
+  .show-filters {
+    .toggle-filters {
+      color:$brandColor;
+
+      &:hover {
+        color: $blue3;
+      }
+    }
+  }
+
+  .toggle-tasks, .toggle-filters {
+    display: inline-block;
+    clear: none;
+    @include pad(2rem 0);
+
+    &:hover {
+      color: $grey1;
+    }
+  }
+
+  // Those are the unimplemented tabs that has placeholder images.
+  .app-tab-home, .app-tab-favorites, .app-tab-alerts {
+    float: left;
+    width: 100%;
+  }
+
+  .exposed-config {
+    display: none
+  }
+}
+
+.mobile-nav {
+  display: inline;
+
+  .LSAC-logo {
+    padding-left: 15px;
+    margin-left: 12px;
+    border-left: 1px solid $gray20;
+    width: 116px;
+    display: inline-block;
+    width: 116px;
+    // color: $grey4;
+    font-weight: 600;
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+  }
+}
+
+.mobile-nav-header {
+  // Display is overridden in _breakpoints.scss for mobile.
+  display: none;
+  height: $mobile-nav-header-height;
+  width: 100%;
+  padding: $mobile-nav-header-top-padding 0.6rem .9rem 0.6rem;
+  z-index: $top-nav-dropdown-z-index;
+  color: $white;
+
+  .icon-menu-hamburger {
+    position: relative;
+    top: $mobile-nav-header-icon-top-padding;
+    font-size: 2rem;
+    float: right;
+    @include clickable;
+    color: $brandColor;
+  }
+}
+
+.mobile-nav-header-img {
+  @include clickable;
+  float: left;
+
+  > img {
+    height: 3.3rem;
+  }
+}
+
+.more-menu {
+  display: inline-block;
+  margin-left: 2rem;
+  position: relative;
+  white-space: nowrap;
+
+  .more-menu-trigger {
+    padding: 0;
+  }
+  .disabled {
+    cursor: not-allowed;
+    color: $grey2;
+  }
+}
+
+.add-menu-options .more-menu-options {
+  right: -1rem;
+}
+
+.add-menu {
+  display: inline-block;
+  margin-left: 2rem;
+  position: relative;
+  white-space: nowrap;
+
+  .add-menu-trigger {
+    padding: 0;
+  }
+}
+
+.add-folder {
+
+  &:hover {
+    color: $grey1;
+  }
+}
+
+.add-task {
+
+  &:hover {
+    color: $grey1;
+  }
+}
+
+.dashboard-bar {
+  // There is a breakpoint associated with the .simple-actions contained in
+  // .dashboard-bar to disable text in phone mode. See _breakpoints.scss.
+  @include span(24);
+  line-height: 2.5rem;
+  padding-top: .5rem;
+
+  span, .simple-action {  // Selected child elements: a span for text and 2 simple-action object.
+    display: inline-block;
+  }
+
+  .simple-action, .simple-dropdown {
+    @include pad(2rem 0);
+    float: right;
+  }
+}
+
+.filters {
+  display: none;
+  @include span(6);
+
+  .show-filters & {
+    /* Pulled out breakpoints to _breakpoints.scss */
+    display: block;
+    height:50vh;
+  }
+}
+
+.tasks {
+  display: none;
+  @include span(6 last);
+
+  .show-tasks & {
+    display: block;
+    height: 100%;
+  }
+}
+
+.report-body {
+  overflow-x: hidden;
+  /* Add padding at the end of the dashboard so that the rows per page dropdown has enough room */
+  padding-bottom: 13rem;
+  /* Pulled out breakpoints to _breakpoints.scss */
+  @include span(24); // Full width
+  ///  The trailing `&` allows us to condition the style on the state of the parent. Normally the selector would look like:
+  ///
+  ///  ```
+  ///  .show-filters .report
+  ///  ```
+  ///
+  ///  But to turn that into standard nested Sass would mean a nesting like this for each kind, with duplication of the
+  ///  innards:
+  ///
+  ///  ```
+  ///  .show-filters { .report-body {} }
+  ///  .show-tasks { .report-body {} }
+  ///  .show-filters.show-tasks { .report-body {} }
+  ///  ```
+  ///
+  ///  By using the trailing `&`, we can generate CSS that still looks like what we want without violating DRY.
+  /* When both bars are visible */
+  .show-filters.show-tasks & {
+    @include span(12);
+  }
+
+  /* When only one bar is visible */
+  .show-filters & {
+    @include span(18 last);
+  }
+
+  .show-tasks & {
+    @include span(18);
+  }
+}
+
+.item-detail-modal-is-open {
+  @include breakpoint($only-phone) {
+    height: 0;
+  }
+}
+
+.close-button {
+  &:before {
+    content: '\00D7';
+  }
+  @include clickable;
+  float: right;
+}
+
+.home-page-content { //styling Favorite Tab
+  .home-page-tabcontent{
+    .app-tab-favorites {
+      .page-header {
+        float: left;
+        width: 250px;
+        margin-top: 25px;
+        height: 0;
+        padding-top: 0;
+        .list-view-path {
+          top: 9px;
+        }
+      }
+    }
+  }
+}
+ 
+.mobile-nav{
+  .mobile-nav-header{
+    display: block;
+    width:47%;
+    float:right;
+    height: 5.2rem;
+  }
+  .study-session-filter{
+    height: 4rem;
+    padding-left:9rem;
+  }
+  & + .main-content{
+    margin-top:0.6rem
+    }
+}
+

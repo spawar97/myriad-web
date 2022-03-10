@@ -1,0 +1,23 @@
+/**
+ *  For this to work this needs to be added to the html:
+ *  <meta name="viewport" content="width=device-width, user-scalable=no">
+ *
+ *  These values align with `MediaQueryConstants.js` and `util.isMobile`.
+ *
+ *  The numbers for this were derived from iores.com which had this information on the logical
+ *  resolution of Apple devices:
+ *
+ *  iPhone 5	iPhone 6	iPhone 6+	iPad		iPad Retina
+ *  320 x 568	375 x 667	414 x 736	1024 x 768	1024 x 768
+ *
+ */
+
+$only-desktop: (min-width 768px);
+
+$only-phone: (min-width 0px) (max-width 767px);
+
+$not-desktop: (min-width 0px) (max-width 1024px);
+
+$not-phone: (min-width 768px);
+
+$only-wide-desktop: (min-width 1025px) (max-width 1281px);

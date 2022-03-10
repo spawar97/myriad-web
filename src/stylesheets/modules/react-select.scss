@@ -1,0 +1,119 @@
+/// This file contains style overrides for the react-select component we use as our Combobox.
+
+.exposure {  // This is here so overriding values is more likely without !important.
+  .report-selector-dropdown {
+    z-index: 500;
+  }
+
+  .Select {
+
+    color: $bodyText;
+
+    &.is-disabled {
+      opacity: 0.5;
+    }
+
+    .Select-control {
+      border-radius: 0rem;
+      height: $form-input-height;
+
+      .Select-placeholder {
+        color: $dropdown-placeholder-color;
+      }
+
+      .Select-placeholder, .Select-placeholder, :not(.Select--multi) > .Select-control .Select-value {
+        line-height: $form-input-height;
+      }
+    }
+
+    &.Select--multi {
+      .Select-value {
+        // TODO: The flex code seems to work even without `display: -ms-flexbox;` in IE 10, confirm this is the case.
+        display: inline-flex;
+        // react-select lays out the removal X before the label, using this direction we place them in reverse order.
+        flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+
+        line-height: 2.0rem;  // Increased from react-select 1.4rem default, due to our greater input element height.
+        padding: 0 $dropdown-tag-lateral-padding;
+
+        // TODO: Double check the blue color
+        background-color: $dropdown-tag-background-color;
+        color: $bodyText;
+        // Transparent white. Basically, eliminate the border. For some reason removing the border just doesn't look good,
+        // as it messes with the layout.
+        border-color: rgba(255, 255, 255, 0);
+        border-radius: $standard-corner-radius;
+
+        .icon {
+          // Force icons we inject into the selected tags to be sized same as the text so they don't mess with tag height.
+          font-size: inherit;
+          padding-right: 0.5rem;
+        }
+
+        .Select-value-label {
+          display: inherit;
+          flex-grow: 1;  // This ensures that the label takes up all available space not used up by the icon.
+          color: $bodyText;
+          font-size: $dropdown-font-size;
+        }
+
+        // This is the X that removes selections.
+        .Select-value-icon {
+          display: inherit;
+          flex-grow: 0;  // This tells the icon to only grow as much as it needs to display itself and no more.
+          -ms-flex: 0;
+          border-right: none;  // Eliminate the close button's border.
+          padding: 0.3rem 1rem 0.1rem 0.5rem;  // Mirror image of the default react-select padding, with the right padding doubled to match the left.
+          margin-right: $dropdown-tag-lateral-padding * -1;
+
+          font-weight: $bold;
+          font-size: $dropdown-font-size + 0.2rem;
+          color: $dropdown-icons-color;
+
+          &:hover, &:focus {
+              background-color: transparent;
+              color: $dropdown-icons-hover-color;
+          }
+        }
+      }
+    }
+
+    .Select-menu {
+      // We're using disabled items as group-headings, so they shouldn't appear disabled.
+      .Select-option.is-disabled {
+        color: $bodyText;
+        font-weight: $semibold;
+      }
+
+      .Select-option.is-focused {
+        background-color: lighten($color: $brandColor, $amount: 47);;
+        color: $bodyText;
+      }
+
+      .Select-option.is-disabled.disabled {
+        color: #ccc;
+      }
+    }
+  }
+
+  .filter-msg-container{
+    display: flex;
+
+    .filter-element-msg {
+      font-size: 11px;
+    }
+
+    .filter-element-msg.asterisk {
+      width: 10px;
+      height: 10px;
+      font-size: 16px;
+      color: red;
+      margin-top: 2px;
+    }
+  }
+
+  .filter-block.dynamic-filter.dropdown-filter-block.hidden {
+    display: none;
+  }
+}

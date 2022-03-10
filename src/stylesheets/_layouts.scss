@@ -1,0 +1,44 @@
+@import "colors";
+
+// Default max-width is 62.5rem.  We want to increase that to get a
+// full screen look.
+.row {
+  max-width: none;
+}
+
+// Default left & right margin is -1.07143rem (top & bottom is 0).
+// We'll set all margins to 0 to simplify our layout
+.row .row {
+  margin: 0;
+}
+
+.row.comprehend-wrapper {
+  height: 100%;
+  position: relative;
+}
+
+.panel-sidenav, .panel-dashboard-view, .panel-dashboard-list-view {
+  height: 100%;
+}
+
+.panel-dashboard-view, .panel-dashboard-list-view {
+  // Configure as absolute so that when we animate we don't vertically
+  // stack our elements.  We want them side by side.
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: auto;
+  // Absolute positioning ignores our parent's padding, so we need to
+  // add it back in.
+  margin: 0;
+}
+
+.widget-container {
+  position: relative;
+}
+
+.page-header {
+  // Improves the vertical rhythm everywhere.
+  padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
+}

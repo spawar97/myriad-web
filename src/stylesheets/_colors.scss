@@ -1,0 +1,149 @@
+// App colors
+
+// Primary colors
+$darkSteel: #353b43;
+$lightSteel: #55606e;
+$lightSteel10: rgba(#55606e, 0.1);
+$lightSteel15: rgba(#55606e, 0.15);
+$lightSteel20: rgba(#55606e, 0.2);
+$lightSteel30: rgba(#55606e, 0.3);
+$lightSteel40: rgba(#55606e, 0.4);
+$lightSteel50: rgba(#55606e, 0.5);
+$lightSteel60: rgba(#55606e, 0.6);
+$lightSteel70: rgba(#55606e, 0.7);
+$lightSteel80: rgba(#55606e, 0.8);
+$lightSteel90: rgba(#55606e, 0.9);
+$comprehendBlue: #0092c8;
+$slateGray: #f8f8f8;
+$disabledGray: #999999;
+$background: #fff;
+$yellow: #ffb01d;
+$orange: #eba709;
+$lightOrange: #ff6600;
+
+// Secondary colors
+$navyBackground: #005878;
+$powderBlue: #b0bccb;
+$lightGray: #d5d7db;
+$pressedBtnBlue: #047ba7;
+$paleGray: #b0bccb;
+$placeholderGray: #8a8f99;
+$whiteSmoke: #f5f5f5;
+$lightBlueBackground: #c5eaf5;
+
+// Misc colors
+$almostGray: #e1e1e1;
+$almostWhite: #f0f0f0;
+
+// Status colors
+$red: #cd4237;
+$blue: #0092c8;
+$green: #64bd8f;
+$transparentGreen: rgba($green, 0.8);
+$transparentBlue: rgba($blue, 0.8);
+$transparentRed: rgba($red, 0.8);
+
+// ExceptionColors
+$exceptionGray: #eaedf1;
+
+$emptyState: #fafafa;
+
+// Old style colors
+$grey1: #58585b;
+$grey2: #989898;
+$grey3: #cbcbcb;
+$grey4: #e5e5e5;
+$grey5: #efefef;
+$grey6: #b2b2b2;
+$grey7: #cccccc;
+$grey8: #f7f7f7;
+
+// New style colors
+$blue1: #34454f;
+$blue2: #4d6678;
+$blue3: #758ea0;
+$blue4: #618dad;
+$blue5: #1e77b3;
+$blue6: #0084b7;
+$blue7: #0092c8;
+$blue8: #b1cadc;
+$blue9: #cfe8fa;
+$blue10: #e0f1f9;
+$blue11:#416783;
+$blue12:#1D96DD;
+
+$gray2: #fafafa;
+$gray5: #f2f2f2;
+$gray10: #e5e5e5;
+$gray15: #d9d9d9;
+$gray20: #cccccc;
+$gray30: #b2b2b2;
+$gray40: #989898;
+$gray50: #808080;
+$gray60: #666666;
+$gray65: #585858;
+$gray70: #4d4d4d;
+$gray80: #333333;
+$gray90: #1a1a1a;
+
+$black: #000;
+$white: #fff;
+
+$blueGray1: #5d6a72;
+$blueGray2: #8a929e;
+$blueGray3: #e5e8ea;
+
+// Accents
+$accentRed1: #cd4237;
+$accentRed2: #e14b3f;
+$accentYellow: #eba709;
+$accentGreen: #64bd8f;
+
+$staticFilterBlue: #bac1dc;
+$navColor: $blue11;
+$gray: gray;
+$lightRed: #e2191b;
+$darkRed: #e14b3f;
+
+////////
+/// Style-guide based semantic colors
+///////.
+$bodyText: $gray80;
+$secondaryBodyText: $grey2;
+$hyperlinkBlue: #1e77b3;
+$menuBorderColor: $gray50;
+$pageHeaderColor: $gray70;
+$brandColor:$blue12;
+$borderColor:$gray20;
+
+// TODO: Kim and Caroline to update the correct color.
+$dottedBorderColor: #d9d9d9;
+$dropdown-tag-background-color: $blue9;
+$dropdown-placeholder-color: $gray40;
+$dropdown-hover-color: $blueGray3;
+$dropdown-icons-color: $gray60;
+$dropdown-icons-hover-color: $black;
+$tooltip-heading-text-color: $gray30;
+$tooltip-drilldown-item-hover-color: $gray50; // The background color for selectable elements in a frozen tooltip, like the drilldown one.
+
+// Chart colors from style guide
+$chart1: #a5cde2;
+$chart2: #1e77b3;
+$chart3: #b1de89;
+$chart4: #329f2b;
+$chart5: #fb9998;
+$chart6: #e2191b;
+$chart7: #fdbe6e;
+$chart8: #ff7e00;
+$chart9: #c9b1d5;
+$chart10: #ffff98;
+$chart11: #b05827;
+$chart12: #be236a;
+
+// Med Review row colors
+$rowAdded: #e2efda;
+$rowDeleted: $gray20;
+$rowUpdated: #fee599;
+
+//Saama Color
+$loginHeader: #244d6d;

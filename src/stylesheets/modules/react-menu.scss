@@ -1,0 +1,87 @@
+/* This CSS was originally extracted from react-menu's `injectCSS.js` file */
+
+.Menu {
+  @include clickable;
+
+  // Seems to be getting overwritten by the icon specification below.
+  font-family: 'proxima-nova', 'Helvetica Neue';
+  text-align: left;
+
+  .react-menu-icon {
+    font-family: 'proxima-nova', 'Helvetica Neue';  // for FF and IE9
+
+    &:before {
+      font-family: 'comprehend';
+      font-size: 1.6rem;
+      padding-right: .7rem;
+    }
+  }
+
+  &:hover {
+    color: $grey1;
+  }
+}
+
+.Menu__MenuOptions {
+  border: 0px !important;
+  border-radius: .5rem;
+  background: $white;
+  position: absolute;
+  z-index: 10;
+  overflow: visible;
+  margin-top: 0.5rem;
+}
+
+.Menu__MenuOption {
+  @include clickable;
+  padding: 3px 17px 11px 17px;
+  outline: none;
+
+  &:first-child {
+    padding-top: 12px;
+  }
+
+  &:last-child {
+    padding-bottom: 12px;
+  }
+}
+div#react-menu-0{
+  min-width: 130px;
+}
+.Menu__MenuOption--disabled {
+  color: $lightGray;
+}
+
+.Menu__MenuOption:not(.Menu__MenuOption--disabled).Menu__MenuOption--active {
+  background-color: $lightSteel10;
+}
+
+.Menu__MenuOption--active.Menu__MenuOption--disabled {
+  color: $lightGray;
+}
+
+.Menu__MenuTrigger {
+  border: '.1rem solid #ccc';
+  padding: .5rem;
+  background: $white;
+
+  // Disable default blue outline.
+  &:focus {
+    outline: none;
+  }
+}
+
+.Menu__MenuOptions--horizontal-left {
+  right: 1rem;
+}
+
+.Menu__MenuOptions--horizontal-right {
+  right: 1rem;
+}
+
+.Menu__MenuOptions--vertical-top {
+  bottom: .5rem;
+}
+
+.Menu__MenuOptions--vertical-bottom {
+}

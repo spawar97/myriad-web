@@ -1,0 +1,481 @@
+/**
+ * Main Comprehend Styles.
+ */
+@import 'colors';
+@import 'dimensions';
+
+/**
+ * Explicitly defined font weight values
+ */
+$regular: 400;
+$semibold: 600;
+$bold: 800;
+
+$pageHeaderUnderline: .5rem solid $pageHeaderColor;
+$monitorButtonsDivider: .1rem solid $grey4;
+$monitorTabUnderline: .2rem solid $grey2;
+$monitorTabSelectionUnderline: .3rem solid $comprehendBlue;
+$sectionDivider: .1rem solid $grey4;
+$subHeaderUnderline: .2rem solid $bodyText;
+$dottedSeparator: .1rem dotted #e6e7e8;
+$dottedUnderline: .1rem dotted $dottedBorderColor;
+$menuBorder: .2rem solid $menuBorderColor;
+$errorBorder: .1rem solid $lightRed;
+$inputBorder: .1rem solid $grey2;
+$relatedReportsBorder: .1rem solid $gray30;
+$notificationBorder: .1rem dashed $gray20;
+$studySessionFilterBorder: .1rem solid $gray15;
+
+/// Base susy configuration.
+$susy: (
+  'math': fluid,
+  'columns': 24,
+  'gutter-position': after,
+  'gutters': 1
+);
+
+// Remove tap highlight on mobile webkit browsers.
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// Disable link color and underline.
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/// Changes cursor to pointer on hover.
+@mixin clickable {
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  &:active {
+    text-shadow: 0rem 0rem 1rem $grey3;
+  }
+}
+
+.clickable {
+  @include clickable;
+}
+
+@mixin noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin dead-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/**
+ * This set up is necessary for 1rem==10px initially, and to scale correctly on different browsers.
+ * 62.5% turns the common default font-size of 16px to 10px. If anyone explicitly resized their default font size,
+ * the use of rem units throughout will result in a correctly scaled version of our page.
+ *
+ * Reference: http://snook.ca/archives/html_and_css/font-size-with-rem
+ */
+html {
+  font-size: 62.5% !important;  /* Since this defines our root unit, it's !important that it is not overridden */
+  box-sizing: border-box;
+
+  // Override iOS automatic font size adjustment on device rotation.
+  -webkit-text-size-adjust: 100%;
+}
+*, *:before, *:after { box-sizing: inherit; }
+
+body {
+  font-size: 1.4rem;
+  font-family: 'proxima-nova', 'Helvetica Neue';
+  margin: 0;
+  background-color: $white;
+  color: $bodyText;
+  font-weight: $regular;
+  line-height: 1.8rem;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: $bodyText;
+}
+
+h2 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: $bodyText;
+}
+
+input[type=text] {
+  padding: .5rem 1rem;
+}
+
+.badge {
+  font-size: .9rem;
+  font-weight: $semibold;
+  background: $comprehendBlue;
+  border-radius: 2rem;
+  color: $white;
+  padding: 0 .8rem 0 .8rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.semi-bold {
+  font-weight: $semibold;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.hidden {
+  visibility: hidden;
+
+  // TODO: remove when we upgrade css-loader to 0.16.0 or newer.
+  opacity: 0;
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.container-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba($white, .8);
+}
+
+.close-button {
+  @include clickable;
+  font-size: 2.2rem;
+  font-weight: bolder;
+}
+
+.text-input-error-explanation {
+  margin-top: .5rem;
+  color: $lightRed;
+}
+
+.text-input-info-explanation {
+  margin-top: .5rem;
+  color: $comprehendBlue;
+}
+
+.text-input-error-dark {
+  color: $darkRed;
+}
+
+.input-focus {
+  box-shadow: 0 0 .2rem 0 $blue2;
+}
+
+.required:after {
+  content: '*';
+  padding-left: .5rem;
+  color:red ;
+}
+
+.colon:after {
+  content: ':';
+}
+
+.tag {
+  background-color: $blue9;
+  border-radius: .5rem;
+  font-weight: bold;
+  padding: .5rem 1.5rem;
+  color: $black;
+
+  &.disabled {
+    background-color: $grey2;
+  }
+
+  &.error {
+    background-color: $red;
+  }
+}
+
+// Different text styles
+.text-selected {
+  font-weight: $semibold;
+  text-transform: capitalize;
+  color: $lightSteel;
+}
+
+.text-disabled {
+  font-weight: $regular;
+  text-transform: capitalize;
+  color: $powderBlue;
+  cursor: default !important;
+}
+
+.text-category {
+  font-weight: $regular;
+  text-transform: uppercase;
+  color: $comprehendBlue;
+}
+
+.text-nav1 {
+  font-weight: $regular;
+  text-transform: uppercase;
+  color: $almostGray;
+}
+
+.text-nav2 {
+  font-weight: $regular;
+  text-transform: capitalize;
+  color: $almostGray;
+}
+
+.text-info {
+  font-weight: $regular;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.text-input {
+  // We're not sure why inputs weren't picking up the body fonts, seems like in some cases the browser override the font
+  font-family: 'proxima-nova', 'Helvetica Neue';
+  font-size: 1.4rem;
+  border: $inputBorder;
+  border-radius: .5rem;
+  padding: 1rem;
+
+  :focus {
+    box-shadow: 0 0 .2rem 0 $blue2;
+  }
+}
+
+.input-disabled {
+  background-color: $grey4;
+}
+
+.textarea {
+  font-family: 'proxima-nova', 'Helvetica Neue';
+  font-size: 1.4rem;
+  border: $inputBorder;
+  border-radius: .5rem;
+  padding: 1rem;
+}
+
+::-webkit-input-placeholder {
+  color: $grey2;
+}
+
+.text-option {
+  font-weight: $semibold;
+  text-transform: uppercase;
+  color: $comprehendBlue;
+}
+
+.clickable-text {
+  margin-top: 3rem;
+  color: $hyperlinkBlue;
+  @include clickable;
+
+  .icon {
+    padding-right: .5rem;
+  }
+}
+
+.text-link {
+  @include clickable;
+  font-weight: $regular;
+  text-decoration: underline;
+  text-transform: none;
+  color: $hyperlinkBlue;
+
+  &:hover {
+    color: $comprehendBlue;
+  }
+}
+
+.text-subheading {
+  font-size: 1.2rem;
+  font-weight: $regular;
+  text-transform: none;
+  color: $powderBlue;
+}
+
+.text-subtext {
+  font-size: 1.2rem;
+  font-weight: $regular;
+  text-transform: uppercase;
+  color: $lightSteel;
+}
+
+.text-subtext-label {
+  font-size: 1.2rem;
+  font-weight: $regular;
+  text-transform: uppercase;
+  color: $almostGray;
+}
+
+.text-subtext-white {
+  font-size: 1.2rem;
+  font-weight: $regular;
+  text-transform: none;
+  color: $white;
+}
+
+.text-subtext-blue {
+  font-size: 1.2rem;
+  font-weight: $regular;
+  text-transform: none;
+  color: $powderBlue;
+}
+
+// In order for text truncation to work, its width has to be specified.
+// This wrapper will cause text to truncate to the set width and end with ellipsis.
+.text-truncation {
+  display: flex !important;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+p {
+  margin: 2rem 0 0 2rem;
+  line-height: 2.6rem;
+}
+
+// Wrap a paragraph with this class if it should follow the 65
+// character width rule.
+.narrow-p {
+  // Paragraphs should have less than 65 characters for readability.
+  max-width: 65ch;
+  display: block;
+}
+
+hr {
+  border: 0;
+  height: .1rem;
+  background-color: $lightGray;
+}
+
+.modal-underlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.virtual-table {
+  display: table;
+}
+
+.virtual-table-row {
+  display: table-row;
+}
+
+.virtual-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.action-input {
+  border: $inputBorder;
+  border-radius: .4rem;
+
+  .text-input {
+    width: calc(100% - #{$action-input-width});  // 4rem came from .action-button width.
+    border: 0;
+  }
+
+  .action-button {
+    border-left: $inputBorder;
+    width: $action-input-width;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    display: inline-block;
+    outline: none;
+
+    .icon {
+      text-align: center;
+      position: relative;
+      top: .1rem;
+    }
+  }
+}
+
+.checkbox-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/**
+ * Turn on custom scrollbars throughout the app
+ * Reference: http://css-tricks.com/custom-scrollbars-in-webkit/
+ * Note that this is only for Chrome since Chrome hides scrollbars.
+ */
+::-webkit-scrollbar {
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: $white;
+
+  &:vertical {
+    border-left: .1rem solid $lightGray;
+  }
+
+  &:horizontal {
+    border-top: .1rem solid $lightGray;
+  }
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1.6rem rgba($lightGray, .5);
+}
+
+textarea::-webkit-scrollbar-track {
+  border-radius: 0 .5rem .5rem 0;
+}
+
+textarea::-webkit-scrollbar {
+  border-radius: 0 .5rem .5rem 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $lightGray;
+  border: .3rem solid transparent;
+  border-radius: .9rem;
+  background-clip: content-box;
+
+  &:hover {
+    background-color: $lightSteel80;
+  }
+}
+
+/** Style Guide 2.0 text styles */
+.text-body2 {
+  font-weight: $regular;
+  font-size: 1.4rem;
+  color: $gray80;
+  line-height: 1.8rem;
+}

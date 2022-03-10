@@ -1,0 +1,61 @@
+.toggle-button {
+  display: inline-block;
+  background: $almostWhite;
+  border: .1rem solid $lightSteel40;
+  border-radius: 4rem;
+  transition: all 1s;
+  padding: .3rem .3rem;
+  width: 5rem;
+
+  .circle {
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 4rem;
+    text-align: center;
+    transition: all 1s;
+  }
+
+  .left {
+    float: left;
+    background: $black;
+    border: .1rem solid $black;
+  }
+
+  .circle.left.icon-star-empty {
+    background: $comprehendBlue;
+    border-color: $comprehendBlue;
+    color: $white;
+  }
+
+  .right {
+    background: transparent;
+    float: right;
+    border-color: transparent;
+  }
+
+  &.is-active {
+    background: $comprehendBlue;
+
+    .circle {
+      color: $comprehendBlue;
+      background: $white;
+      border: .1rem solid $white;
+
+      &.left {
+        background: $comprehendBlue;
+        color: $white;
+        border: none;
+      }
+    }
+  }
+
+  &:not(&.disabled) {
+    @include clickable;
+  }
+
+  &.disabled {
+    background: $gray15;
+    border: .1rem solid $gray15;
+  }
+}

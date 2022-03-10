@@ -1,0 +1,229 @@
+.simple-dropdown {
+  position: relative;
+
+
+  &.no-scrollbar{
+    width:30px;
+    
+    .opener{
+      @include clickable;
+      position:relative;
+      
+      &:hover {
+        color: $grey1;
+      }
+      .icon-accordion-down{
+        position: absolute;
+        right: 11px;
+        top: 8px;
+      }
+    }
+  }
+
+  &.inactive {
+    color: $paleGray;
+  }
+
+  &.open {
+    z-index: $top-nav-dropdown-z-index;
+  }
+
+  &.disabled {
+    color: $lightGray;
+  }
+
+  > div:first-child {
+    display: table;
+
+    > div {
+
+      > div {
+        display:inline-block;
+        color:$brandColor;
+        font-weight: normal;
+        
+        .selected-item-prefix {
+          font-weight: bold;
+          margin-right: .5rem;
+          display: none;
+        }
+      }
+
+      > div:first-child {
+        padding-right: .3rem;
+      }
+    }
+  }
+
+  .simple-dropdown-top-clickable {
+    @include clickable;
+  }
+
+  .underlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    // IE9 will allow clicks to go through divs with no background regardless of z-indexes, so give it a transparent background.
+    // http://stackoverflow.com/questions/6480774/z-index-problem-in-ie-with-transparent-div.
+    background: $white;
+    opacity: 0;
+  }
+
+  .simple-dropdown-contents {
+    background: $white;
+    border: $table-border;
+    border-radius: .5rem;
+    margin-top: 1rem;
+    overflow: visible;
+    position: absolute;
+    top: 100%;
+    right: -.5rem;
+
+    > div {
+      
+      > div {
+
+        &.icon {
+          font-weight: normal;
+
+          [class^="icon-"] {
+            padding: 1rem;
+          }
+
+          > div {
+            padding: .5rem 2rem .5rem .5rem;
+          }
+        }
+
+        &.disabled {
+          color: $lightGray !important;
+
+          .checkbox {
+            color: inherit;
+          }
+        }
+
+        &:hover:not(.item-list-header):not(.disabled) {
+          @include clickable;
+          background: $lightSteel10;
+        }
+
+        > div, .checkbox-container {
+          display: table-cell;
+          padding: 1rem 2rem;
+          white-space: nowrap;
+        }
+
+        > div:last-child {
+          width: 1.4rem;
+        }
+      }
+    }
+
+    .item-list-header {
+      font-weight: bold;
+
+      > div {
+        padding-top: 2rem;
+      }
+    }
+  }
+
+  .simple-dropdown-icon {
+    &:before {
+      font-family: 'comprehend';
+      font-size: 1.6rem;
+      padding-right: .3rem;
+    }
+  }
+
+  .open-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &.no-scrollbar {
+    float: left;
+
+    .simple-dropdown-contents {
+      max-height: none;
+      overflow: visible;
+
+      > div {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.align-right > .simple-dropdown-contents {
+    top: 1.2rem;
+    right: inherit;
+  }
+
+  &.header-icon [class^="icon-"] {
+    padding: 0 .4rem;
+  }
+
+  // No good way to remove that final child selector due to the uncertainty of the specific structure of SimpleDropdown
+  &.no-hover:hover .simple-dropdown-contents .simple-dropdown-items > div:not(.item-list-header)
+  {
+    background: transparent;
+  }
+
+  &.list-style {
+    border: .1rem solid $lightGray;
+    border-radius: .5rem;
+    width: 100%;
+    margin-bottom: .5rem;
+
+    > div:first-child {
+      width: 100%;
+
+      > div > div:last-child {
+        width: 2.8rem;
+
+        .opener {
+          border-left: .1rem solid $lightGray;
+          padding: .5rem;
+        }
+      }
+    }
+
+    &.align-right .simple-dropdown-contents {
+      top: 1.5rem;
+    }
+
+    .checkbox {
+      padding-right: 3rem;
+    }
+  }
+
+  .badge {
+    position: absolute;
+    top: -1.1rem;
+    right: 1rem;
+    width: 1.5rem;
+    text-align: left;
+    font-size: 1.3rem;
+  }
+}
+
+.exposure {
+  .simple-dropdown-items {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .list-view-bar .simple-dropdown-items {
+    [class^="icon-"] {
+      padding: 1rem 1rem 1rem 0;
+    }
+
+    .column-name {
+      padding: 1rem 2rem 1rem 0;
+    }
+  }
+}

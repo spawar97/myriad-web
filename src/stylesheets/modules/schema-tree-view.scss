@@ -1,0 +1,318 @@
+.schema-tree-view {
+  display: inline-block;
+  vertical-align: top;
+
+  &:not(.no-border) {
+    border-right: .1rem solid $lightSteel60;
+    border-top: .1rem solid $lightSteel60;
+  }
+
+  .schema-tree-view-search {
+    width: 100%;
+
+    .summary-text-container {
+      margin: .5rem 2rem 0 2.2rem;
+      display: inline-block;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+
+      .summary-text {
+        display: inline;
+        margin-right: .4rem;
+
+        &.bold {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .schema-tree-view-search-box {
+      cursor: pointer;
+      height: 3rem;
+      margin: 0 2rem 1rem;
+      background-color: $white;
+      border-radius: .4rem;
+      border: .1rem solid $lightGray;
+
+      &.no-margin {
+        margin: 0;
+        width: 100%;
+        display: inline-block;
+      }
+
+      .nav-tree {
+        .simple-dropdown > div:nth-child(3) {
+          top: 1.9rem;
+          overflow-y: auto;
+          overflow-x: hidden;
+
+          .item-name {
+            padding: 0;
+
+            .schema-tree-view-datasource-container {
+              display: table;
+
+              .schema-tree-view-datasource {
+                display: table-row;
+
+                span {
+                  height: 2rem;
+                  padding: 1rem 1rem 1rem 2rem;
+                  color: $darkSteel;
+                  display: table-cell;
+
+                  &.checked {
+                    font-weight: bold;
+                  }
+                }
+
+                .icon-checkmark-full {
+                  padding: 1rem 2.5rem 1rem 1rem;
+                  display: table-cell;
+                  color: $darkSteel;
+                  font-size: 1.4rem;
+                }
+              }
+            }
+
+            .simple-button-array {
+              margin: 1rem 2rem 2rem;
+
+              .active {
+                background-color: $comprehendBlue;
+              }
+            }
+
+            .dropdown-label {
+              color: $lightSteel50;
+              margin: 2rem;
+            }
+          }
+        }
+      }
+
+      .modal {
+        .dropdown-label {
+          color: $black;
+          font-weight: bold;
+          width: 26.7rem;
+          margin: 1rem 1rem 1rem 0;
+        }
+
+        .search-with {
+          .simple-dropdown {
+            border: .1rem solid $darkSteel;
+            border-radius: .4rem;
+            width: 100%;
+
+            > div > div {
+              > div:nth-child(2) {
+                width: 100%;
+              }
+
+              > div:nth-child(3) {
+                padding-right: .5rem;
+              }
+            }
+
+            .simple-dropdown-contents {
+              background-color: $white;
+
+              .simple-dropdown-items > div {
+                font-weight: bold;
+
+                &:hover {
+                  background: $lightSteel10;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      input {
+        float: left;
+        width: calc(100% - 8rem);
+        background-color: $white;
+        margin-bottom: 0;
+        padding: 0;
+        border: none;
+        height: 2.8rem;
+        font-size: 1.4rem;
+
+        @include placeholder {
+          color: $powderBlue;
+        }
+      }
+
+      .opener {
+        height: 3rem;
+        width: 2rem;
+        font-size: 1.8rem;
+        vertical-align: middle;
+        float: left;
+
+        .icon-cog {
+          position: relative;
+          color: $black;
+          top: .7rem;
+          left: .2rem;
+          margin-right: .2rem;
+          font-size: 1.4rem;
+
+          &:hover {
+            color: $lightSteel;
+          }
+        }
+      }
+
+      .schema-tree-view-search-icon {
+        float: left;
+        position: relative;
+        right: -.7rem;
+        top: -.1rem;
+        font-size: 1.4rem;
+        width: 3rem;
+        height: 3rem;
+        background: $black;
+        border-radius: 0 .4rem .4rem 0;
+        color: $white;
+        cursor: pointer;
+
+        .icon-search {
+          position: relative;
+          top: .7rem;
+          left: .7rem;
+        }
+
+        &:hover {
+          color: $lightSteel;
+        }
+      }
+
+      .schema-tree-view-search-cancel {
+        float: left;
+        position: relative;
+        right: -.7rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+        width: 2rem;
+        height: 3rem;
+        cursor: pointer;
+        color: $lightSteel;
+
+        &:hover {
+          color: $lightSteel50;
+        }
+
+        .icon-close {
+          position: relative;
+          top: .5rem;
+          right: .2rem;
+        }
+      }
+    }
+  }
+
+  .admin-edit-schema-button {
+    height: 5.2rem;
+
+    .simple-button-array {
+      margin: 2rem;
+      width: calc(100% - 4rem);
+    }
+  }
+
+  .schema-tree-items {
+    overflow-y: auto;
+    // Size the container to fit in the available screen viewport height. 17.5rem
+    // is the distance between the top of this component and the top of the
+    // `admin-tab` component.
+
+    > div {
+      display: table;
+      width: 100%;
+
+      .tree-entry {
+        display: table-row;
+        height: 2.4rem;
+
+        > div {
+          display: table-cell;
+          vertical-align: middle;
+
+          > div {
+            width: 100%;
+
+            &.selected {
+              background: $lightSteel10;
+              border-radius: .3rem;
+            }
+
+            &.dimmed {
+              color: $lightSteel60;
+            }
+
+            > div {
+              display: table;
+
+              > div {
+                display: table-row;
+
+                > div {
+                  display: table-cell;
+
+                  .icon-eye-blocked {
+                    color: $yellow;
+                  }
+                }
+              }
+            }
+          }
+
+          .item-opener, .checkbox {
+            width: 2rem;
+          }
+
+          .item-opener {
+            bottom: .1rem;
+
+            &:after {
+              top: calc(50% - .2rem);
+            }
+          }
+
+          .selected-triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent transparent transparent $lightSteel20;
+            border-width: 1.2rem 0 1.2rem 1rem;
+          }
+
+          .selector {
+            @include clickable;
+          }
+
+          .tree-name {
+            @include noselect;
+            padding: .4rem .5rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            .tree-short-name {
+              color: $lightSteel30;
+              font-size: 1.3rem;
+              margin-left: .5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .spinner-container {
+    top: 10rem;
+  }
+}

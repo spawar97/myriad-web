@@ -1,0 +1,604 @@
+/* Style the both tabs - upper and the report */
+.home-page-tab {
+  margin-left: 0px;
+}
+
+.home-page-tab button:not(.active):not(.disabled) {
+  cursor: pointer;
+  margin-bottom: 1px;
+  border-color: transparent;
+}
+
+/* Style the team selection tabs */
+.home-page-team-tab {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  margin-top: 0rem;
+  background-color:$white;
+  padding-left:20px;
+  margin-left:20px;
+}
+
+.home-page-team-tab-div-button {
+  text-overflow: ellipsis;
+  color: $brandColor;
+}
+
+.home-page-enter-admin-mode, .home-page-team-tab-div-button {
+  background: none;
+  outline: none;
+  padding: 10px 28px;
+  height: 3.5rem;
+
+  &.active {
+    background-color: $white;
+    border-bottom: 0;
+    border-right: 1px solid $borderColor;
+    border-left: 1px solid $borderColor;
+    border-top:3px solid $brandColor;
+
+    & .disabled {
+      cursor: default;
+    }
+  }
+
+  &:not(.active) {
+    cursor: pointer;
+  }
+
+  &:hover:not(.active):not(.disabled) {
+    background-color: #edf7fd;
+    color: $brandColor;
+  }
+
+  &.disabled {
+    cursor: default;
+    color: $disabledGray;
+    background-color: inherit;
+  }
+}
+
+.home-page-enter-admin-mode {
+  margin-left: auto;
+  font-size: 1.2rem;
+  font-family: 'proxima-nova', 'Helvetica Neue';
+  border: none;
+  margin-top:-2px;
+  margin-right: 20px;
+  background: none;
+  &:not(.active) {
+    border-left: none;
+  }
+
+  &.active {
+
+  }
+
+  &.disabled {
+    cursor: default;
+    color: $disabledGray;
+  }
+}
+
+//style the report tab
+.home-page-report-tab {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  margin-top:2px;
+
+  button {
+    background: transparent;
+    outline: none;
+    transition: background-color 0.3s;
+    opacity: 0.97;
+    border-left: none;
+    border-right: none;
+    border-top:0;
+    border-bottom:0;
+    padding-right: 0;
+    padding-left: 0;
+    .tab-title{
+      padding: 4px 12px;
+      margin: .4rem 0 .3rem;
+      border-right: 1px solid #ccc;
+      font-size:1.3rem;
+    }
+  }
+
+  button.active {
+    border-radius: 0;
+    border-bottom: 3px solid $brandColor !important;
+    color: $brandColor;
+
+    &.first {
+      border-top-left-radius: 0 !important;
+    }
+
+    &.last {
+      border-top-right-radius: 0 !important;
+    }
+
+    &:hover{
+      background: $white;
+      border-bottom: 3px solid $brandColor;
+    }
+    background-color: $white;
+    opacity: 1;
+    position: relative;
+    border-bottom: 0;
+    z-index: $homepage-tab-active-z-index;
+  }
+}
+
+.tablinks {
+  float: left;
+  .icon-WarningCircle{
+    color: $orange;
+    padding-right: 1rem;
+  }
+}
+
+.home-page-content-container{
+  border-top: 1px solid $borderColor;
+  margin-top:-1px;
+  .home-page-tab{
+    border-bottom: 1px solid $borderColor;
+    
+  }
+}
+.home-page-enter-admin-mode, .home-page-enter-edit-mode {
+  text-transform: uppercase;
+  float: right;
+  color: #999999;
+  cursor: pointer;  
+  position: relative;
+  bottom: -2px;
+}
+.home-page-enter-admin-mode{
+  &.active {
+    color: $brandColor;  
+  }
+}
+
+.home-page-enter-edit-mode {
+  padding-left: 2rem;
+  font-size: 1.2rem;
+
+  &:hover:not(.disabled) {
+    text-decoration: underline;
+    color: $brandColor;
+  }
+
+  &.disabled {
+    color: $disabledGray;
+  }
+}
+
+.home-page-link-enter-edit-or-admin-mode {
+  text-transform: uppercase;
+  color: $hyperlinkBlue;
+  cursor: pointer;
+  padding-left: 0.5rem;
+}
+
+.home-page-link-enter-edit-or-admin-mode:hover {
+  text-decoration: underline;
+}
+
+.home-page-content {
+  &:not(.empty):not(.dashboard) {
+    padding: 0 2rem 0.5rem 2rem;
+    height: calc(100% - 48px);
+  }
+
+  .dashboard {
+    height: calc(100% - 48px);
+  }
+}
+
+.home-page-content-editor-mode {
+  width: 75%;
+  margin-right: 0;
+  float: left;
+  padding: 0 0 0.5rem 2rem;
+}
+
+@mixin home-page-editor-pane-report {
+  padding: 1rem;
+  border: 0.5px solid grey;
+}
+
+@mixin home-page-editor-pane-report-title {
+  padding-left: 2rem;
+}
+
+@mixin home-page-editor-pane-report-hamburger {
+  float: left;
+}
+
+@mixin icon-hamburger {
+  font-size: 1.8rem;
+  padding-right: 1rem;
+  color:#b5b5b5;
+}
+
+.home-page-editor-pane-container {
+  display: none;
+  width: 25%;
+  float: right;
+  padding-left: 2rem;
+  transition: all .2s ease-in-out;
+  margin-top:-1px;
+
+  .home-page-editor-pane {
+    width: 95%;
+  }
+
+  .home-page-editor-reports-list-header {
+    display: inline-block;
+    width: 100%;
+    height: 3.5rem;
+
+    .subheader-title {
+      padding-top: 0.5rem;
+      float: left;
+      font-size: 1.4rem;
+      color: $black;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .home-page-report-selector-text {
+      padding-top: 0.5rem;
+      float: left;
+    }
+
+    .home-page-clear-all-tabs {
+      font-weight: bold;
+      float: right;
+      margin-right: 0;
+    }
+
+  }
+
+  .icon-information_solid {
+    font-size: 2.3rem;
+    color: $orange;
+    padding-right: 1rem;
+  }
+
+  .home-page & {
+    display: block;
+    height: 100%;
+  }
+  .Select{
+    .Select-control{
+      border-radius: 0 !important;
+    }
+  }
+  .section-title {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-bottom: 1px solid $grey2;
+    line-height: 2.5rem;
+    color: $black;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .title-text {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    color: $black;
+
+    .icon-checkmark-full {
+      color: $green;
+      padding-right: 1rem;
+    }
+  }
+
+  .simple-dropdown {
+    margin-bottom: 2rem;
+
+    .text-truncation {
+      margin-left: 1rem;
+    }
+
+    .opener {
+      @include clickable;
+    }
+  }
+
+  .home-page-editor-pane-text {
+    color: $black;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    vertical-align: middle;
+
+    .icon {
+      float: right;
+      font-size: 1.4rem;
+    }
+
+    &.title {
+      margin-top: 2rem;
+    }
+  }
+
+  .editor-no-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .home-page-editor-pane-report {
+    @include home-page-editor-pane-report;
+  }
+
+  .home-page-editor-pane-report-title {
+    @include home-page-editor-pane-report-title;
+  }
+
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                 supported by Chrome and Opera */
+  }
+
+  .grabbing {
+    pointer-events: auto !important;
+    cursor: grabbing !important;
+    cursor: -moz-grabbing !important;
+    cursor: -webkit-grabbing !important;
+  }
+
+  .icon-WarningCircle {
+    color: $orange;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .home-page-editor-pane-report-hamburger {
+    @include home-page-editor-pane-report-hamburger;
+  }
+
+  .icon-hamburger {
+    @include icon-hamburger;
+  }
+
+  .icon-hamburger {
+    font-size: 1.8rem;
+    padding-right: 1rem;
+  }
+
+  .close-button:hover {
+    transform: scale(1.25);
+    color: $red;
+  }
+
+}
+
+.home-page-editor-pane-report-drag-and-drop {
+
+  .home-page-editor-pane-report {
+    @include home-page-editor-pane-report;
+  }
+
+  .home-page-editor-pane-report-title {
+    @include home-page-editor-pane-report-title;
+  }
+
+  .home-page-editor-pane-report-hamburger {
+    @include home-page-editor-pane-report-hamburger;
+  }
+
+  .icon-hamburger {
+    @include icon-hamburger;
+  }
+}
+
+
+/* Change background color of buttons on hover */
+.home-page-team-tab button:hover:not(.active):not(.disabled) {
+  background-color: #edf7fd;
+}
+
+.home-page {
+  height: 90vh;
+  display: inline;
+}
+
+.home-page-content:not(.dashboard)/* Style the tab content */
+.home-page-tabcontent {
+  display: inline-block;
+  width: 100%;
+  .information-message {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+.home-page-tabcontent {
+  margin-top: -1px;
+
+  &.spinner-container {
+    height: 65vh;
+  }
+
+  &:not(.empty) {
+    padding: 6px 12px;
+  }
+
+  .page-header {
+    margin: 25px 0 0 0;
+    padding: 35px 0 0 2rem;
+    border-bottom: none;
+    height: 3rem;
+    background: transparent;
+  }
+
+  .filters {
+    margin-top: 0;
+  }
+}
+
+.home-page-dashboard-tabcontent {
+  height: 100%;
+}
+
+.home-iframe-container-dashboard {
+  overflow: hidden !important;
+  .iframe-container-outer-wrapper {
+    height: calc(100vh - 9.1rem);
+
+    .home-iframe-inner-content-fullscreen {
+      height: 100%;
+      width: 100%;
+      border: none;
+    }
+  }
+}
+
+.home-page-all-content {
+  height: 100%;
+  margin-left: -$main-content-padding;
+  margin-right: -$main-content-padding;
+}
+
+.home-page-content .home-page-tabcontent .page-header {
+  float:right
+}
+
+.home-page-help {
+  margin-left: 2rem;
+  padding-top: 0.2rem;
+}
+
+.home-page-help-text {
+  padding-left: 0.5rem;
+}
+
+.team-tab-drop-down-wrapper {
+
+  height: 3.5rem;
+
+  .Select-control {
+    border-radius: 0 !important;
+    height: 46px !important;
+    background-color: #f1f1f1 !important;
+    border-bottom: 1px solid #999999;
+  }
+
+  .Select-value {
+    @extend .home-page-team-tab-div-button;
+    @extend .tablinks;
+    padding-top: 0.5rem;
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+    .Select-value-label {
+      font-family: sans-serif;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
+  }
+
+  .Select-input input {
+    width: 0px !important;
+  }
+}
+
+.report-tab-drop-down-wrapper {
+
+  .Select-value {
+    @extend .home-page-report-tab;
+    @extend .tablinks;
+    .Select-value-label {
+      overflow: hidden;
+      .tab-title {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-right: 3rem;
+        & span {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-family: sans-serif;
+          font-size: 100%;
+          line-height: 1.15;
+        }
+      }
+    }
+  }
+
+  .Select-input input {
+    width: 0px !important;
+  }
+}
+
+.home-page-team-tab .responsive-home-page-nav-bar,
+.home-page-team-tab .drop-down-wrapper,
+.home-page-team-tab .Select-control {
+  height: 3.5rem !important;
+}
+
+.home-page-report-tab .responsive-home-page-nav-bar,
+.home-page-report-tab .drop-down-wrapper,
+.home-page-report-tab .Select-control {
+  height: 3.6rem !important;
+}
+
+.responsive-home-page-nav-bar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  flex: 1 1 auto;
+
+  .drop-down-wrapper {
+    position: absolute;
+    width: 6rem;
+    border-bottom: 1px solid #999999;
+
+    .Select-control {
+      border:none;
+    }
+
+    .Select-placeholder {
+      color: $brandColor !important;
+      font-weight: bold
+    }
+    .Select-arrow{
+      border-color: $brandColor transparent transparent; 
+    }
+    &.active .Select-control {
+      background-color: $white !important;
+      border-bottom: 0 !important;
+    }
+
+    .Select.is-focused:not(.is-open) .Select-control {
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .Select-menu-outer {
+    position: absolute;
+    right: 0;
+    z-index: $dropdown-z-index;
+  }
+}
+
+.home-page-team-nav-dropdown{
+  .Select-menu-outer{
+    width: 200px;
+  }
+}

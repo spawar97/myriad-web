@@ -1,0 +1,673 @@
+.monitor-view-container {
+  .monitor {
+    @include container(100vw);
+    width: 100%;
+
+    &.show-filters {
+      .filters {
+        display: block;
+        @include span(6);
+      }
+
+      .viz-configuration-wrapper {
+        @include span(18 last);
+      }
+    }
+
+    .viz-configuration-wrapper {
+      @include span(24);
+
+      .monitor-viz, .history, .spinner-container-placeholder {
+        @include span(16);
+      }
+
+      .right-pane {
+        @include span(8 last);
+      }
+    }
+
+    .viz-configuration-wrapper {
+      .spinner-container-placeholder {
+        height: $monitorConfigurationHeight;
+
+        .spinner-container {
+          position: relative;
+          height: $monitorConfigurationHeight;
+        }
+      }
+    }
+
+    .preview-loading-container {
+      @include dead-center;
+
+      .preview-loading-message-container {
+        background: $blueGray3;
+        padding: 2rem;
+        border-radius: .5rem;
+
+        .preview-loading-message {
+          padding-bottom: .5rem;
+        }
+
+        .text-link {
+          text-align: center;
+        }
+      }
+
+      .spinner-container {
+        position: relative;
+        height: 8rem;
+      }
+    }
+
+    .viz-pane-container {
+      position: relative;
+    }
+
+    .viz-container {
+      .preview-menu {
+        float: right;
+
+        .toggle-preview {
+          display: inline-block;
+          padding-right: 1.5rem;
+        }
+      }
+    }
+
+    .icon-question-circle {
+      cursor: pointer;
+      color: $gray50;
+      margin: 0 0.5rem;
+      display: inline-block;
+    }
+
+    .sub-tab-header {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      font-weight: $semibold;
+      padding-bottom: 1rem;
+      border-bottom: $monitorTabUnderline;
+
+      .close-button {
+        float: right;
+      }
+    }
+
+    .history {
+      .sub-tab-header {
+        margin-bottom: 2rem;
+      }
+
+      .link-container > div {
+        float: left;
+        padding-right: .5rem;
+      }
+
+      .icon {
+        color: $comprehendBlue;
+      }
+
+      .btn {
+        position: relative;
+        bottom: .5rem;
+        float: right;
+      }
+    }
+
+    .filters {
+      border-bottom: $menuBorder;
+      // To ensure `.overview-and-config` only cover `.filters`.
+      position: relative;
+
+      .filter-title {
+        font-weight: $semibold;
+        font-size: 1.4rem;
+
+        .toggle-button {
+          float: right;
+        }
+      }
+
+      .monitor-filter {
+        padding: 3rem 0 4rem;
+      }
+    }
+
+    .monitor-viz {
+      margin-bottom: 2rem;
+
+      .highcharts-range-selector {
+        // These styles override the highcharts style for the date range inputs
+        // with the effect of removing the outline when the input is selected.
+        border: 0 !important;
+        top: 1.1rem !important;
+        background-color: $white !important;
+        margin-left: .1rem !important;
+      }
+
+      .empty-content {
+        width: 100%;
+        height: 50rem;
+      }
+
+      .text-link {
+        padding: 0 .5rem;
+      }
+
+      .viz-header {
+        margin: 2.5rem 0 2rem;
+
+        .viz-title {
+          font-size: 1.6rem;
+          font-weight: $semibold;
+          display: inline-block;
+          text-align: center;
+          width: 100%;
+        }
+
+        .legend {
+          display: inline-block;
+          float: right;
+          margin-right: 1.4rem;
+          // For some reason, IE9/10 doesn't like -2rem.
+          // If we really care about 2px, we could look into this later.
+          margin-top: -1.8rem;
+
+          // Override the standard menu item behavior since the legend items
+          // aren't really clickable.
+          .Menu__MenuOption {
+            cursor: default;
+
+            &:hover {
+              background: $white;
+              cursor: default;
+            }
+          }
+
+          .legend-opener-text {
+            padding-right: 1rem;
+          }
+
+          .react-menu-icon:not(.icon-diagonals):before {
+            padding-right: 1.3rem;
+          }
+
+          .legend-options {
+            color: $black;
+            right: -.5rem;
+
+            .icon-viz-threshold:before, .icon-dashed-line:before {
+              font-size: 1rem;
+              color: $red;
+            }
+
+            .option-breach:before {
+              font-size: 1rem;
+              color: $darkRed;
+            }
+
+            .option-non-breach:before {
+              font-size: 1rem;
+              color: $gray;
+            }
+          }
+        }
+      }
+    }
+
+    .monitor-tasks {
+      overflow-y: auto;
+      overflow-x: hidden;
+      border-bottom: $sectionDivider;
+      padding-bottom: 5rem;
+
+      input, textarea {
+        width: 100%;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      .monitor-tasks-title {
+        font-size: 1.8rem;
+        font-weight: $semibold;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: $monitorTabUnderline;
+      }
+
+      .monitor-tasks-content {
+        height: $monitorConfigurationHeight;
+
+        .monitor-tasks-info {
+          padding: 3rem 0;
+
+          .monitor-tasks-count {
+            font-weight: $semibold;
+            font-size: 1.6rem;
+            display: inline-block;
+          }
+
+          .monitor-tasks-show-open-tasks-only {
+            float: right;
+            display: inline-block;
+
+            .show-only-open-tasks {
+              padding-left: 0.5rem;
+              font-size: 1.4rem;
+              line-height: 1.8rem;
+            }
+          }
+        }
+
+        .monitor-tasks-list {
+          .monitor-task-list-item:first-child {
+            border-top: $dottedSeparator;
+          }
+
+          .monitor-task-list-item-expanded:first-child {
+            border-top: $dottedSeparator;
+          }
+
+          .monitor-task-list-item {
+            @include clickable;
+            border-bottom: $dottedSeparator;
+            padding: 1.6rem 2rem;
+          }
+
+          .monitor-task-list-item-expanded {
+            border-bottom: $dottedSeparator;
+            padding: 1.6rem 2rem;
+            background: $whiteSmoke;
+
+            .monitor-task-details {
+              padding-top: 2.1rem;
+              padding-bottom: 1.4rem;
+
+              .monitor-task-detail {
+                padding: 0.4rem 0;
+
+                .monitor-task-detail-entry {
+                  font-weight: $semibold;
+                  padding-right: 1rem;
+                }
+              }
+            }
+          }
+
+          .monitor-task-list-item-title {
+            color: $blue5;
+            padding-right: 1.2rem;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            text-decoration: underline;
+
+            &:hover {
+              color: $comprehendBlue;
+            }
+          }
+
+          .icon-arrow-right {
+            color: $blue5;
+
+            &:hover {
+              color: $comprehendBlue;
+            }
+          }
+
+          .icon-DownArrow {
+            color: $blue5;
+
+            &:hover {
+              color: $comprehendBlue;
+            }
+          }
+
+          .monitor-no-tasks {
+            color: $grey2;
+            background: $whiteSmoke;
+            text-align: center;
+            border: $dottedSeparator;
+            border-radius: 0.5rem;
+            padding: 5rem 0;
+          }
+        }
+      }
+    }
+
+    .overview-and-config {
+      // To ensure `.container-overlay` only cover overview-and-config.
+      position: relative;
+      border-bottom: $sectionDivider;
+      padding-bottom: 3rem;
+      position: relative;
+
+      .toggle-tabs-container {
+        height: 4.5rem;
+        width: 100%;
+        margin-top: 0.4rem;
+        position: relative;
+
+        .icon-question-circle {
+          position: absolute;
+          right: 0;
+          top: 8px;
+          font-size: 1.8rem;
+        }
+      }
+
+      input, textarea {
+        width: 100%;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      // Overwrite some scrollbar properties
+      // TODO: re-enable setting the height of the overview/configuration panes.
+      ::-webkit-scrollbar {
+        &:vertical {
+          border-left: 0;
+        }
+      }
+
+      ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 1.6rem $white;
+      }
+
+      .monitor-configuration {
+        margin-top: 1rem;
+        height: $monitorConfigurationHeight;
+        overflow-y: scroll;
+
+        .header {
+          font-weight: $semibold;
+        }
+
+        .reset-all-button {
+          float: right;
+          font-size: 1.4rem;
+          // TODO: move these to colors.scss
+          color: #939598;
+          cursor: pointer;
+
+          &:hover {
+            color: $black;
+          }
+        }
+
+        .metrics {
+          .header-container {
+            padding-bottom: 1.5rem;
+            border-bottom: $dottedSeparator;
+
+            .main-header {
+              display: inline-block;
+              font-weight: $semibold;
+              font-size: 1.8rem;
+            }
+
+            .weights-header {
+              display: inline-block;
+              float: right;
+              font-weight: $semibold;
+            }
+          }
+
+          .metric {
+            display: inline-block;
+            width: 100%;
+            padding: 1.2rem 0;
+            border-bottom: $dottedSeparator;
+
+            &.is-editing {
+              padding: 2rem 0;
+            }
+
+            .display-name {
+              display: inline-block;
+              font-weight: $semibold;
+            }
+
+            .scale-factor {
+              display: inline-block;
+              float: right;
+              text-align: center;
+              width: 8rem;
+              padding: 0 1rem;
+
+              .is-editing {
+                color: $comprehendBlue;
+                border-color: $comprehendBlue;
+              }
+
+              .loaded-scale-factor {
+                color: #939598;
+                padding: 0.5rem 0 0 1.1rem;
+                text-align: left;
+              }
+            }
+
+            .scale-factor-button {
+              background: #8b939f;
+              border-radius: .4rem;
+              color: $white;
+              cursor: pointer;
+              float: right;
+              height: 3rem;
+              font-size: 2.1rem;
+              padding: 0.6rem 0;
+              text-align: center;
+              width: 3.5rem;
+            }
+          }
+
+          .metric:last-child {
+            border-bottom-style: solid;
+          }
+        }
+
+        .numeric-input-box {
+          float: right;
+          @include disable-user-select();
+        }
+
+        .threshold-scalar {
+          margin: 3rem 0 4rem;
+
+          .header {
+            font-weight: $semibold;
+          }
+
+          .threshold {
+            display: inline-block;
+            width: calc(100% - 10rem);
+
+            &.is-editing {
+              width: calc(100% - 18rem);
+            }
+          }
+
+          .scalar {
+            display: inline-block;
+            float: right;
+            text-align: center;
+          }
+
+          .threshold-input-container {
+            display: inline-block;
+            float: right;
+            padding: 0 1rem;
+            text-align: center;
+            width: 8rem;
+          }
+        }
+
+        .threshold-type {
+          .header {
+            font-weight: $semibold;
+          }
+
+          margin-bottom: 4rem;
+        }
+
+        .score-formula {
+          padding: 2rem 0;
+          border-top: $sectionDivider;
+
+          .header {
+            display: inline-block;
+          }
+
+          .expand-collapse-button {
+            cursor: pointer;
+            display: inline-block;
+            float: right;
+          }
+
+          .score-formula-content {
+            .header {
+              margin: 3rem 0 3rem;
+            }
+          }
+        }
+
+        .impact-range {
+          margin: 3rem 0;
+        }
+
+        .associated-file-item {
+          padding-top: 1rem;
+          margin-bottom: 3rem;
+
+          .header {
+            font-weight: $semibold;
+            margin-bottom: .5rem;
+          }
+        }
+
+        .modification-note {
+          .header {
+            margin-right: 1rem;
+          }
+
+          .modification-note-input-container {
+            margin: 1rem 0 2rem;
+          }
+        }
+
+        .edit-buttons {
+          padding-bottom: 3rem;
+          border-bottom: $sectionDivider;
+        }
+
+        .associated-file:before {
+          padding-right: .5rem;
+        }
+      }
+
+      .monitor-overview {
+        margin-top: 1rem;
+        height: $monitorConfigurationHeight;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        .overview-item {
+          margin-bottom: 3rem;
+
+          .header {
+            font-weight: $semibold;
+            margin-bottom: .5rem;
+          }
+
+          .monitor-description {
+            word-wrap: break-word;
+
+            .description.less {
+              // reference to this style: http://joelsaupe.com/programming/multiple-line-ellipsis-css/
+              // If webkit is not supported by the browser, the ellipsis feature will fall back to the default,
+              // where the description will still be clipped but without "...".
+              display: block;
+              display: -webkit-box;
+              max-width: 100%;
+              margin: 0 auto;
+              // 1.8 rem * 4 lines = 6.8 rem
+              height: 7.2rem;
+              -webkit-line-clamp: 4;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+
+          .monitor-overview-tasks {
+            background: $blue9;
+            height: 3.8rem;
+            padding: 1rem 0 0 1.5rem;
+            border-radius: .5rem;
+
+            &:before {
+              padding-right: .5rem;
+            }
+
+            &.icon-task-alt {
+              color: $hyperlinkBlue;
+            }
+          }
+
+        }
+
+        .overview-item:last-child {
+          margin-bottom: 0;
+        }
+
+        .edit-buttons {
+          border-top: $monitorButtonsDivider;
+          margin-top: 3rem;
+          padding-top: 3rem;
+        }
+      }
+    }
+  }
+
+  .mobile-monitor {
+    display: inline-block;
+    width: 100%;
+
+    .mobile-monitor-view {
+      margin: 2rem 0 2.5rem;
+
+      .header {
+        font-weight: $semibold;
+      }
+
+      .monitor-description {
+        word-wrap: break-word;
+      }
+    }
+
+    .user-alert {
+      position: relative;
+      background: $blue9;
+      padding: 1.5rem 2rem;
+
+      .icon-info {
+        font-size: 3.2rem;
+        color: $blue8;
+        margin-right: 2rem;
+      }
+
+      .message {
+        position: absolute;
+        top: 50%;
+      }
+
+      .mobile-message {
+        margin-top: -1.5rem;
+      }
+    }
+  }
+}

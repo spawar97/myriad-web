@@ -1,0 +1,52 @@
+.share-icon {
+  font-family: comprehend;
+  position: relative;
+  color: white;
+  height: 2.6rem;
+  width: 2.6rem;
+  border-radius: 50%;
+  display: inline-block;
+
+  &:before, &:after {
+    position: absolute;
+  }
+
+  &:before {
+    font-size: 1.3rem;
+    left: .64rem;
+    top: .3rem;
+  }
+
+  &.read {
+    background-color: $blueGray2;
+
+    &:before {
+      content: '\e2dc';  // icon-eye
+    }
+  }
+  &.edit {
+    background-color: $blue3;
+
+    &:before {
+      content: '\e00d';  // icon-pencil
+    }
+  }
+  &.share {
+    background-color: $blue1;
+
+    &:before {
+      content: '\e617';  // icon-share
+      left: .5rem;
+      top: .2rem;
+    }
+
+    &:after {
+      font-size: .72rem;
+      font-family: sans-serif;
+      font-weight: bold;
+      content: '+';
+      right: .4rem;
+      bottom: -.1rem;
+    }
+  }
+}

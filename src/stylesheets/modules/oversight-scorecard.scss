@@ -1,0 +1,1163 @@
+.oversight-scorecard {
+
+  .oversight-scorecard-ribbon {
+    display: flex;
+    justify-content: space-between;
+
+    .ribbon-filters {
+      display: flex;
+      justify-content: flex-start;
+      flex: 1;
+      flex-flow: row wrap;
+
+      .popover {
+        background: white;
+        border-radius: 4px;
+        width: 300px;
+        z-index: $popover-z-index;
+        position: absolute;
+        top: 100%;
+        display: flex;
+        margin: 5px;
+        flex-direction: column;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        hr {
+          display: block;
+          height: 1px;
+          border: 0;
+          border-top: 1px solid #ccc;
+          margin: 0.5em 2em 0.5em 2em;
+          padding: 0;
+        }
+
+        .popover-controls {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin: 10px 8px 5px 8px;
+          font-weight: bold;
+          color: $blue5;
+
+          .metrics-select-all-control, .metrics-clear-control, .metrics-apply-control{
+            &:not(.disabled) {
+              @include clickable;
+            }
+            &.disabled {
+              color: gray;
+            }
+          }
+        }
+
+        .metrics-items-container, .metrics-categories-container {
+          display: flex;
+          flex-direction: column;
+          margin: 5px;
+
+          .metrics-items-container-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+          }
+
+          .metrics-items-container-item {
+            @include clickable;
+            margin: 2px;
+          }
+
+          .metrics-items-container-input {
+            margin-right: 5px;
+          }
+
+        }
+
+      }
+
+      .popover-wrapper {
+        width: 80%;
+        min-width: 150px;
+        margin-left: 10px;
+
+        .popover-header {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0px 8px 8px;
+          width: 100%;
+          border: 1px solid;
+          border-radius: 0rem;
+          border-color: #d9d9d9 #ccc #b3b3b3;
+          @include clickable;
+        }
+
+        .popover-container {
+          position: relative;
+        }
+      }
+
+    }
+
+    .oversight-scorecard-toggle-view {
+      margin-left:10px;
+    }
+  }
+
+  .oversight-scorecard-tabular-view {
+    table {
+      table-layout: fixed;
+      border-collapse: collapse;
+
+      thead {
+        tr {
+          display: block;
+          position: relative;
+          border: 0;
+          border-radius: .5rem .5rem 0 0;
+          text-align: center;
+          font-weight: bold;
+        }
+
+        th {
+          background: $blue1;
+          color: $white;
+        }
+      }
+
+      tbody {
+        display: block;
+        overflow: auto;
+        width: 100%;
+        height: 55rem;
+      }
+
+      @mixin fixed_column_width($width) {
+        width: $width;
+        max-width: $width;
+        min-width: $width;
+      }
+
+      td, th {
+        /* Needed to align fixed header cells with body*/
+        @include fixed_column_width(20rem);
+
+        &.small-header-cell {
+          @include fixed_column_width(15rem);
+        }
+
+        &.large-header-cell {
+          @include fixed_column_width(25rem);
+        }
+
+        &.header-site-id, &.site-id {
+          @include fixed_column_width(20rem);
+        }
+        &.header-study-id, &.study-id {
+          @include fixed_column_width(20rem);
+        }
+        &.header-study-name, &.study-name,
+        &.header-site-name, &.site-name {
+          @include fixed_column_width(30rem);
+        }
+        &.header-overall-score, &.oversight-scorecard-tableview-score {
+          @include fixed_column_width(15rem);
+        }
+      }
+
+      td, th {
+        height: 4rem;
+        text-align: center;
+        border: 1px solid $white;
+        padding: 0 1rem 0 1rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        &, div, span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .invalid-metric-value {
+      display: none;
+    }
+    .oversight-score, .oversight-value {
+      font-weight: bold;
+    }
+
+    .oversight-low {
+      color: $gray50;
+    }
+
+    .oversight-medium {
+      color: $yellow;
+    }
+
+    .oversight-high {
+      color: $red;
+    }
+
+    .oversight-scorecard-table-body {
+      tr:nth-child(odd) td{
+        background-color: $white;
+      }
+
+      tr:nth-child(even) td{
+        background-color: $grey4;
+      }
+    }
+
+    .grouped-scores {
+      color: $white;
+      background-color: $blue5;
+      text-align: left;
+      padding: .5rem 0 .5rem 1rem;
+    }
+  }
+
+  .oversight-scorecard-grid-view  {
+    overflow: visible;
+  }
+
+  .oversight-scorecard-tabular-view {
+    overflow: auto;
+  }
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* To fix a double scrollbar bug in IE:
+    vertical scrollbar drawn inside container causes an horizontal overflow
+    resulting in a second horizontal scrollbar */
+    .oversight-scorecard-tabular-view tbody {
+      padding-right: 20px;
+    }
+  }
+
+  .section-title {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-bottom: $subHeaderUnderline;
+    line-height: 2.5rem;
+    color: $black;
+    font-size: 2.1rem;
+    font-weight: bold;
+  }
+
+  .oversight-scorecard-ribbon-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+
+    .oversight-scorecard-dropdown-sort {
+      width: 85%;
+    }
+  }
+
+  .oversight-scorecard-ribbon {
+    margin: 2rem 0;
+    .spinner-container {
+      padding-top: 1rem;
+      width: 2rem;
+      .icon-spinner {
+        color: $blue5;
+      }
+    }
+  }
+
+  .ribbon-filter-label {
+    font-weight: bold;
+  }
+
+  .oversight-scorecard-scorecard, .oversight-scorecard-sort, .oversight-scorecard-group, .oversight-scorecard-metric {
+    display: flex;
+    justify-content: space-between;
+    min-width: 340px;
+    margin-bottom: 10px;
+  }
+
+  .oversight-scorecard-dropdown-group, .oversight-scorecard-dropdown-metric {
+    width: 80%;
+  }
+
+  .ribbon-filter-dropdown {
+    width: 80%;
+    min-width: 150px;
+    margin-left: 10px;
+    .Select-menu-outer {
+      left: 0;
+      max-height: none;
+      .Select-menu {
+        max-height: none;
+      }
+    }
+  }
+
+  .view-toggle {
+    float: right;
+    font-size: 24px;
+    border: 1px solid;
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
+    transition: background-color 0.3s;
+
+    &:hover:not(.active) {
+      cursor: pointer;
+      background-color: #ddd;
+      opacity: 0.7;
+    }
+
+    &.active {
+      background-color: #ddd;
+    }
+  }
+
+  .grid-view-button {
+    border-radius: 5px 0 0 5px;
+  }
+
+  .tabular-view-button {
+    border-radius: 0 5px 5px 0;
+  }
+
+  &.configuration {
+    /*
+      Slightly customized style to match the default disable styling of react-select components as they both occupy
+       the same page and looks off if using the standard input.disbaled style from _forms.scss
+     */
+    .disabled-form-input {
+      color: #8B8B8B;
+      background-color: #FCFCFC;
+      border-color: #C1C1C1;
+    }
+
+    // Component reuses some ribbon-filter-dropdown class, strip out the margin-left attribute from there
+    .oversight-config-dropdown {
+      margin-left: 0 !important;
+    }
+
+    textarea.disabled-form-input {
+      resize: none;
+    }
+
+    .oversight-metric-group-selection-header {
+      font-size: 16px;
+      font-weight: bold;
+      border-bottom: 2px solid;
+      padding-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .oversight-metric-group-selection {
+      padding: 1rem;
+      background: whitesmoke;
+
+      .oversight-metric-group-selector-panes {
+        display: flex;
+        float: left;
+
+        .oversight-metric-group, .oversight-metric-group-studies {
+          display: flex;
+
+          &:not(.oversight-metric-group-studies) {
+            margin-right: 3rem;
+          }
+
+          .metric-group-selector, .metric-studies-selector {
+            width: 30rem;
+          }
+
+          .label {
+            padding-top: 1rem;
+            font-weight: bold;
+            padding-right: 1.5rem;
+          }
+        }
+      }
+      .oversight-metric-group-study-list-wrapper, .unassigned-study-warning {
+        display: flex;
+        clear: both;
+        padding-top: 2rem;
+
+        .unassigned-study-warning-icon {
+          font-weight: bold;
+          padding-right: 2rem;
+          color: $orange;
+        }
+
+        .oversight-metric-group-unassigned-study-message {
+          font-weight: bold;
+        }
+
+        .oversight-metric-group-study-list-no-studies {
+          font-weight: bold;
+        }
+
+        .oversight-metric-group-study-list-label {
+          font-weight: bold;
+          padding-right: 2rem;
+        }
+      }
+      .buttons {
+        float: right;
+      }
+      .oversight-metric-group-study-list {
+        clear: both;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .page-header .title {
+      width: 100%;
+
+      .close-button {
+        font-size: 3rem;
+      }
+    }
+
+    .pane-content-left {
+      height: 80vh;
+    }
+
+    .pane-header {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 5rem;
+      padding-bottom: 0;
+      border-bottom: .2rem solid $pageHeaderColor;
+
+      .title {
+        cursor: default;
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+
+      .header-buttons {
+        display: flex;
+        align-items: center;
+
+        .delete-button {
+          cursor: pointer;
+
+          span {
+            margin-left: 0.5em;
+          }
+        }
+
+        .simple-button-array {
+          margin: 0 0 0.1em 1em;
+          cursor: pointer;
+
+          .mode-buttons {
+            font-size: 1.5em;
+            padding: 0.2em 0.4em;
+          }
+        }
+      }
+    }
+
+    .metric-input {
+      margin-bottom: 1em;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row-reverse;
+      margin-bottom: 1em;
+    }
+
+    .metric-spinner {
+      position: relative;
+      height: 75vh;
+    }
+
+    .metric-menu {
+      height: calc(80vh - 5rem);
+      overflow: auto;
+
+      ul {
+        padding-left: 0;
+
+        h3 {
+          margin: 2em 0 0.3em;
+        }
+
+        li>ul>li {
+          padding: 1rem 0.2rem;
+          border-top: 1px solid $grey4;
+
+          &:last-child {
+            border-bottom: 1px solid $grey4;
+          }
+
+          &:hover {
+            cursor: pointer;
+            background-color: $gray15;
+          }
+
+          &.activated {
+            background-color: $lightBlueBackground;
+            cursor: default;
+          }
+
+          &.enabled {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .CodeMirror {
+      // CodeMirror recommended to set height: auto to have the text box wrapped
+      // by its content height instead of a default fixed height scrollable box.
+      height: auto;
+      // Force code mirror to be displayed under combox dropdown options.
+      // Combobox cannot receive option selection on click event, otherwise.
+      z-index: 0;
+    }
+
+    .web-form {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        text-transform: none;
+      }
+
+      .toggle-button {
+        // NOTE - For some reason, this is not being pulled in properly from toggle-button.scss.
+        // Just copying it in here for it to work properly
+        &:not(&.disabled) {
+          @include clickable;
+        }
+      }
+
+      .row {
+        display: flex;
+        margin-bottom: 1em;
+
+        .col {
+          display: flex;
+          flex-direction: column;
+          flex: 1 0 40%;
+          margin: 0 1em 0;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          .placeholder {
+            height: 4em;
+            width: 100%;
+            border: 0.1em solid green;
+          }
+
+          .tall {
+            height: 8em;
+          }
+
+          .couple {
+            display: flex;
+            flex-direction: row;
+
+            &.wide {
+              justify-content: space-between;
+              align-items: center;
+            }
+
+            .placeholder {
+              width: 10em;
+            }
+          }
+
+          .label {
+            font-weight: bold;
+          }
+
+          .input-group {
+            display:flex;
+            flex-direction: column;
+
+            &:not(:first-child) {
+              margin-left: 1em;
+            }
+
+            &.inline {
+              flex-direction: row;
+              align-items: flex-end;
+            }
+
+            .label {
+              margin-right: 0.5em;
+            }
+
+            & input.text-input {
+              width: 100%;
+              height: 3.8rem;
+
+              &.short {
+                width: 9em;
+              }
+            }
+
+            textarea {
+              height: 10.8rem;
+            }
+
+            .Select-control {
+              border-color: $gray40;
+              min-width: 340px;
+            }
+
+            .drill-targets-dropdown .Select-control {
+              height: 7.3rem;
+            }
+
+            .invalid-combobox {
+              .Select-control {
+                border: $errorBorder;
+              }
+            }
+
+            .search-option {
+              margin-left: 1em;
+            }
+
+            .color-rectangle {
+              height: 3.7rem;
+              width: 3.8rem;
+              border-radius: .4rem;
+              background-color: black;
+            }
+
+            .color-picker {
+              position: absolute;
+              zIndex: 2;
+
+              .backdrop {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+              }
+
+              .sketch-picker {
+                position: absolute;
+                bottom: 3.7rem;
+                right: -3.8rem;
+              }
+            }
+
+            .error-message {
+              margin-top: .5rem;
+              color: $lightRed;
+            }
+          }
+        }
+      }
+    }
+
+    .splitter-layout {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .splitter-layout .layout-pane {
+      flex: 0 0 auto;
+      overflow: auto;
+    }
+
+    .splitter-layout .layout-pane.layout-pane-primary {
+      flex: 1 1 auto;
+    }
+
+    .splitter-layout > .layout-splitter {
+      flex: 0 0 auto;
+      width: 30px;
+      height: 85vh;
+      position: relative;
+      cursor: ew-resize;
+    }
+
+    .splitter-layout.splitter-layout-vertical {
+      flex-direction: column;
+    }
+
+    .splitter-layout.splitter-layout-vertical > .layout-splitter {
+      display: none;
+    }
+  }
+}
+
+.oversight-tooltip.rc-tooltip {
+  opacity: 1.0 !important;
+  z-index: $oversight-scorecard-rc-tooltip;
+}
+
+.oversight-tooltip {
+  margin: 0 $main-content-padding 0 #{$main-content-left-pad + 2rem};
+
+  .rc-tooltip-inner {
+    background-color: $white;
+    color: $black;
+    box-shadow: 0 0 2rem 0 $grey3;
+  }
+
+  .aggregate-score-tooltip {
+    min-width: 30rem;
+    max-width: 50rem;
+
+    .entity-name {
+      line-height: 2.5rem;
+      color: $black;
+      font-size: 2.1rem;
+      font-weight: bold;
+    }
+    .score-categories {
+      display: flex;
+      .category-column {
+        flex: 1;
+        font-size: 1.6rem;
+        font-weight: bold;
+        text-align: center
+      }
+    }
+    .missing-metrics-title {
+      color: $grey2;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+    .missing-metrics {
+      color: $grey2;
+      font-size: 1.3rem;
+    }
+  }
+
+  .metric-score-tooltip {
+    .metric-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      .metric-header-notification-message {
+        font-size: 1.4rem;
+        color: $red;
+      }
+    }
+
+    .drilldowns {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 1em;
+
+      a {
+        line-height: 1.6em;
+        text-decoration: underline;
+        color: $hyperlinkBlue;
+        margin-left: 0.4em;
+      }
+    }
+
+    .more-information {
+      .collapsible-text {
+        width: 30rem;
+        .title {
+          cursor: pointer;
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: $blue4;
+          .icon-accordion-down {
+            margin-top: 0.4rem;
+            &.rotate-arrow-up{
+              transform: translate(0, -0.4rem) rotate(180deg);
+            }
+          }
+        }
+        .content {
+          .metric-title {
+            font-weight: bold;
+            font-size: 1.4rem;
+          }
+          .metric-legend {
+            display: flex;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            .legend-color {
+              margin-right: 0.2rem;
+              width: 2rem;
+              height: 2rem;
+            }
+          }
+        }
+      }
+    }
+    span {
+      font-size: 1.4rem;
+    }
+  }
+
+  .entity-info-tooltip {
+    .info-header{
+      display: flex;
+      flex-direction: row;
+    }
+    .entity-name {
+      flex-grow: 1;
+      line-height: 2.5rem;
+      color: $black;
+      font-size: 2.1rem;
+      font-weight: bold;
+      padding-bottom: 2rem;
+    }
+    .entity-details {
+      color: $black;
+      font-size: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      .tooltip-field {
+        display: flex;
+      }
+      .tooltip-label {
+        font-size: 1.4rem;
+        color: $grey2;
+        font-weight: bold;
+        padding-right: 0.5rem;
+      }
+      .tooltip-value {
+        max-width: 30rem;
+        color: $black;
+        word-break: break-word;
+      }
+    }
+    .drilldown-view-study-sites {
+      text-align: right;
+      font-size: 1.4rem;
+      color: $blue5;
+      cursor: pointer;
+      text-decoration: underline;
+      &:hover {
+        color: $blue4;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.risk-console-header {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  height: 5rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.5rem solid #4d4d4d;
+  flex-grow: 1;
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.risk-console-phase-details-header {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  height: 5rem;
+  /* padding-bottom: 1rem; */
+  border-bottom: 0.5rem solid #4d4d4d;
+  flex-grow: 1;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.risk-console-phase-details-container {
+  margin-top: 1rem;
+}
+
+.oversight-scorecard-card {
+  width: 40rem;
+  background: #e3e7e9;
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+}
+
+.oversight-scorecard-card-chart {
+  float: left;
+  width: 8rem;
+  height: 8rem;
+}
+
+.oversight-scorecard-card-overview {
+  position: relative;
+  display: flex;
+}
+
+.oversight-scorecard-card-entity-contents {
+  width: 100%;
+  .oversight-scorecard-card-entity-header {
+    @include span(24);
+
+    .oversight-scorecard-card-entity-name {
+      @include span(18 of 24);
+      padding-bottom: 1rem;
+
+      .oversight-scorecard-card-entity-name-span {
+        @include clickable;
+        font-weight: bold;
+        font-size: medium;
+
+        color: $blue5;
+
+        &:hover {
+          color: $blue7;
+        }
+      }
+    }
+
+    .oversight-scorecard-card-drilldown-link {
+      @include clickable;
+      @include span(6 of 24 last);
+      font-weight: bold;
+      float: right;
+
+      color: $blue5;
+
+      &:hover {
+        color: $blue7;
+      }
+    }
+  }
+
+  .oversight-scorecard-card-entity-metadata {
+    padding-right: 2.5rem;
+  }
+
+  .oversight-scorecard-card-entity-additional-metadata {
+    font-weight: bold;
+    @include clickable;
+  }
+}
+
+.oversight-scorecard-card-accordion {
+  @include clickable;
+  width: 2rem;
+  font-size: large;
+  position: absolute;
+  margin: 0;
+  right: 1rem;
+  top: 40%;
+
+  &.icon-accordion-down {
+    &.rotate-arrow-up{
+      transform: rotate(180deg);
+    }
+  }
+}
+
+
+.oversight-scorecard-card-scores-breakdown {
+  clear: both;
+  padding-top: 2rem;
+  width: 100%;
+  transition: visibility 0.1s 0.3s;
+
+  &.minimized {
+    display: none;
+    visibility: hidden;
+  }
+
+  &:not(.minimized) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.oversight-scorecard-card-details-kpi-info {
+  width: 49%;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.oversight-scorecard-kpi-link,
+.oversight-scorecard-drilldown-link a {
+  @include clickable;
+  color: $blue5;
+  &:hover {
+    color: $blue7;
+  }
+}
+
+.oversight-scorecard-scorebox {
+  width: 1.5rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  min-height: 1.5rem;
+  margin-top: 0.1rem;
+  margin-right: 1rem;
+}
+
+.oversight-scorecard-kpi-score {
+  height: 5rem;
+  width: 5rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+
+}
+
+.oversight-scorecard-grid-contents {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.oversight-scorecard-grid-grouped-contents {
+  width: 100%;
+}
+
+// Score card overall score for the grid view
+.oversight-scorecard-card-score {
+  position: absolute;
+  left: 0.25rem;
+  border: 3px solid;
+  width: 5rem;
+  height: 5rem;
+  margin-right: 1rem;
+  text-align: center;
+  padding-top: 1.4rem;
+  font-weight: bold;
+  border-radius: 2.5rem;
+  margin-top: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.8rem;
+
+ .oversight-scorecard-card-score-text  {
+   color: black;
+ }
+}
+
+// Score card overall score for the table view
+.oversight-scorecard-tableview-score {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.oversight-scorecard-histogram {
+  margin-right: 1rem;
+}
+
+.oversight-missing-score-indicator {
+  padding-left: 1.2rem;
+}
+
+.oversight-metric-score-information {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .oversight-metric-score-suffix {
+    padding-left: 0.5rem;
+  }
+}
+
+.oversight-scorecard-configure-metrics-mode {
+  text-transform: uppercase;
+  float: right;
+  color: $hyperlinkBlue;
+  cursor: pointer;
+  padding-left: 1.5rem;
+  font-size: 1.4rem;
+  padding-top: 0.2rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.infinite-scroll {
+  height: 11rem !important;
+  width: 11rem !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-view-prev-page, .grid-view-next-page {
+  float: right;
+  padding: 1rem;
+  border: 1px solid;
+  margin: 1rem;
+  transition: background-color 0.3s;
+  font-weight: bold;
+
+  &:hover:not(.active) {
+    cursor: pointer;
+    background-color: #ddd;
+    opacity: 0.7;
+  }
+}
+
+.oversight-scorecard-filters {
+  .filter-element {
+    position: relative;
+
+    &.range {
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        border-color: $gray20;
+        width: 8em;
+      }
+    }
+
+    .arrow-hidden {
+      .Select-arrow {
+        display: none;
+      }
+    }
+    .icon-spinner {
+      position: absolute;
+      right: 0.6em;
+      top: 0.7em;
+      color: $disabledGray;
+    }
+  }
+}
+
+.oversight-metric-group-add-popup {
+  .name-input {
+    width: 43rem;
+  }
+
+  .buttons {
+    margin-top: 22rem;
+    float: right;
+  }
+}
+
+.oversight-metric-group-modal {
+  width: 100rem !important;
+}

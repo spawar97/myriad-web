@@ -1,0 +1,93 @@
+.cm-info-list {
+  .flex-container {
+   flex-wrap: wrap;
+   width: 100%;
+  }
+  .items{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .total-item-7 .flex-container{
+    justify-content: space-between;
+  }
+  .total-item-4 .item{
+    margin: 0px 11px;
+  }
+  .total-item-4 .item{
+   margin-left: 0px;
+ }
+  .total-item-4 .flex-container{
+    width:100%;
+  }
+  .info-card-container{
+    margin-left: 0px;
+  }
+  .flex-container .item{
+   background-color: #fff;
+   width: calc(50% - 0.225rem);
+   flex: 0 0 calc(14% - 0.625rem) !important;
+   text-align: center;
+   height: 140px;
+   box-shadow:0px 1px 1px #00000029;
+   cursor: pointer;
+   box-sizing: border-box;
+    border: 1px solid transparent;
+    border-bottom-width: 3px;
+    flex-wrap: wrap;
+    border-radius: 10px;
+  }
+  .info-subtitle.info-align{ 
+   width: 100% !important;
+   padding: 9px 15px !important;
+   text-align: center !important;
+   line-height: 17px;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   -webkit-line-clamp: 2;
+   font-size: 14px;
+
+  }
+  .infographic-title.sub-hdr{
+   margin: 3px 0px 8px;
+   color: #1d96dd !important;
+   font-size: 20px;
+   font-weight: 600;
+  }
+  .infographic-title.hdr{
+   padding: 2px 10px;
+   text-align: center;
+   padding: 2px 15px;
+   width: 100%;
+   height: 45px;
+   font-size: 15px !important;
+   color: #555555 !important;
+   line-height: 21px !important;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+ .item-value-wrapper{
+   align-items: center;
+   display: flex;
+   width: 100%;
+   height: 65px;
+   margin-top: 5px;
+   flex-wrap: wrap;
+   justify-content: center;
+ }
+ .flex-container .item-selected{
+   flex: 0 0 calc(13% - 0.625rem);
+   width: calc(50% - 0.225rem);
+   border:1px solid #1E95DD;
+   border-bottom:3px solid #1E95DD;
+   background-color:#EDF9FF;
+   border-radius:10px;
+ }
+}
+@media only screen and (max-device-width: 1280px){
+  .cm-info-list .item{
+    height: 150px !important;
+  }
+}

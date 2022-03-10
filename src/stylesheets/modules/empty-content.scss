@@ -1,0 +1,43 @@
+.empty-content {
+  border: .1rem dashed $gray20;
+  background-color: $gray2;
+  height: 70vh;
+
+  .empty-content-text-holder {
+    width: 100%;
+    display: flex;
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 14rem;
+    color: $gray30;
+
+    .icon-text-wrapper {
+      width: 52%;
+      max-width: 40rem;
+      text-align: center;
+
+      .icon-info {
+        font-size: 2rem;
+        color: $yellow;
+        padding-right: .5rem;
+      }
+
+      .empty-content-text {
+        font-size: 1.8rem;
+        font-weight: $semibold;
+        line-height: 2.1rem;
+        color: $gray40;
+        position: relative;
+        bottom: .3rem;
+      }
+    }
+  }
+}
+
+.modal-sized {
+  height: 10vh;
+  margin-top: 0rem !important;
+}

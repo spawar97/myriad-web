@@ -1,0 +1,15 @@
+.data-access-groups-management-container, .data-review-roles-management-container {
+  padding: 5.5rem 0 2rem 0;
+  display: inline-block;
+  margin-left: 10rem;
+  width: calc(100% - 13rem);
+}
+
+.data-access-group-management-buttons, .data-review-roles-management-buttons {
+  padding-top: 2rem;
+  float: left;
+}
+
+.data-access-groups-management-email, .review-roles-management-email {
+  font-size: 12px;
+}

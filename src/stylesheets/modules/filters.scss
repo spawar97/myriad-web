@@ -1,0 +1,398 @@
+@mixin null-asterisk {
+  color: $blue4;
+  content: '*';
+  font-size: 2rem;
+  font-weight: bold;
+  vertical-align: sub;
+}
+
+.filters {
+
+  a.icon-question-circle {
+    margin-left: 5px;
+  }
+
+  margin-bottom: 2rem;
+
+  .filters-container {
+    height: 98vh;
+    padding-right: 1rem;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+
+    // @include breakpoint($only-tablet) {
+    //   overflow-y: inherit;
+    // }
+
+    hr {
+      color: $grey2;
+      margin: 4rem 0 1rem 0;
+    }
+
+    &.fixed {
+      top: 1rem;
+      height: 98vh;  // Leave some room at the bottom to simulate margin.
+      margin-bottom: 2rem;
+      position: fixed;
+    }
+  }
+
+  // TODO: There are similarity between filters.scss and task.scss, we need to pull those items out.
+  .title-text {
+    @include span(14);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+  }
+
+  .session-filter {
+    .no-filters {
+      margin-bottom: 4rem;
+    }
+
+    .no-filters-yet {
+      padding-right: 1rem;
+    }
+
+    .add-session-filter {
+      margin: 4rem 0;
+    }
+
+    .add-session-filter-link {
+      @include clickable;
+      color: $hyperlinkBlue;
+
+      .icon {
+        font-size: 1.4rem;
+        padding-right: 0.4rem;
+        position: relative;
+        top: 0.2rem;
+      }
+
+      .link-text {
+        text-decoration: underline;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+  }
+
+  .no-filters {
+    margin-bottom: 4rem;
+    background: $whiteSmoke;
+    border: dotted 0.1rem $grey3;
+    border-radius: 0;
+    text-align: center;
+    padding: 0.7rem;
+    color: $grey2;
+    width: 100%;
+  }
+
+  .reset-button {
+    float: right;
+    margin-right: 1rem;
+  }
+
+  .section-title {
+    @include span(24);
+    padding-top: 1rem;
+    line-height: 2.5rem;
+    color: $black;
+  }
+
+  .panel.drilldown-filter, .filterContent {
+    border-bottom: $dottedUnderline;
+
+    .static-filters-container {
+      background-color: $grey4;
+      border-radius: 0.5rem;
+      border-top: none;
+      color: $gray;
+      display: inline-block;
+      margin-top: 0;
+      padding: 1rem;
+      width: 100%;
+      z-index:auto;
+
+      .static-filters {
+        display: inline-block;
+        max-height: 12.6rem;
+        overflow: hidden;
+      }
+
+      .ellipsis {
+        float: right;
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+        margin-top: 10.6rem;
+        margin-right: 0.8rem;
+      }
+    }
+
+    .clear-drilldown-filters {
+      float: right;
+      margin: 0.6rem 0.5rem;
+      color: $gray60;
+      text-decoration: none;
+
+      &:hover {
+        color: $black;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .panel.drilldown-filter {
+    padding: 3.7rem 0 3rem 0;
+  }
+
+  .filterContent {
+    padding: 0.3rem 0 3rem 0;
+  }
+
+  .panel-sub-header {
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    font-weight: bold;
+
+    span {
+      display: inline-block;
+    }
+
+    .panel-sub-header-title {
+      font-size: 1.6rem;
+      margin-right: .5rem;
+      margin-bottom: 1rem;
+    }
+
+    .reset-all-button, .apply-filters-button {
+      float: right;
+      margin-bottom: 1rem;
+    }
+
+    .apply-reset-all-filters, .disabled {
+      float: right;
+      margin-bottom: 1rem;
+      pointer-events: none;
+    }
+
+    .filter-buttons-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .filter-block {
+    padding-bottom: 1.5rem;
+    .Select{
+      .Select-control{
+        border:none;
+        border: 1px solid $grey7;
+        border-radius: 0 !important;             
+      }
+      &.Select--multi{
+        .Select-value{
+          border-radius: 0 !important;
+        }
+      } 
+
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+
+  .static-filters-container {
+    margin-top: 0.5rem;
+    padding-bottom: 2rem;
+
+    .static-filter-block {
+      margin-top: 2rem;
+    }
+
+    .session-static {
+      background-color: $staticFilterBlue;
+
+      &.disabled {
+        background-color: $grey2;
+      }
+    }
+  }
+
+  .block-underline {
+    padding-top: 2rem;
+    border-top: .1rem solid $gray15;
+  }
+
+  .null-asterisk-footnote {
+    font-size: 1.2rem;
+
+    &:before {
+      @include null-asterisk;
+      margin-right: 0.2rem;
+    }
+  }
+
+  .tag {
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+    font-weight: normal;
+    border-radius: 0;
+
+    &.static-filter {
+      color: $gray;
+      background-color: $grey4;
+    }
+  }
+
+  .filter-title {
+    color: $black;
+    line-height: 1.8rem;
+    padding: .3rem 0;
+    vertical-align: middle;
+
+    .filter-title-text {
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+
+    .null-excluded:after {
+      @include null-asterisk;
+      margin-left: 0.2rem;
+    }
+
+    .icon {
+      @include clickable;
+      float: right;
+      font-size: 1.4rem;
+    }
+
+    .filter-menu {
+      float: right;
+      position: relative;
+      cursor: default;
+
+      .filter-menu-trigger {
+        @include clickable;
+      }
+
+      .Menu__MenuTrigger {
+        padding: 0;
+      }
+
+      .filter-menu-options {
+        position: absolute;
+        right: -.01rem;
+        top: 2.3rem;
+        background: $white;
+        border: .1rem solid $grey3;
+        border-radius: .5rem;
+        display: inline-block;
+        width: 13rem;
+        z-index: $homepage-tab-active-z-index;
+
+        .filter-menu-option {
+          padding: 1rem;
+          position: relative;
+          @include clickable;
+          white-space: nowrap;
+
+          div {
+            display: inline-block;
+          }
+
+          // Default react-menu has padding-top of 2rem, that's too big.
+          &:first-child {
+            padding-top: 1rem;
+          }
+
+          // We want the last item before the hr to have a slightly bigger padding.
+          // This class conditionally added in javascript.
+          &.last-item {
+            padding-bottom: 1.5rem;
+          }
+        }
+
+        hr {
+          height: .2rem;
+          width: 100%;
+          position: relative;
+          margin: 0;
+        }
+
+        .include-nulls {          
+          position: relative;
+          @include clickable;
+          white-space: nowrap;
+          padding: 1rem;
+        }
+
+        .virtual-table {
+          margin-top: -1.2rem;
+
+          .include-nulls-text {
+            display: block;
+            margin-left: 0.6rem;
+            margin-top: 1rem;
+            white-space: normal;
+          }
+        }
+      }
+    }
+
+    &.title {
+      margin-top: 2rem;
+    }
+
+    .filter-menu-option {
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+    }
+
+    .filter-menu-icon {
+      margin-right: 1rem;
+    }
+
+    .filter-menu-text {
+      font-weight: normal;
+      margin-left: 1rem;
+    }
+  }
+
+  .date-range {
+    margin-bottom: -0.5rem;
+    width: 100%;
+
+    .lower-input {
+      text-align: right;
+    }
+
+    .input-block {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      min-width: 12rem;
+      vertical-align: top;
+      width: calc(50% - 1.6rem);  // 1.6rem is half of the .to div.
+
+      .text-input {
+        width: 100%;
+      }
+
+      .rdt-picker-right-align {
+        right: 0;
+      }
+    }
+
+    .to {
+      display: inline-block;
+      font-weight: $semibold;
+      margin-top: 0.6rem;
+      padding: 0 1rem;
+      width: 3.2rem;
+    }
+  }
+}
+

@@ -1,0 +1,616 @@
+.risk-category-subtitle {
+  display: flex;
+  padding: 13px 6px 10px 4px;
+}
+.title {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.right-align {
+  text-align: right;
+}
+.left-align {
+  text-align: left;
+}
+.icon-setter {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}
+.ract-assessment-container{
+div.Menu__MenuOption.risk-score-menu.Menu__MenuOption--active {
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.risk-parameter-table {
+  width: 100%;
+  margin-top: 0.938rem;
+  margin-bottom: 0.938rem;
+  border-spacing: 0px;
+}
+.Menu__MenuOptions.risk-score-options.Menu__MenuOptions--horizontal-right.Menu__MenuOptions--vertical-bottom {
+  width: 30%;
+  height: 25%;
+}
+.risk-score-buttons {
+  float: right;
+  margin-top: 2rem;
+}
+/* Style the tab , Style the buttons inside the tab & Change background color of buttons on hover */
+.ract-assessment-tab {
+  float: left;
+  width: 20%;
+  height: 58rem;
+  overflow-y: scroll;
+  button {
+    display: block;
+    background-color: white;
+    padding: 12px 12px;
+    width: 100%;
+    border-right: 0px solid #e3e3e3;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #1D96DD;
+    position: relative;
+    border-bottom: 1px dotted #ddd;
+    font-family: 'proxima-nova', 'Helvetica Neue';
+    &:hover {
+      background-color: #ddd;
+    }
+  } 
+  button.active {
+    background-color: #f9f9f9;
+    color: black;
+     border-bottom: 1px solid #e3e3e3;
+    border-left: 1px solid #e3e3e3;
+    border-top: 1px solid #e3e3e3;
+    border-right: none;
+  }
+}
+.remove-category {
+  right: 0.938rem;
+  top: 8px;
+  z-index: 1;
+  font-size: 1.9rem;
+}
+
+/* Style the tab content */
+.ract-assessment-tabcontent {
+  float: left;
+  padding: 0px 12px 35px;
+  border-bottom: 1px solid #e3e3e3;
+  border-top: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+  width: 80%;
+  border-left: none;
+  background: #f9f9f9;
+  min-height: 56.4rem;
+  height: 58rem;
+  overflow-y: scroll;
+  margin-bottom: 29px;
+}
+.add-custom-category {
+  border-right: 1px solid #e3e3e3;
+}
+button.btn.btn-secondary.custom {
+  width: 90%;
+  border: 1px solid;
+}
+.save-next {
+  float: right;
+  margin-top: 0px;
+  margin-bottom: 0.938rem;
+  padding-left: 54px;
+}
+.reject-approve {
+  float: right;
+  margin-top: 0px;
+  margin-bottom: 0.938rem;
+}
+.flex-container {
+  display: flex;
+}
+.text-description {
+  width: 80%;
+}
+.enable-category {
+  width: 20%;
+}
+.category {
+  margin-top: 0.938rem;
+}
+.enable-category-label {
+  margin-left: 0.938rem;
+  font-weight: bold;
+}
+.info-text {
+  margin: 0.628rem;
+}
+.p-title {
+  font-weight: 600;
+  font-family: 'proxima-nova', 'Helvetica Neue';
+}
+.t-label {
+  padding-top: 15px;
+  width:auto ;
+}
+.risk-subcategory-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: 0.3rem;
+}
+.custom-subcategory-container {
+  width: 47%;
+  text-align: right;
+}
+.custom-subcategory-title {
+  font-weight: 600;
+}
+.global-padding {
+  padding: 0.938rem;
+}
+.right-line {
+  border-right: 1px solid #e3e3e3;
+}
+.enable-container {
+  margin-left: 0px;
+  margin-top: 0.938rem;
+  display:flex;
+}
+.question-txt {
+  padding: 0px;
+  width: 90%;
+}
+.risk-category-score {
+  padding-top: 27px;
+  font-size: 1.5rem;
+  width: 31%;
+}
+#total-risk-category-score {
+  height: 34px;
+  width: 66px;
+  border-color: white;
+  box-shadow: none;
+  text-align: center;
+  opacity: 0.9;
+  border: 1px solid #cccccc;
+}
+.subcategory-risk-score {
+  padding-bottom: 20px;
+  padding-left: 9px;
+  line-height: 2;
+  display: flex;
+  height: auto;
+}
+.Select.risktype-selector.Select--single.is-searchable {
+  width: 250px;
+  >div {
+    border-radius: 0px;
+  }
+}
+.Select.risktype-selector.Select--single.is-focused.is-open.is-searchable {
+  >.Select-menu-outer {
+    border: 1.5px solid #1d96dd;
+  }
+}
+.risk-rationale {
+  background-color: #fff;
+  border-color: #d9d9d9 #ccc #b3b3b3;
+  border: 1px solid #ccc;
+  cursor: default;
+  display: table;
+  border-spacing: 0;
+  border-collapse: separate;
+  height: 36px;
+  outline: none;
+  position: relative;
+  width: 80%;
+  bottom: 0;
+  color: #333;
+  left: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.Risk-Score {
+  border-left: 1.4px solid;
+  padding-left: 23px;
+  border-color: #ccc;
+  width: 336px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 23px 13px 0px 0px;
+  height: 89px;
+}
+span#risk-score-3 {
+  font-weight: 500;
+  font-size: 1.4rem;
+  font-family: 'proxima-nova', 'Helvetica Neue';
+}
+span#risk-score-2 {
+  line-height: 2;
+}
+span#risk-score-1 {
+  font-size: 2.3rem;
+}
+.Select.range-selector {
+  width: 66px;
+}
+.Select-arrow {
+  border-color: #1d96dd transparent transparent !important;
+  border-style: solid;
+  border-width: 5px 5px 2.5px;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  position: relative;
+}
+.is-open {
+  >.Select-control {
+    .Select-arrow {
+      top: -2px;
+      border-color: transparent transparent #1d96dd !important;
+      border-width: 0 5px 5px;
+    }
+  }
+}
+.subcategory-functional-plan {
+  width: 476px;
+}
+.Select.subcategory-functional-plan.Select--single.is-clearable.is-searchable.has-value {
+  >div {
+    border-radius: 0px;
+  }
+}
+.Select.subcategory-functional-plan.Select--single.is-clearable.is-searchable {
+  >div {
+    border-radius: 0px;
+  }
+}
+.Select.range-selector.Select--single.is-searchable {
+  >div {
+    border-radius: 0px;
+  }
+}
+.Select.range-selector.Select--single.is-focused.is-open.is-searchable {
+  >.Select-menu-outer {
+    bottom: 37px !important;
+    top: inherit !important;
+    border: 1.5px solid #1d96dd;
+  }
+}
+.Select.subcategory-functional-plan.Select--multi.is-clearable.is-searchable {
+  >.Select-menu-outer {
+    bottom: 37px !important;
+    top: inherit !important;
+    border: 1.5px solid #1d96dd;
+  }
+  >div {
+    border-radius: 0px;
+  }
+}
+.Select.subcategory-mitigation-action.Select--multi.is-clearable.is-focused.is-open.is-searchable {
+  >.Select-menu-outer {
+    bottom: 37px !important;
+    top: inherit !important;
+    border: 1.5px solid #1d96dd;
+  }
+}
+.subcategory-mitigation-action {
+  width: 476px;
+  max-width: 476px;
+}
+.Select.subcategory-mitigation-action.Select--multi.is-clearable.is-searchable {
+  >div {
+    border-radius: 0px;
+  }
+}
+.Custom-Menu-Option {
+  color: #1d96dd;
+  margin-left: 5px;
+  border-top: 1px solid gray;
+  width: 97%;
+  display: block;
+  margin-top: 4px;
+  cursor: pointer;
+}
+span#add-new-functional-plan {
+  margin-left: 6px;
+}
+input[disabled] {
+  background: #f9f9f9;
+  opacity: 0.5;
+}
+button {
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+button[disabled] {
+  opacity: 0.5;
+}
+#disabled-category {
+  font-weight: 500;
+  color: #999;
+}
+.toggle-button.subcategory-enabled {
+  margin: 0px 6px -6px;
+}
+.toggle-button.subcategory-enabled.is-active {
+  margin: 0px 6px -6px;
+}
+button#quetion-edit-button {
+  width: 44px;
+  height: 22px;
+  font-size: 12px;
+  padding: 4px;
+}
+button#consideration-edit-button {
+  width: 44px;
+  height: 22px;
+  font-size: 12px;
+  padding: 4px;
+}
+.btn.btn-secondary {
+  &:hover {
+    &:not(.btn-disabled) {
+      background: #EDF7FD;
+    }
+  }
+}
+.subcategory-errors {
+  font-size: 13px;
+  color:red;
+}
+.required {
+  &:after {
+    color: red;
+    content: " *";
+  }
+}
+.impact-range-text {
+  margin-left: 10px;
+}
+.probability-range-text {
+  margin-left: 10px;
+}
+.risk-category-text {
+  margin-left: 10px;
+}
+.risk-weight-text {
+  margin-left: 10px;
+}
+td.t-label.category-objective {
+  width: 70%;
+}
+/* Custom Radio Button */
+td#subcategory-td-data {
+  display: flex;
+}
+
+div[class^="detectability-"]{
+  display: flex;
+}
+div[class^="detectability-"] input[type='radio'] {
+  width:18px;
+  height:18px;
+  border:1px solid darkgray;
+  border-radius:50%;
+  outline:none;
+}
+div[class^="detectability-"] input[type='radio']:before {
+  content:'';
+  display:block;
+  width:11px;
+  height:11px;
+  margin: 3.5px 0px 0px 3.7px;    
+  border-radius:50%;    
+}
+div[class^="detectability-"] input[type='radio']:checked:before {
+  background:#1d96dd;
+}
+.detectability-1, .detectability-2 {
+  margin-left: 20px;
+}
+.radio-label {
+  color: #1d96dd;
+  padding-left: 10px;
+  margin: -5px;
+}
+
+/* Custom Radio End */
+
+/* Ipad */
+@media only screen and (min-device-width: 768px) and (min-height: 1024px) {
+  .ract-assessment-tabcontent {
+    height: 67.4rem;
+  }
+}
+
+/* Ipad Pro */
+@media only screen and (min-device-width: 1024px) and (min-height: 1366px) {
+  .ract-assessment-tabcontent {
+    height: 61.4rem;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-device-width: 1200px) and (min-height: 1200px) {
+  .ract-assessment-tabcontent {
+    height: 56.4rem;
+  }
+}
+}
+
+.content-placeholder.ract-assessment-loader {
+  background-color: #fafafa;
+  width: 100%;
+  height: 100% !important;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#subcategory-risk-score-table{
+  width:100%;
+}
+
+.riskType-errors{
+  color:red;
+}
+.ract-assessment-container .question-area {
+  width: 95%;
+  height: 58px;
+  overflow-y: auto;
+  padding: 0px;
+}
+
+.ract-assessment-container
+.Select.subcategory-mitigation-action.Select--multi.is-clearable.is-searchable > div > span > div > span {
+  max-width: 400px;
+}
+
+.ract-assessment-container
+.Select.subcategory-functional-plan.Select--multi.is-clearable.is-searchable > div > span > div > span {
+  max-width: 400px;
+}
+
+label[id^="detectability-label-"]{
+  display: flex;
+}
+
+.Select.ract-assessment-kpi-filter-Monitor{
+  >.Select-menu-outer {
+    bottom: 37px !important;
+    top: inherit !important;
+    border: 1.5px solid #1d96dd;
+  }
+}
+.ract-assessment-kpi-filter-Monitor {
+  width: 476px;
+  max-width: 476px;
+}
+.Select.ract-assessment-kpi-filter-Monitor {
+  >div {
+    border-radius: 0px;
+  }
+}
+
+.ract-module.row.title.right-align.close-button {
+  font-size: 3.5rem;
+  font-weight: bold;
+  width:10%;
+}
+
+div.ract-study-version {
+  display: flex;
+  justify-content: flex-end;
+  >.ract-assessment-study {
+    border-right: 1px solid #78726d;
+    height: 18px;
+    >.ract-assessment-study-label {
+      margin-right: 10px;
+      margin-left: 3px;
+    }
+  }
+  >.ract-assessment-version {
+    margin-left: 10px;
+    display: flex;
+    >.ract-assessment-version-label {
+      color: #1D96DD;
+      font-weight: 700;
+      margin-left: 6px;
+    }
+  }
+}
+
+.Select.ract-assessment-version-select.Select--single.is-searchable {
+  text-align: left;
+  width: 114px;
+  height: 31px;
+  margin: -7px 0px 0px 0px;
+}
+
+.Select.ract-assessment-version-select.Select--single.is-searchable > div  {
+  border: none;
+  border-radius: 0%;
+}
+
+.Select.ract-assessment-version-select{
+  >.Select-control{
+    >.Select-arrow-zone{
+      >.Select-arrow{
+          border-color: #1d96dd transparent transparent !important;
+          border-style: solid;
+          border-width: 5px 5px 2.5px;
+          display: inline-block;
+          height: 0;
+          width: 0;
+          position: relative;
+      }
+    }
+    >.Select-multi-value-wrapper{
+      >.Select-value{
+        >.Select-value-label{
+          color: #1d96dd ;
+        }
+      }
+    }
+  }
+  >.Select-menu-outer {
+    border: 1.5px solid #9a95954f !important;
+    border-radius: 0%;
+    .Select-menu{
+      box-shadow: 0px 0px 0px 3px #cfcbcb4f;
+    >.is-focused{
+      background-color: #cfcbcb3d;
+    }
+   }
+  } 
+}
+
+.Select.ract-assessment-version-select.is-open {
+  > .Select-control{
+    .Select-arrow {
+      top: -2px;
+      border-color:  transparent transparent #1d96dd !important;
+      border-width: 0 5px 5px;
+    }
+  } 
+}
+
+.version-diff {
+  color: #e7521a;
+}
+
+.version-option{
+  display: flex;
+  >#version-status {
+    font-size: 1.4rem;
+    margin-left: 3px;
+  }
+}
+.notification-title {
+  font-weight: 600;
+  font-size: 1.6rem;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 30vw;
+}

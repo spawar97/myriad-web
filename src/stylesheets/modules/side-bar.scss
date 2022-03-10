@@ -1,0 +1,260 @@
+.side-bar {
+  z-index: $side-bar-z-index;
+  /* Pulled out breakpoints to _breakpoints.scss */
+  -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.27);
+  -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.27);
+  box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.27);
+
+  .side-bar-tab-contents {
+    color: $white;
+    cursor: pointer;
+
+    br{
+      margin-right: 10px;
+      display: inline;
+    }
+  }
+
+  .side-bar-width {
+    width: $sidebar-width;
+  }
+
+  .side-bar-extended-width {
+    width: $sidebar-expanded-width;
+  }
+
+  background: $blue11;
+  white-space: nowrap;
+  min-height: 100%;
+  position: fixed;
+  float: none;
+  top: 0;
+  height: 100vh;
+
+  .side-bar-tab-oversight-scorecard {
+    width: 5rem;
+  }
+  .admin & {
+    .side-bar-tab-contents {
+      display: inline-flex;
+      padding: 1.3rem 0rem 1.2rem;
+      color: $white;
+      font-weight: $bold;
+    }
+  }
+  .exposure & {
+    background-color: $navColor;
+
+    .side-bar-tab-contents {
+      display: inline-flex;
+      padding: 1.3rem 0rem 1.2rem;
+      color: $white;
+      font-weight: $bold;
+    }
+
+    .header-fixed  {
+      background-color: $navColor;
+    }
+
+    .footer-fixed  {
+      background-color: $blue11;
+    }
+  }
+
+  .logo {
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    padding-left: 0.5rem;
+
+    img {
+      min-width: 5rem;
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+
+
+  .side-bar-tab {
+    margin:0.3rem 0;
+    float: right;
+    font-size: 1.4rem;
+    text-decoration: none;  // Remove default link style.
+    position: relative;
+    // id:10060 This z-index is to fix IE9 rendering issue of the tab being hidden.
+    z-index: $side-bar-tab-z-index;
+
+    @include clickable;
+
+    &.selected {
+      background: $white;
+      &:hover{
+        background: $white;
+      }
+      .side-bar-tab-contents {
+        color: $blue11;
+      }
+
+      .side-bar-tab-oversight-scorecard {
+        background-color: $blue7;
+      }
+    }
+
+    .side-bar-tab-contents {
+      .side-bar-tab-icon {
+        font-size: 2rem;
+        padding-bottom: .5rem;
+        padding-right: 1rem;
+        //width: 15%;
+        float: left;
+        margin: 0 2rem;
+        width: 2rem;
+
+        &~div{
+          font-weight: $semibold;
+        }
+      }
+
+      .side-bar-tab-menu-name {
+        width: 85%;
+        text-align: left;
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+      }
+    }
+
+    .side-bar-sub-tab{
+      padding: 0 0 0 6.8rem;
+      min-height: 25px;
+      font-weight: 400;
+    }
+
+    .badge {
+      position: absolute;
+      right: 0.6rem;
+      top: 0.8rem;
+      // id:10060 This z-index is to fix IE9 rendering issue of the badge being hidden.
+      z-index: $side-bar-tab-badge-z-index;
+      background: $darkRed;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: -6px;
+      margin-left: -18px;
+      border-radius: 3px;
+    }
+
+    &.side-bar-tab-extended-width{
+      .badge {
+        position: absolute;
+        right: 0.8rem;
+        top: 2.4rem;
+        transition-property: top;
+        transition-duration: 0.25s;
+      }
+    }
+    .subMenuItems{
+      position: fixed;
+      left: 25rem;
+    }
+  }
+
+  .side-bar-tab-width {
+    width: $sidebar-width;
+    -webkit-transition: all 0.25s; /* For Safari 3.1 to 6.0 */
+    transition: all 0.25s;
+    &:hover{
+      background-color: darken($color: $blue11, $amount: 10);
+    }
+  }
+
+  .side-bar-tab-extended-width {
+    width: $sidebar-expanded-width;
+  }
+
+  #side-bar-tab-operational-insights{
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  div.side-bar-container-scroll {
+    position: relative;
+    overflow: auto;
+    overflow-x: hidden;
+    height: calc(100% - 5.5rem);
+    z-index :$side-bar-tab-z-index;
+    margin-top: 5.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .header-fixed  {
+    position: fixed;
+    top: 0;
+    z-index: $side-bar-tab-badge-z-index;
+    background-color: $grey4;
+  }
+
+  .header-fixed-width {
+    width: $sidebar-width;
+  }
+
+  .header-fixed-expanded-width {
+    width: $sidebar-expanded-width;
+  }
+
+  .footer-fixed  {
+    bottom: 0;
+    z-index: $side-bar-tab-badge-z-index;
+    height: 6rem !important;
+    background-color: $blue11;
+  }
+
+  .side-bar-inner-container{
+
+    .virtual-table-cell {
+      #side-bar-tab-clinical-insights,#side-bar-tab-rbm{
+        cursor: default;
+      }
+      .icon-star-full{
+        color: $white;
+      }
+    }
+    &.selected {
+      .virtual-table-cell {
+        .icon-star-full{
+          color: $blue11;
+        }
+      }
+    }
+  }
+   .side-bar-inner-container .virtual-table-cell .side-bar-tab.selected .side-bar-tab-contents .icon-star-full{
+    color: $blue11;
+  }
+
+  ::-webkit-scrollbar {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #fff
+  }
+
+  ::-webkit-scrollbar:vertical {
+    border-left: .1rem solid #d5d7db
+  }
+
+  ::-webkit-scrollbar:horizontal {
+    border-top: .1rem solid #d5d7db
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1.6rem rgba(213, 215, 219, .5)
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #d5d7db;
+    border: .3rem solid transparent;
+    border-radius: .9rem;
+    background-clip: content-box
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(85, 96, 110, .8)
+  }
+}

@@ -1,0 +1,355 @@
+.task-management-container {
+    width: 90%;
+    .config-content {
+      width: 100%;
+      overflow: auto;
+    }
+    .tab-title {
+      font-size: 1.8rem;
+      font-weight: normal;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #ccc;
+      height: 5rem;
+      line-height: 6rem;
+      padding-bottom: 1rem;
+    }
+  
+    .buttons {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 1rem 0 1rem 0;
+      max-width: 140rem;
+    }
+
+    .hide-attribute { 
+      display: none;
+    }
+  
+    @mixin fixed_column_width($width, $center: false) {
+      width: $width;
+      max-width: $width;
+      min-width: $width;
+
+      @if $center{
+        text-align: center;
+      }
+    }
+    .action-column {
+      @include fixed_column_width(12rem, true);
+    }
+
+    .field-name-column {
+      @include fixed_column_width(18rem);
+    }
+    .field-type-column {
+      @include fixed_column_width(20rem);
+      overflow: visible !important;
+      .Select-menu-outer {
+        z-index: $search-selector-z-index;
+      }
+    }
+    .field-lov {
+      @include fixed_column_width(20rem);
+    }
+
+    .filter-dependancy-column,
+    .field-description,
+    .report-dashboard-multiselect {
+      @include fixed_column_width(25rem);
+    }
+    
+    .is-mandatory-column {
+      @include fixed_column_width(12rem);
+    }
+    .state-active-column,
+    .state-withdrawn-column,
+    .state-completed-column {
+      @include fixed_column_width(10rem);
+    }
+    .disposition-row {
+      display: flex;
+    }
+    .drag-drop-icon{
+      padding-top: 1rem;
+    }
+    .state-radio-container {
+      display: flex;
+    }
+  
+    .field-type-dropdown{
+      overflow: visible !important;
+      .Select-menu-outer div{
+        overflow: visible !important;
+        overflow-x: hidden !important;
+      }
+    }
+  
+    .clinical-popup-section-left{
+      width: 60%;
+      float: left;
+      padding-right: 2rem;
+    }
+
+    .full-width{
+      width: 100%;
+    }
+
+    .clinical-popup-section-right{
+      width: 40%;
+      float: left;
+      padding: 0 1rem;
+      max-height: 33rem;
+      overflow-y: auto;
+    }
+  
+    .disabled-table {
+      .disabled-table-header {
+        border-top: 1px #34454f dashed;
+      }
+    }
+  
+    .delete-attribute {
+      cursor: pointer;
+      padding-right: 1rem;
+      &:hover{
+        color: red;
+        opacity: 0.5;
+      }
+    }
+  
+    .table-title {
+      display: flex;
+      cursor: pointer;
+      margin: 1rem;
+      font-size: 2.4rem;
+      font-weight: bold;
+      &:hover{
+        opacity: 0.5;
+      }
+      .expand-button {
+        margin-top: -0.2rem;
+        padding-right: 1rem;
+        &.expanded {
+          transform: translate(-1rem, -0.6rem) rotate(180deg);
+        }
+      }
+    }
+  
+    table {
+      border-collapse: collapse;
+      thead {
+        tr {
+          display: block;
+          position: relative;
+          border: 0;
+          border-radius: .5rem .5rem 0 0;
+          font-weight: bold;
+        }
+  
+        th {
+          background: $blue1;
+          color: $white;
+        }
+      }
+  
+      tbody {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 1rem 0rem;
+      }
+  
+  
+      td.state-column {
+        border: 0;
+      }
+      td.state-active-column {
+        border-left: 0;
+      }
+      .state-types td {
+         border-bottom: 0;
+      }
+      td, th {
+        text-align: center;
+        padding: 0.5rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+  
+        &, div, span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  
+    .is-mandatory{
+      background-color: #0092c8;
+      color: white;
+      border: 1px solid #0092c8;
+    }
+  
+    .associated-files-dropdown{
+      width: 22rem;
+      max-width: 22rem;
+      min-width: 22rem;
+    }
+  
+    .no-attribute-container{
+      width: 100%;
+      height: auto;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      background-color: rgba(239, 239, 239, 0.3);
+      margin-bottom: 2rem;
+    }
+
+    .duplicate-field-name-error{
+      font-size: 11px;
+      color: red;
+    }
+
+    .clinical-popup{
+      display: flex;
+    }
+
+    .dependsOn.Select--multi {
+      .Select-multi-value-wrapper {
+        display: block;
+      }
+      .Select-value{
+        display: inline-flex;
+        flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        line-height: 2.0rem;
+        padding: 0 0.5rem;
+        background-color: #cfe8fa;
+        color: #333333;
+        border-color: rgba(255, 255, 255, 0);
+        border-radius: 0.5rem;
+
+        .Select-value-icon{
+          display: inherit;
+          flex-grow: 0;
+          -ms-flex: 0;
+          border-right: none;
+          padding: 0.3rem 1rem 0.1rem 0.5rem;
+          margin-right: -0.5rem;
+          font-weight: 800;
+          font-size: 1.6rem;
+          color: #666666;
+        }
+      }
+    }
+
+    .attribute-type{
+      font-size: 1.6rem;
+      text-decoration: underline;
+    }
+
+    .p-component{
+      font-family: 'proxima-nova', 'Helvetica Neue';
+      font-size: 1.4rem;
+    }
+
+    .add-menu {
+      margin-right: 2rem;
+    }
+
+    .input-height{
+      height: 36px;
+    }
+
+    .dateConditions-dropdown{
+      width: 18rem;
+      max-width: 18rem;
+      min-width: 18rem;
+      &.p-disabled{
+        cursor: default !important;
+        pointer-events: none;
+        background-color: #fafafa;
+        border: 1px solid #b0b0b0;
+      }
+    }
+
+    .active-list-item{
+      color:red;
+    }
+
+    .text-align-right{
+      text-align: right !important;
+    }
+
+    .page-header-right-part{
+      float: right; 
+      font-size: 1.4rem;
+    }
+
+    .edit-item{
+      padding: 0 0 0 1rem; 
+      cursor: pointer;
+    }
+
+    .action-column{
+      display: flex;
+    }
+
+    .list-item-overflow{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 95%;
+    }
+
+    .clinical-popup-section-right{
+      .list-item{
+        display: flex;
+      }
+    }
+
+    .highlight-row{
+      background-color: aliceblue;
+    }
+
+    .attribute-db-details{
+      font-weight: 100;
+    }
+
+    .title-save-button{
+      float: right;
+      line-height: 2.2rem;
+      margin-top: 0.6rem;
+      margin-bottom: 0.5rem;
+      margin-right: 0;
+    }
+  }
+
+  .p-multiselect-items-wrapper .p-multiselect-item .itemTemplate{
+    width: 13rem;
+    max-width: 13rem;
+    min-width: 13rem;
+  }
+
+  .p-multiselect-header, .p-multiselect-item{
+    font-size: 1.4rem;
+  }
+
+  .p-multiselect-item-group{
+    font-size: 1.4rem;
+  }
+
+  .clinicalAttributeModal{
+    .modal-dialog-main{
+      height: '36rem'; 
+      max-height: '36rem';
+      .studio .schema-section{
+        margin-top: 0;
+      }
+    }
+    .modal-dialog-footer{
+      bottom: 2rem;
+      position: absolute;
+      right: 2rem;
+    }
+  }

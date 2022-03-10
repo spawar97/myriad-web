@@ -1,0 +1,58 @@
+.report-detail-panel {
+  // This style has overrides for mobile in _breakpoints.scss.
+  @include span(24);
+  margin: 6rem 0 4rem;
+  border-top: $relatedReportsBorder;
+
+  &.loading {
+    display: none
+  }
+
+  .report-detail-panel-contents {
+    @include span(24);
+    @include pad(1rem);
+  }
+
+  .related-reports, .related-dashboards, .export-options {
+    @include span(8);
+    margin-top: 2rem;
+    padding-left: 0;
+
+    ul {
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 1rem;
+      display: list-item;
+    }
+
+    .header-text {
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+    }
+
+    [class*="icon-"]:before {
+      margin-right: 1rem;
+    }
+  }
+
+  .export-options {
+    margin-right: 0;
+  }
+
+  .dyn-message {
+    margin: 2rem 0 0;
+  }
+
+  .open-link {
+    text-decoration: underline;
+    color: $hyperlinkBlue;
+    @include clickable;
+  }
+
+  a.icon-question-circle {
+    margin-left: 5px;
+    font-size: 2rem;
+  }
+}

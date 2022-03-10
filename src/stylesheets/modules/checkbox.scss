@@ -1,0 +1,26 @@
+.checkbox {
+  display: inline-block;
+  font-family: 'comprehend';
+  font-size: 1.6rem;
+  height: 1.6rem;
+  width: 1.6rem;
+  color: $brandColor;
+
+  @include clickable;
+
+  &:after {
+    content: '\e42f';
+  }
+
+  &.partial:after {
+    content: '\e431';
+  }
+
+  &.checked:after {
+    content: '\e42e';
+  }
+
+  &.dimmed {
+    color: $lightSteel60;
+  }
+}

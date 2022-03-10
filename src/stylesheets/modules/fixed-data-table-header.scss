@@ -1,0 +1,25 @@
+.fixed-data-table-header {
+  height: 100%;
+  width: 100%;
+
+  .fixed-data-table-header-contents {
+    width: 100%;
+    text-align: left;
+  }
+
+  .virtual-table-cell {
+    padding-left: 1rem;
+
+    &:first-child {
+      padding-left: 2rem;
+    }
+
+    &:last-child {
+      padding-right: 2rem;
+    }
+
+    .checkbox, .icon-star-full, .icon-star-empty, .icon-star-disabled {
+      color: $white;
+    }
+  }
+}

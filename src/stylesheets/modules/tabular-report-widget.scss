@@ -1,0 +1,21 @@
+.tabular-report-widget {
+  text-align: center;
+
+  .table-wrapper {
+    overflow: auto;
+    width: 100%;
+    .fixed-table-wrapper {
+      overflow: hidden;
+    }
+  }
+
+  .pagination-widget {
+    margin: 4rem 0 0 0;
+  }
+
+  .cellData-overflow{
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

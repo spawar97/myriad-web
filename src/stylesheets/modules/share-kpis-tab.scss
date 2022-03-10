@@ -1,0 +1,146 @@
+.share-kpis-tab {
+  width: 100%;
+
+  .share-kpis-tab-main-view  {
+    margin-bottom: 2rem;
+  }
+
+
+  .selected-group-info, .package-display {
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    font-size: large;
+
+    & > div {
+      display: inline-block;
+      font-weight: bold;
+      margin-right: 2rem;
+      padding-left: 2rem;
+    }
+  }
+
+  .group-selection-header {
+    font-size: 2.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .group-info {
+    height: 7rem;
+    margin-bottom: 2rem;
+    background-color: $slateGray;
+    @include clickable;
+    border: $sectionDivider;
+    font-size: larger;
+    font-weight: bold;
+    padding: 1.5rem;
+
+    &:hover {
+      background-color: $blue8;
+    }
+
+    &.selected {
+      background-color: $grey4;
+
+      .icon-checkmark-circle {
+        float: right;
+        display: inline-block;
+        margin: 2.2rem 3rem 0 3.5rem;
+        font-size: 2.5rem;
+        color: $green;
+      }
+    }
+  }
+
+  .share-kpis-report-selection {
+    .error-list {
+      border: 0.2rem solid black;
+      padding: 1rem;
+      margin-bottom: 1rem;
+
+      > .error-message-list {
+        padding-bottom: 0.5rem;
+      }
+
+      > .bypass-warning {
+        border-top: 0.1rem dotted black;
+        padding: 1rem 0 1rem 0;
+
+        > .checkbox-container {
+          float: left;
+          padding: 0 1rem 0 1rem;
+        }
+
+        > .bypass-warning-message {
+          font-weight: bold;
+        }
+
+      }
+
+      ul {
+        list-style-type: disc;
+      }
+
+      .error-header {
+        .error-header-message {
+          font-size: larger;
+          font-weight: bold;
+          padding-top: 0.3rem;
+        }
+
+        .error-icon {
+          float: left;
+
+          span {
+            color: $red;
+            font-size: x-large;
+            padding-right: 1rem;
+          }
+        }
+      }
+
+
+    }
+    .kpi-package-info {
+      border: $sectionDivider;
+      padding: 1rem;
+      margin-bottom: 1rem;
+
+      .kpi-package-name {
+        font-size: larger;
+        font-weight: bold;
+        border-bottom: solid;
+        margin-bottom: 1rem;
+
+        .package-name {
+          float: left;
+        }
+
+        .package-name > span {
+          padding-right: 1.5rem;
+        }
+
+        .toggle-all-kpis {
+          text-align: right;
+
+          .checkbox {
+            padding-right: 3rem;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: $slateGray;
+      }
+    }
+    .kpi-info {
+      .report-info {
+        margin-bottom: 0.5rem;
+
+        & > div {
+          display: inline-block;
+          margin-right: 1.5rem;
+        }
+      }
+    }
+  }
+}

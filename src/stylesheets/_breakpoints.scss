@@ -1,0 +1,752 @@
+@import "susy";
+@import "breakpoint";
+@import "_base";
+@import "_colors";
+@import "_media-breakpoints";
+@import "_z-indexes";
+@import "_dimensions";
+@import "modules/dashboard";
+@import "modules/mobile-list-view";
+
+/**
+ * Mixins
+ */
+/// Turn any element into an iphone-compatible modal.
+@mixin iphone-modal($z-index: $phone-modal-z-index) {
+  @include breakpoint($only-phone) {
+    position: fixed;
+    top: $mobile-nav-header-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include pad(1.6rem);
+    padding-bottom: 6rem;
+    z-index: $z-index;
+    background-color: $white;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.simple-dropdown .simple-dropdown-underlay {
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+}
+
+.mobile-tabular-report-widget.row-detail {
+  @include iphone-modal;
+}
+
+.simple-dropdown {
+  @include breakpoint($not-phone) {
+    .simple-dropdown-contents {
+      max-height: 33rem;
+      overflow-y: auto;
+    }
+  }
+}
+
+.main-content {
+  @include breakpoint($only-phone) {
+    @include pad(1.6rem);
+  }
+
+  @include breakpoint($only-phone) {
+    margin-top:1rem;
+    .close-button {
+      font-size: 3.6rem;
+    }
+  }
+}
+.home-page-report-tab{
+  button{
+    @include breakpoint($only-phone) {
+      background: $white;
+    }
+  }
+}
+.study-session-filter {
+  @include breakpoint($only-phone) {
+    // Align `study-session-filter` to be under the mobile nav header.
+    margin-top: -2.4rem;
+
+    .study-filter-dropdown-container {
+      width: 75%;
+    }
+  }
+  @include breakpoint($only-wide-desktop) {
+    padding: 0;
+    margin:0 auto;
+  }
+
+  .title{
+    @include breakpoint($only-wide-desktop) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .selected-study{
+    @include breakpoint($only-wide-desktop) {
+      padding: 0 0.7rem;
+    }    
+  }
+}
+
+.page-header {
+  @include breakpoint($only-phone) {
+    margin-bottom: 0.8rem;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      @include breakpoint($only-phone) {
+        &:before {
+          font-size: 2.2rem !important;
+        }
+      }
+    }
+
+    // When in phone mode we do not want the text on the SimpleActions in the
+    // header (e.g. Filters, Tasks, More) to display, just the icons.
+    // If we were to set display:none it would affect both the text and the icon, by doing
+    // this and setting the icon's font-size to non-0, we can ensure it is displayed.
+    .simple-action {
+      font-size: 0;
+
+      sup {
+        // this is the tasks/filters number badge selector
+        font-size: 1.4rem;
+        vertical-align: top;
+      }
+    }
+
+    .more-menu-trigger .react-menu-icon {
+      font-size: 0;
+    }
+
+    .title {
+      width: calc(100% - #{$dashboard-header-buttons-width-only-phone});
+    }
+
+    .header-buttons {
+      width: $dashboard-header-buttons-width-only-phone;
+      color: $hyperlinkBlue;
+    }
+  }
+
+  @include breakpoint($only-phone) {
+    .more-menu-edit,
+    .more-menu-share {
+      display: none;
+    }
+  }
+}
+
+.dashboard-view {
+  .reports {
+    @include breakpoint($only-phone) {
+      width: 100%;
+    }
+  }
+}
+
+.dashboard-bar {
+  @include breakpoint($only-phone) {
+    // When in phone mode we do not want the text on the SimpleActions in the
+    // header (e.g. Filters, Tasks, More) to display, just the icons.
+    // If we were to set display:none it would affect both the text and the icon, by doing
+    // this and setting the icon's font-size to non-0, we can ensure it is displayed.
+    .simple-action {
+      font-size: 0;
+    }
+
+    .more-menu-trigger .react-menu-icon {
+      font-size: 0;
+    }
+  }
+}
+
+.display-info-container {
+  @include breakpoint($only-phone) {
+    display: none;
+  }
+}
+
+.rows-per-page-dropdown-container {
+  @include breakpoint($only-phone) {
+    display: none;
+  }
+}
+
+.filters {
+  .show-filters & {
+    @include breakpoint($only-phone) {
+      @include span(24);
+    }
+
+    @include iphone-modal;
+  }
+
+  .show-filters.show-tasks & {
+    @include breakpoint($only-phone) {
+      @include span(24);
+    }
+
+    @include iphone-modal;
+  }
+}
+
+.tasks {
+  .show-tasks & {
+    @include breakpoint($only-phone) {
+      @include span(24);
+    }
+
+    @include iphone-modal;
+  }
+
+  .show-filters.show-tasks & {
+    @include breakpoint($only-phone) {
+      @include span(24);
+    }
+
+    @include iphone-modal;
+  }
+}
+
+.task-pane {
+  @include breakpoint($only-phone) {
+    // Make the dropdown opener wider for mobile, TP#6529
+    .item-opener {
+      width: 4rem;
+    }
+
+    // Increase the size of the opener triangle and position it for the new size, TP#6529
+    .item-opener:after {
+      border: 0.9rem solid transparent;
+      border-left-color: black;
+      border-right-width: 0;
+      left: calc(50% + 1rem);
+      top: calc(50% - 1.2rem);
+    }
+
+    // Increase the size of the opener triangle and position it for the new size, TP#6529
+    .item-opener.open:after {
+      left: calc(50% + 0.7rem);
+      top: calc(50% - 1.2rem);
+    }
+  }
+}
+
+.mobile-scroll-disabled {
+  @include breakpoint($only-phone) {
+    &.mobile-top-nav-menus-visible .app-tab-report {
+      display: none;
+    }
+
+    .report-body,
+    .page-header,
+    .app-tab-home,
+    .app-tab-favorites,
+    .app-tab-alerts,
+    .app-tab-tasks,
+    .app-tab-reports {
+      display: none;
+    }
+
+    .top-nav {
+      // This prevents the browser from making the underlying page taller than the modal. Why? We don't know.
+      display: none !important;
+    }
+
+    .notifications {
+      .underlay {
+        display: none;
+      }
+    }
+  }
+}
+
+.exposure .side-bar {
+  @include breakpoint($only-phone) {
+    display: none;
+  }
+}
+
+.exposure .top-nav {
+  @include breakpoint($only-phone) {
+    visibility: hidden;
+    display: block; // To ensure that display:table doesn't override things.
+    height: 0;
+    width: 0;
+    padding-top: 0;
+    
+  }
+
+}
+
+.exposure .status-message-container {
+  @include breakpoint($only-phone) {
+    padding-left: 0;
+  }
+}
+
+.mobile-nav-header {
+  @include breakpoint($only-phone) {
+    display: block;
+    background: $white;
+    -webkit-box-shadow: 0px 1px 8px 0px rgba(50, 50, 50, 0.2);
+    -moz-box-shadow: 0px 1px 8px 0px rgba(50, 50, 50, 0.2);
+    box-shadow: 0px 1px 8px 0px rgba(50, 50, 50, 0.2);
+
+    .mobile-notifications-container,
+    .icon-menu-hamburger {
+      padding: 0 1rem;
+      @include breakpoint($only-phone) {
+        color: $brandColor;
+      }
+    }
+
+    .mobile-notifications-container {
+      margin-right: 1rem;
+    }
+  }
+  
+  .LSAC-logo {
+    @include breakpoint($only-phone) {
+      display: none;
+    }
+  }
+
+  @include breakpoint($only-phone) {
+    .notifications {
+      display: inline-block;
+      .opener {
+        display: none;
+      }
+
+      .badge {
+        right: -1.2rem;
+      }
+
+      .mobile-notifications-count {
+        display: inline;
+      }
+
+      .notifications-header {
+        // Copied from `.page-header .title` because we can't @extend nested selectors
+        text-transform: uppercase;
+        font-size: 2.4rem;
+        color: $black;
+        font-weight: bold;
+        vertical-align: bottom;
+        padding: 0 0 1rem 0;
+        border-bottom: $pageHeaderUnderline;
+
+        span {
+          text-transform: inherit;
+          font-size: inherit;
+          color: inherit;
+          font-weight: inherit;
+          vertical-align: inherit;
+        }
+
+        .notifications-title {
+          margin-left: 1rem;
+          width: calc(100% - #{$dashboard-header-buttons-width});
+        }
+      }
+      .notifications-tabs-separator {
+        display: none;
+      }
+
+      .simple-dropdown-items {
+        width: 100%;
+      }
+
+      .simple-button-array {
+        border-radius: 0.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .simple-dropdown-contents {
+        @include iphone-modal;
+        overflow-x: hidden;
+        border: none;
+        margin-top: 0;
+      }
+
+      .task {
+        // Copied from `.mobile-list-item` because @extend interacted strangely with the media queries.
+        @include clickable;
+        padding: 1.5rem 0;
+        border-bottom: $subHeaderUnderline;
+
+        &.dotted-border {
+          border-bottom: 0.1rem dotted $secondaryBodyText;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+        border-bottom-color: $grey4;
+      }
+    }
+  }
+}
+
+.mobile-nav-menu {
+  @include breakpoint($only-phone) {
+    display: block;
+  }
+
+  @include iphone-modal;
+
+  z-index: $phone-nav-menu-z-index !important;
+
+  .mobile-nav-menu-item {  
+    [class^="icon-"] {
+      @include breakpoint($only-phone) {
+        width:3%;
+        float:left;
+      } 
+      @include breakpoint($only-phone) {
+        width:7%;
+      }
+    }
+    .mobile-nav-menu-item-text {
+      @include breakpoint($only-phone) {
+        width:92%;
+        float:left;
+        margin-left:67px;
+      } 
+    }
+  }
+  li{
+    @include breakpoint($only-phone) {
+      font-size: 1.9rem;
+    }
+  }
+}
+
+.Menu__MenuOptions--horizontal-left {
+  @include breakpoint($only-phone) {
+    right: 1rem;
+  }
+}
+
+.Menu__MenuOptions--horizontal-right {
+  @include breakpoint($only-phone) {
+    right: auto;
+    left: 0;
+  }
+}
+
+.more-menu .Menu__MenuOption--active {
+  @include breakpoint($only-phone) {
+    background-color: $white;
+  }
+}
+
+.pagination-widget {
+  .paging-widget-container {
+    @include breakpoint($only-phone) {
+      @include span(24);
+    }
+  }
+
+  .paging-widget {
+    @include breakpoint($only-phone) {
+      .page-text {
+        padding: 0 !important;
+      }
+
+      .paging-widget-totalpages {
+        padding: 0 0 0 0.3rem;
+      }
+
+      .page-number-container {
+        padding: 0 0.3rem 0 0.3rem;
+      }
+    }
+  }
+}
+
+// This was originally in _forms.scss and imported from Foundation.
+button,
+.button {
+  @include breakpoint($only-phone) {
+    display: inline-block;
+  }
+}
+
+.modal-dialog-underlay {
+  .modal-dialog {
+    @include breakpoint($only-phone) {
+      width: 100%;
+    }
+  }
+}
+
+body {
+  &.login,
+  &.password-reset-request {
+    @include breakpoint($only-phone) {
+      #container {
+        flex: 0.6;
+      }
+    }
+
+    @include breakpoint($only-phone) {
+      justify-content: center;
+      #container {
+        flex: 1;
+
+        .login-box {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+.registration .policy {
+  @include breakpoint($only-phone) {
+    .external-template-body {
+      width: 100%;
+
+      &.short-inner-box {
+        height: 90%;
+        top: 5%;
+      }
+
+      .inner-content {
+        margin: 0 10%;
+        margin-top: -5rem;
+
+        .sign-up-btn .agree-btn {
+          margin-top: $registration-page-default-element-margin;
+        }
+
+        .checkbox-agreement {
+          margin-top: 20%;
+        }
+      }
+
+      img {
+        margin: $registration-page-default-element-margin auto;
+      }
+
+      hr {
+        margin-bottom: 3rem;
+      }
+
+      .password-fields {
+        .password-input-block,
+        .confirm-password-input-block {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// React-Widgets mobile overrides.
+// Increase dropdown opener triangle size, TP#6529
+.rw-i.rw-i-caret-down {
+  @include breakpoint($only-phone) {
+    position: relative;
+    top: 0.4rem;
+    font-size: 2.2rem;
+  }
+}
+
+// The rows per page dropdown needs to have its down arrow adjusted differently.
+.pagination-widget .rows-per-page-dropdown-container .rows-per-page-dropdown .rw-i-caret-down {
+  @include breakpoint($only-phone) {
+    top: 0.1rem;
+  }
+}
+
+// Increase dropdown item line-height, TP#6529
+.rw-combobox .rw-list,
+.rw-datetimepicker .rw-list,
+.rw-numberpicker .rw-list,
+.rw-dropdown-list .rw-list,
+.rw-multiselect .rw-list {
+  @include breakpoint($only-phone) {
+    line-height: 3rem;
+  }
+}
+
+// First report group should not have top padding, TP#6529
+.rw-combobox .rw-list,
+.rw-datetimepicker .rw-list,
+.rw-numberpicker .rw-list,
+.rw-dropdownlist .rw-list,
+.rw-multiselect .rw-list {
+  @include breakpoint($only-phone) {
+    li:first-of-type {
+      padding-top: 0 !important;
+    }
+  }
+}
+
+// Increase dropdown item padding size, report groups should have extra padding, TP#6529
+ul.rw-list.rw-list-grouped > li.rw-list-optgroup,
+.rw-selectlist.rw-list-grouped > li.rw-list-optgroup {
+  @include breakpoint($only-phone) {
+    padding-left: 2rem;
+    padding-top: 1.8rem;
+  }
+}
+
+// Increase dropdown item padding size, TP#6529
+ul.rw-list.rw-list-grouped > li.rw-list-option,
+.rw-selectlist.rw-list-grouped > li.rw-list-option {
+  @include breakpoint($only-phone) {
+    padding-left: 3rem;
+  }
+}
+
+.report-detail-panel {
+  .related-reports,
+  .related-dashboards {
+    @include breakpoint($only-phone) {
+      @include span(24);
+    }
+  }
+}
+
+// Make the table preview placeholder shorter on mobile.
+.modal-dialog {
+ .table-preview-placeholder {
+   @include breakpoint($only-phone) {
+     height: 22rem;
+   }
+ }
+}
+
+.empty-content .icon-text-wrapper {
+  @include breakpoint($only-phone) {
+    width: 78%;
+  }
+}
+
+.home-page .home-page-team-tab {
+  @include breakpoint($only-phone) {
+    margin: 0 0 0 0;
+  }
+}
+
+.home-page {
+  @include breakpoint($only-phone) {
+    display: block;
+    width: calc(100% + 3.2rem);
+    margin-left: -1.6rem;
+  }
+}
+
+.home-page-all-content {
+  @include breakpoint($only-phone) {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+.iframe-container-kpi-studio,
+.iframe-container-clinops-insights {
+  @include breakpoint($only-phone) {
+    display: none;
+  }
+}
+
+.kpi-size-alert-wrapper {
+  @include breakpoint($only-desktop) {
+    display: none;
+  }
+
+  .user-alert {
+    margin-left: -1.6rem;
+    margin-right: -1.6rem;
+  }
+}
+
+.user-alert {
+  @include breakpoint($only-phone) {
+    position: relative;
+    background: $blue9;
+    padding: 1.5rem 2rem;
+
+    .icon-info {
+      font-size: 3.2rem;
+      color: $blue8;
+      margin-right: 2rem;
+    }
+
+    .message {
+      position: absolute;
+      top: 50%;
+    }
+
+    .mobile-message {
+      margin-top: -1.5rem;
+    }
+  }
+}
+
+.top-nav{
+  .top-nav-row{
+    .header-logo{
+      @include breakpoint($only-wide-desktop) {
+        width: 17.5%;
+      }
+      .LSAC-logo{
+        @include breakpoint($only-wide-desktop) {
+          padding-left: 10px;
+          margin-left: 2px;
+        }
+      }
+      img{
+        @include breakpoint($only-wide-desktop) {
+          width: 85px;
+          height: auto;
+          margin:0 6px;
+        }
+      }
+    }
+  } 
+  .top-nav-left-items{
+    @include breakpoint($only-wide-desktop) {
+      width: 35%;
+    }
+  }
+  .top-nav-item:last-child {
+    @include breakpoint($only-wide-desktop) {
+      padding-right:0.5rem;
+    }
+  }
+} 
+
+.top-nav-search-container .search-box .search-selector {
+  @include breakpoint($only-wide-desktop) {
+    width:38rem;
+    max-width: 285px;
+    .Select {
+      .Select-placeholder {
+        padding-left:35px;
+      }
+    }
+  }
+  @include breakpoint($only-wide-desktop) {
+    margin-right: 0rem;
+    width:285px;
+    max-width: 285px;
+    position: relative;
+
+    .icon-search{
+      left:0;
+    }
+  }
+}

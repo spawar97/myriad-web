@@ -1,0 +1,14 @@
+.simple-grouped-list-break {
+  background: $almostWhite;
+  height: .1rem;
+}
+
+.simple-grouped-list {
+  section:first-child .simple-grouped-list-break {
+    display: none;
+  }
+
+  h2 {
+    margin: .6rem 0 .8rem;
+  }
+}

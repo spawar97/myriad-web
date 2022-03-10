@@ -1,0 +1,48 @@
+.current-schema-table {
+  display: table;
+  color: black;
+  width: 100%;
+
+  > div {
+    display: table-row;
+
+    > div {
+      display: table-cell;
+      padding: 1.4rem 0 1rem;
+
+      .time {
+        color: $lightSteel60;
+        font-size: 1.2rem;
+        padding-left: .5rem;
+      }
+    }
+  }
+
+  > div:first-child {
+    font-weight: bold;
+    background: $grey8;
+
+    > div:first-child, > div:last-child {
+      width: 2rem;
+    }
+
+    > div:nth-child(2) {
+      width: 2.4rem;
+    }
+
+    > div:nth-child(3) {
+      padding-left: 2.6rem;
+    }
+
+  }
+
+  .item-opener {
+    float: left;
+    height: 1.2rem;
+  }
+
+  .checkbox {
+    float: left;
+    margin: -.1rem 1rem 0 0;
+  }
+}

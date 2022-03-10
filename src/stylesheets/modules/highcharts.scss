@@ -1,0 +1,16 @@
+.tooltip-clone span::-webkit-scrollbar {
+    width: 5px;
+    background-color: #050505;
+  }
+
+.tooltip-clone span::-webkit-scrollbar-thumb {
+      background: #000;
+  }
+
+.tooltip-clone span{
+    max-height: 120px;
+    overflow-y: auto;
+    //to make the scrollbar work on IE 
+    -ms-overflow-style: none;
+    -ms-overflow-style: scrollbar;
+}

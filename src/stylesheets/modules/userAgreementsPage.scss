@@ -1,0 +1,75 @@
+.policy-content {
+  height: 100vh;
+  width: 100%;
+  background-color: $blue1;
+  display: flex;
+  align-items: center;
+
+  .agreements-content {
+    background-color: $background;
+    width: $registration-page-desktop-width + $registration-page-desktop-vertical-margin * 2;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100%;
+
+    .agreements-content-logo {
+      margin: 5rem auto;
+      vertical-align: middle;
+      width:145px;
+      max-width: 100%;
+      height: auto;
+      -ms-interpolation-mode: bicubic;
+      border: 0;
+    }
+
+    .agreements-hr-line {
+      border: 0;
+      height: .1rem;
+      background-color: #d5d7db;
+      width: 100%;
+      margin-bottom: 3.5rem;
+    }
+
+    .an-acceptance-is-required {
+      width: 85%;
+      font-weight: $semibold;
+      margin-bottom: 5px;
+    }
+
+    .terms-of-use-header {
+      padding-left: .3rem;
+      font-weight: $semibold;
+    }
+
+    .terms-and-conditions {
+      overflow-y: auto;
+      height: 550px;
+      width: 85%;
+      padding: 5px;
+      border: 1px solid #DDD;
+
+      .prefix {
+        font-weight: $semibold;
+      }
+    }
+
+    .agreements-controls {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      align-items: center;
+
+      .checkbox-label {
+        margin-left: 5px;
+      }
+      .agree-btn {
+        width: 95%;
+        margin-top: 3rem;
+        text-align: center;
+      }
+    }
+  }  
+}

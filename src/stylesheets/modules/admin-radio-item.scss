@@ -1,0 +1,16 @@
+.admin-radio-item {
+  padding-bottom: 1rem;
+
+  span {
+    padding-left: 1rem;
+    position: relative;
+    bottom: .1rem;
+    font-family: 'proxima-nova', Arial, 'sans-serif';
+    font-size: 1.4rem;
+    color: $black;
+  }
+
+  .icon-radio-unchecked {
+    color: $grey3;
+  }
+}

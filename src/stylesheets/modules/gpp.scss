@@ -1,0 +1,54 @@
+.main-info-container {
+  border: 1px solid #CCC;
+  padding: 5px;
+}
+.main-info-container tr td { width:20%; }
+.main-top-info{
+  width: 100%;
+  border-collapse: collapse;
+}
+.main-top-info td {
+  padding: 5px 0 5px 1rem;
+  word-break: break-word;
+}
+tr.bordered {
+  border-bottom: 1px solid #CCC;
+}
+.infographic-right-separator{
+  border-right:1px solid #ccc;
+  margin-left:3px
+}
+td.noborder {
+  border-bottom: none;
+}
+.title {
+  font-weight: 600;
+  font-size: medium;
+  margin-bottom: 2px;
+}
+.labLayout {
+  display: flex;
+  justify-content:flex-end;
+}
+.labLayout_outline {
+  margin-left:2px;
+  margin-top:6px;
+  margin-bottom:6px;
+}
+.exposure_graph {
+  margin:2rem 0 0 2px;
+}
+.report-filter-notice-gpp {
+  height: 30vh !important;
+}
+.text-holder-gpp {
+   top: 10rem !important;
+}
+ .lab-container .viz-group-wrapper,  .lab-container .highcharts-container,  .lab-container svg:not(:root) {
+    overflow: visible !important;
+  }
+
+  .exposure-sec .viz-group-wrapper, .exposure-sec .highcharts-container, .exposure-sec svg:not(:root) {
+    overflow: visible !important;
+  }
+  

@@ -1,0 +1,26 @@
+.item-opener {
+  display: inline-block;
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+
+  @include clickable;
+
+  &:after {
+    @include transition(all 0.2s ease-in-out);
+
+    content: ' ';
+    position: absolute;
+    border: .5rem solid transparent;
+    border-left-color: black;
+    border-right-width: 0;
+    height: 0;
+    width: 0;
+    left: calc(50% - .2rem);
+    top: calc(50% - .5rem);
+  }
+
+  &.open:after {
+    @include transform(rotate(90deg));
+  }
+}

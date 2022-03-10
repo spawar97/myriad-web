@@ -1,0 +1,144 @@
+.privilege-table {
+  .privilege-table-tab {
+    display: inline-block;
+    margin-right: 2.4rem;
+    padding: 1rem 0 .5rem;
+    font-size: 1.8rem;
+    color: $blue3;
+    cursor: default;
+
+    &.selected {
+      color: $black;
+      font-weight: bold;
+      border-bottom: .5rem solid $comprehendBlue;
+    }
+  }
+
+  hr.privilege-table-tab-separator {
+    margin-top: 0;
+    margin-bottom: 1.8rem;
+  }
+
+  .public_fixedDataTable_main {
+    border: .1rem solid $grey3;
+    border-top-width: 0;
+    margin-top: 1.2rem;
+  }
+
+  .public_fixedDataTableRow_main {
+    border-bottom: .1rem solid $grey4;
+  }
+
+  // Remove the border from the header.
+  .public_fixedDataTable_main .public_fixedDataTable_header {
+    .public_fixedDataTableCell_main {
+      border-color: transparent;
+    }
+
+    .edit-cell {
+      padding-left: .3rem;
+    }
+  }
+
+  .public_fixedDataTable_main {
+    .public_fixedDataTable_bodyRow .edit-cell {
+      padding: .4rem 0 0 1.2rem;
+    }
+
+    .public_fixedDataTableCell_main:last-child .public_fixedDataTableCell_cellContent {
+      padding: 0;
+    }
+  }
+
+  // Remove right padding of the name cell.
+  .public_fixedDataTable_main .public_fixedDataTableCell_main:first-child .public_fixedDataTableCell_cellContent {
+    padding-right: 0;
+  }
+
+  .public_fixedDataTableRow_highlighted, .public_fixedDataTableRow_highlighted .public_fixedDataTableCell_main {
+    background-color: $white;
+  }
+
+  .user-name {
+    color: $grey1;
+    font-weight: 400;
+
+    &.self {
+      color: $black;
+    }
+
+    &.no-privileges {
+      color: $grey4;
+    }
+  }
+
+  .icon-users {
+    padding-right: .5rem;
+  }
+
+  .group-name {
+    font-weight: 600;
+  }
+
+  .self-subtext {
+    color: $grey1;
+    font-variant: small-caps;
+    letter-spacing: .05rem;
+    padding-left: .5rem;
+  }
+
+  .icon-accordion-down {
+    color: $grey2;
+    margin-left: -.3rem;
+
+    &.disabled {
+      color: $grey4;
+    }
+  }
+
+  .virtual-table.privileges-table {
+    width: calc(100% - .1rem);
+
+    .virtual-table-cell:first-child {
+      width: 100%;
+    }
+
+    .virtual-table-cell:last-child {
+      border-right: .1rem solid $grey3;
+    }
+
+    .privilege-cell {
+      border-left: dotted .2rem $grey4;
+    }
+
+    .share-icon {
+      margin: .5rem;
+    }
+
+    .owner {
+      margin: .5rem;
+      height: 2.6rem;
+      font-size: 1.3rem;
+      line-height: 2.8rem;
+      width: 6.4rem;
+      color: $bodyText;
+      background: $grey5;
+      border-radius: .5rem;
+      text-align: center;
+    }
+  }
+
+  .fdt-container {
+    position: relative;
+
+    &.has-scrollbar {
+      .public_fixedDataTable_main .public_fixedDataTable_header .edit-cell {
+        padding-left: .6rem;
+      }
+
+      .public_fixedDataTable_main .public_fixedDataTable_bodyRow .edit-cell {
+        padding-left: 1.5rem;
+      }
+    }
+  }
+}

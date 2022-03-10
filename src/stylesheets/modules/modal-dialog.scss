@@ -1,0 +1,854 @@
+.modal-dialog-underlay {
+  background-color: rgba($grey2, 0.5);
+  font-family: 'proxima-nova', Arial, 'sans-serif';
+  z-index: $modal-dialog-underlay-z-index;
+
+  &.hidden {
+    display: none;
+  }
+
+  .modal-radio-items {
+    padding-bottom: 1rem;
+  }
+
+  .virtual-table-cell {
+    white-space: normal;
+  }
+
+  .modal-dialog {
+    background-color: $white;
+    margin: auto;
+    // This value is overridden for phones in _breakpoints.scss
+    width: 50rem;
+    padding: 2.5rem 3.5rem;
+    position: relative;
+    border-radius: .5rem;
+    max-height: 64rem;
+
+    // Make sure modals can scroll vertically.
+    overflow-y: auto;
+
+    &.larger {
+      width: 77rem;  // 700px content + 35px left & right padding.
+      max-height: 80rem;
+    }
+
+    .modal-dialog-closer {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: $black;
+      background-color: $white;
+      border: 0;
+      font-size: 2.2rem;
+      font-weight: bolder;
+      line-height: 1.2rem;
+
+      @include clickable;
+
+      &:after {
+        content: '\d7';
+      }
+    }
+
+    // hr is used as a separator that spans the width of the modal.
+    hr {
+      margin: 2rem -3.5rem;
+    }
+
+    .modal-dialog-content {
+      color: $black;
+      text-align: left;
+
+      .modal-dialog-header {
+
+        &.underline {
+          border-bottom: 0.2rem solid $black;
+          padding-bottom: 1rem;
+        }
+
+        .icon {
+          padding-right: .5rem;
+        }
+
+        .modal-dialog-header-text {
+          font-size: 2rem;
+          font-weight: $semibold;
+          line-height: 2.4rem;
+        }
+      }
+
+      .modal-dialog-main {
+        font-size: 1.4rem;
+        line-height: 150%;
+        text-align: left;
+        margin: 1.5rem 0;
+
+        .text-padding-left {
+          padding-left: .5rem;
+        }
+
+        .icon-checkmark-full {
+          color: $green;
+          margin-right: 1rem;
+        }
+
+        .icon-close-alt {
+          color: $red;
+          margin-right: 1rem;
+        }
+
+        .batch-users-result {
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .batch-users-error {
+          color: $lightRed;
+        }
+
+        .batch-users-buttons {
+          margin-top: .9rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .cql-content {
+          padding: 1.8rem 0 1.8rem 0;
+          border-bottom: 0.1rem solid $grey4;
+
+          .cql-mode-toggle-string {
+            color: $hyperlinkBlue;
+            cursor: pointer;
+            text-decoration: underline;
+          }
+
+          .cql-textbox {
+            padding-bottom: 2rem;
+
+            .cql-textbox-prefix {
+              font-weight: bold;
+              padding-right: 0.5rem;
+            }
+
+            .input-block {
+              display: inline-block;
+
+              input {
+                width: 30rem;
+              }
+            }
+          }
+
+          .cql-validation-error-message {
+            display: block;
+            margin-top: 5px;
+            color: $red
+          }
+        }
+
+        .notice-list {
+          font-weight: 600;
+          margin: 2rem 0;
+          line-height: 1.8rem;
+          border: 0.1rem solid $grey2;
+          border-radius: 0.5rem;
+
+          .notice-list-header {
+            padding-left: 1.8rem;
+            color: $white;
+            background-color: $blue1;
+            height: 3.6rem;
+            line-height: 3.6rem;
+          }
+
+          .notice-list-rows {
+            color: $blue1;
+            max-height: 29rem;
+            overflow: auto;
+            display: block;
+
+            .notice-list-row {
+              .notice-list-row-main {
+                padding-left: 1.8rem;
+                border-top: 0.1rem solid $grey6;
+                min-height: 4rem;
+                width: 100%;
+
+                .notice-list-row-main-text {
+                  padding-left: 1rem;
+                }
+
+                &.row-disabled {
+                  color: $grey2;
+                }
+              }
+
+              .notice-list-row-sub {
+                margin-left: 5.8rem;
+                border-top: 0.1rem dashed $grey6;
+                min-height: 4rem;
+                padding-top: .5rem;
+
+                &.with-folders {
+                  margin-left: 7.8rem;
+                }
+
+                .icon {
+                  padding-top: 1rem;
+                }
+
+                .notice-list-row-sub-text {
+                  padding-left: 1rem;
+                }
+              }
+
+              .opener-cell {
+                min-width: 2rem;
+              }
+
+              .open {
+                @include transform(rotate(90deg));
+                @include transform-origin(.4rem .8rem);
+                display: block;
+              }
+
+              .text-cell {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        &.modal-dialog-delete-item {
+          li.deleted-item {
+            // Make sure bullets are displayed.
+            list-style-type: disc;
+          }
+
+          .notice-list .notice-list-rows {
+            max-height: 26rem;
+          }
+        }
+
+        .role-definitions {
+          margin-top: 1rem;
+          line-height: 1.8rem;
+          border: 0.1rem solid $grey2;
+          border-radius: 0.5rem;
+
+          .virtual-table {
+
+            .virtual-table-row {
+              height: 3.6rem;
+
+
+              &.section-title {
+                background-color: #d9d9d9;
+                color: #333333;
+                font-weight: bold;
+              }
+
+              .virtual-table-cell {
+                padding: 0.8rem 1rem;
+                border-right: 0.1rem solid #b2b2b2;
+                border-bottom: 0.1rem solid #e5e5e5;
+
+                &.span-columns {
+                  white-space: nowrap;
+                  max-width: 20rem;
+                  font-weight: bold;
+                }
+                &.no-border {
+                  border: none;
+                }
+                &.no-border-right {
+                  border-right: none;
+                }
+                &.no-border-bottom {
+                  border-bottom: none;
+                }
+                &.column-title {
+                  color: $white;
+                  background-color: $blue1;
+                }
+                &.icon-checkmark-full {
+                  color: $blue7;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+        .folder-list {
+          margin-top: 1rem;
+          margin-bottom: 2rem;
+          line-height: 1.8rem;
+          border: 0.1rem solid $grey2;
+          border-radius: 0.5rem;
+
+          .folder-list-rows {
+            max-height: 28rem;
+            overflow: auto;
+            display: block;
+
+            .folder-list-row {
+              clear: both;
+              @include clickable;
+
+              .folder-list-row-main {
+                min-height: 3.6rem;
+
+                .icon {
+                  display: inline-block;
+                  vertical-align: top;
+                  padding-top: 1rem;
+                }
+
+                .folder-list-row-main-text {
+                  display: inline-block;
+                  width: calc(100% - 2rem);
+                  padding: 1rem;
+                  line-height: 1.8rem;
+                  vertical-align: middle;
+                }
+
+                &:hover {
+                  background-color: $lightSteel10;
+                }
+
+                &:not(.root) {
+                  padding-left: 1.8rem;
+                  border-top: 0.1rem solid $grey7;
+                }
+
+                &.root {
+                  font-weight: bold;
+                }
+
+                &.row-active {
+                  color: $white;
+                  background-color: $blue3;
+                }
+              }
+            }
+          }
+        }
+
+        .uniqueness-dialog-summary {
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+          display: block;
+          width: 100%;
+
+          .summary-row {
+            width: 100%;
+            display: block;
+            padding-bottom: 1rem;
+
+            .summary-text {
+              float: left;
+              width: 60%;
+              display: block;
+            }
+
+            .summary-count {
+              float: left;
+              width: 40%;
+              display: block;
+            }
+          }
+        }
+
+        .uniqueness-dialog-title {
+          font-weight: bold;
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        }
+
+        .uniqueness-dialog-rows {
+          max-height: 30rem;
+          overflow: auto;
+
+          .uniqueness-row {
+            margin-left: 2rem;
+
+            .icon-close-alt {
+              color: $red;
+            }
+
+            .icon-checkmark-full {
+              color: $green;
+            }
+
+            .icon-circle2 {
+              color: $comprehendBlue;
+            }
+
+            .uniqueness-text {
+              margin-left: 1rem;
+            }
+          }
+        }
+
+        .uniqueness-dialog-hint-text {
+          padding-top: 2rem;
+          line-height: 1.8rem;
+        }
+
+        .input-block .create-folder-title-input {
+          width: 100%;
+        }
+
+        .modal-dialog-text {
+          display: flex;
+          flex-flow: column nowrap;
+          .title {
+            padding-left: 0.5rem;
+            padding-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+          }
+        }
+
+        .modal-dialog-content-text .modal-dialog-content-description {
+          line-height: initial;
+          padding: 0.5rem 0;
+        }
+
+        .modal-dialog-content-text-item {
+          line-height: initial;
+          padding: 0.5rem 0.5rem 0.5rem 1rem;
+
+          .bold {
+            font-weight: bold;
+            padding-right: 0.5rem;
+          }
+        }
+
+        .edges {
+          overflow: auto;
+        }
+
+        .edge-wrapper {
+          border-radius: 0.3rem;
+          background: $almostGray;
+          border: 0.2rem solid $almostGray;
+          margin-bottom: 0.5rem;
+        }
+
+        .edge {
+
+          .edge-table-long-name {
+            padding-left: 0.5rem;
+          }
+
+          .edge-column-long-name {
+            padding-left: 0.5rem;
+            font-weight: bold;
+          }
+
+          .edge-short-names {
+            padding-left: 0.5rem;
+            color: $lightGray;
+          }
+
+          &.child-background {
+            background-color: $darkSteel;
+          }
+        }
+
+        > input {
+          margin-top: 1rem;
+        }
+      }
+
+      .modal-dialog-inherit-note {
+        margin-top: 2rem;
+
+        .modal-dialog-inherit-emphasis {
+          margin-right: 0.5rem;
+          font-weight: bolder;
+        }
+      }
+
+      .modal-dialog-delete-action {
+        margin-top: 2rem;
+
+        .modal-dialog-delete-emphasis {
+          margin-left: .5rem;
+          font-weight: bolder;
+        }
+      }
+
+      .modal-dialog-closing {
+        padding-bottom: 2.0rem;
+
+        .modal-dialog-closing-emphasis {
+          margin-left: .5rem;
+          padding-top: 2.0rem;
+          font-weight: bolder;
+        }
+      }
+
+      .folder-list-warning {
+        padding-bottom: 2rem;
+        color: $red;
+      }
+
+      .modal-dialog-footer {
+        font-size: 1.2rem;
+        text-align: left;
+
+        .button {
+          border-radius: 0.3rem;
+          color: $black;
+          font-size: 1.4rem;
+          font-weight: normal;
+          margin-right: 0.8rem;
+          min-width: 10rem;
+          padding: 0.8rem 1.2rem;
+          display: inline-block;
+
+          .icon {
+            font-size: 1.4rem;
+            font-weight: lighter;
+            margin-right: 0.3rem;
+          }
+
+          .button-text {
+            text-transform: capitalize;
+          }
+        }
+      }
+
+      .modal-dialog-error {
+        color: $red;
+      }
+    }
+
+    .share-modal, .monitor-task-assignees-modal {
+      // Ensure that the main area has enough height to support a combobox
+      // dropdown opening without resorting to scrolling.
+      .modal-dialog-main {
+        min-height: 25rem;
+      }
+
+      .footer-link {
+        color: $hyperlinkBlue;
+        font-size: 1.4rem;
+
+        .icon {
+          padding-right: .8rem;
+        }
+      }
+
+      &.add {
+        .add-users-groups {
+          font-weight: bold;
+          margin-bottom: .5rem;
+        }
+
+        .entity-dropdown {
+          float: left;
+          width: 29rem;
+        }
+
+        .privilege-dropdown-container {
+          float: left;
+          position: relative;
+        }
+
+        .privilege-dropdown {
+          font-weight: $semibold;
+          margin-left: 1rem;
+          width: 8.2rem;
+        }
+
+        .privilege-dropdown {
+          right: -.1rem;
+        }
+
+        .rw-list-optgroup {
+          padding-left: 0;
+
+          &:first-child .dropdown-group-component {
+            border-top-width: 0;
+          }
+        }
+
+        .rw-list-option:hover {
+          background-color: $blue3;
+          color: $white;
+        }
+
+        .dropdown-group-component {
+          background-color: $whiteSmoke;
+          border-top: .1rem solid $grey2;
+          border-bottom: .1rem solid $grey2;
+          padding: .8rem 0;
+
+          .icon-users, .icon-user {
+            padding: 0 .5rem 0 1rem;
+          }
+        }
+
+        .groups-header, .users-header {
+          .icon-users, .icon-user {
+            padding: 0 .5rem 0 1rem;
+          }
+        }
+
+        .dropdown-item-component {
+          padding: .8rem 1rem;
+        }
+      }
+
+      &.details {
+        .modal-dialog-content-text {
+          color: $red;
+          font-style: italic;
+        }
+      }
+
+      &.results {
+        .failed-entities {
+          color: $red;
+
+          .group-name {
+            .icon {
+              padding-right: .5rem;
+            }
+          }
+
+          .failed-entity {
+            display: inline-block;
+            padding-right: .5rem;
+
+            &:after {
+              content: ',';
+            }
+          }
+
+          .failed-entity:last-child{
+            padding-right: 0;
+
+            &:after {
+              content: '';
+            }
+          }
+        }
+      }
+
+      .file-title-container {
+        .icon {
+          padding-left: .5rem;
+          line-height: 4rem;
+        }
+      }
+
+      .add-users-groups, .add-filter {
+        font-weight: bold;
+        margin-bottom: .5rem;
+      }
+
+      .entity-dropdown {
+        width: 29rem;
+      }
+
+      .tag-container {
+        max-height: 35rem;  // Set to respect overall 640px max height spec.
+        min-height: 6.1rem;  // Ensures that the entity dropdown has space to open (otherwise the modal scrollbar is visible).
+        overflow: auto;
+        margin: 1rem 0;
+
+        .tag {
+          clear: none;
+          float: left;
+          margin: .5rem;
+          padding-right: 1rem;
+          width: inherit;
+
+          .list-item-content .icon-users {
+            padding-right: .5rem;
+          }
+        }
+      }
+
+      .helper-text-block {
+        margin: 1rem 0 -2rem;
+
+        .persistent-text-block {
+          color: $grey2;
+          width: 34rem; // Quick & dirty to match the line split in the mockup.
+          line-height: 1.8rem;
+        }
+
+        .hideable-text-block {
+          line-height: 1.8rem;
+        }
+
+        li {
+          color: $black;  // Bullets take the color of the <li>.
+          list-style-position: outside;
+          margin: 1rem 0 1.4rem 2rem;
+
+          .bullet-text {
+            color: $grey2;
+          }
+        }
+
+        .opener-block {
+          padding-left: .5rem;
+          cursor: default;
+          color: $comprehendBlue;
+
+          .icon-arrow-right {
+            display: inline-block;
+            margin-left: .5rem;
+            font-size: 1.2rem;
+
+            &:before {
+              display: block;
+            }
+
+            &.open:before {
+              @include transform(rotate(90deg));
+            }
+          }
+        }
+      }
+
+      .modal-dialog-main .icon-close-alt {
+        color: $black;
+        margin: .3rem 0 0 1rem;
+      }
+
+      .btn {
+        margin-top: 2rem;
+      }
+    }
+
+    .monitor-task-assignees-modal {
+      .add-filter-help-text {
+        color: $grey2;
+        margin: 0 0 1rem 0;
+        line-height: 1.8rem;
+      }
+
+      .optional {
+        font-weight: normal;
+      }
+
+      .add-task-assignees-buttons {
+        margin-top: 2.5rem;
+        border-top: $sectionDivider;
+      }
+
+      .conditional-filter {
+        padding-top: 1rem;
+
+        .icon {
+          color: $hyperlinkBlue;
+          padding-right: .4rem;
+        }
+      }
+
+      .tag-container {
+        min-height: 0;
+
+        .conditional-filter-tag {
+          background-color: $blue8;
+        }
+      }
+    }
+
+    &.modal-warning-dialog {
+      & .btn {
+        margin-top: 2rem;
+      }
+
+      .task-assignee-update-warning-content {
+        .warning-header {
+          font-weight: $semibold;
+        }
+
+        ul {
+          list-style: circle;
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
+}
+
+.multi-sort-settings-modal {
+  .sort-column-table {
+    display: table;
+    border-collapse: collapse;         
+    width: 43rem;
+    
+    .table-body {
+      height: 250px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      margin-top: 5px;
+      font-size: 1.2rem;
+      .Select .Select-control {
+        height: 2.8rem;
+      }
+      .Select .Select-control .Select-placeholder, .exposure .Select .Select-control .Select-placeholder, .exposure .Select .Select-control :not(.Select--multi) > .Select-control .Select-value {
+        line-height: 2.5rem;
+      }
+      .Select-placeholder, .Select--single > .Select-control .Select-value {
+        line-height: 25px;
+      }
+      .Select-input {
+        height: 25px;
+      }
+    }
+    .sort-row {
+      display: table-row;
+      width: auto;
+      clear: both;
+    }
+    .sort-row.header {
+      background-color: #f8f9fa;
+      border-bottom: 2px solid #cccccc;
+      font-size: 1.3rem; 
+    }
+    .sort-cell {
+      float: left; 
+      display: table-column;         
+      width: 145px;
+      padding: 5px;            
+    }
+    .empty-cell {
+      width: 62px;
+    }
+    .body{
+      .empty-cell {
+        line-height: 3rem;
+        text-align: center;
+      }
+      .add-icon {
+        margin-right: 5px;
+      }
+      .icon {
+        color: #0092c8;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .modal-dialog-header {
+    text-align: center;
+  }
+  .modal-dialog-main {
+    min-height: 25rem;    
+  }
+  .modal-dialog-footer {
+    text-align: right !important;
+    .btn{
+      padding: 0.3rem 1rem;
+    }
+  }
+}

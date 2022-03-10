@@ -1,0 +1,41 @@
+.list-filters {
+  display: inline-block;
+  width: 100%;
+  margin-top: 1.5rem;
+
+  .list-filter-toggle-container {
+    padding: 1rem 0;
+
+    .toggle-button {
+      float: right;
+      position: relative;
+      bottom: .3rem;
+    }
+
+    .list-filter-toggle-title {
+      font-weight: bold;
+    }
+  }
+
+  .list-filter-dropdown-container {
+    padding: 1rem 0;
+
+    .list-filter-dropdown-title {
+      font-weight: bold;
+      display: block;
+      padding-bottom: .5rem;
+    }
+  }
+}
+
+.reset-button { 
+  @include clickable;
+  position: relative;
+  bottom: .1rem;
+
+  &:before {
+    font-family: 'comprehend';
+    content: '\e14b';
+    margin-right: .5rem;
+  }
+}

@@ -1,0 +1,73 @@
+/*
+ * This file should contain dimensions we're going to use as bases for calculating other dimensions.
+ *
+ * The method used to generate things here, multiplying by a single unit, prevents implicit conversion
+ * to a string and allows us to use things like round(), ceil(), etc.
+ * See http://hugogiraudel.com/2013/09/03/use-lengths-not-strings/ for more information.
+ */
+$sidebar-width-value: 5.5;
+$sidebar-expanded-width-value: 25;
+$sidebar-width: $sidebar-width-value * 1rem;
+$sidebar-expanded-width: $sidebar-expanded-width-value * 1rem;
+$main-content-padding: 3rem;
+$main-content-left-pad: 8.5rem;
+$minimized-study-filter-height: 5.6rem;
+$main-content-height: calc(100% - 3.5rem);
+
+// Mobile nav height and padding constants mentioned in id:6303.
+$mobile-nav-header-height: 4.8rem;
+$mobile-secondary-nav-padding: 2.4rem;
+
+$mobile-nav-header-top-padding: .9rem;
+$mobile-nav-header-icon-top-padding: .5rem;
+
+/**
+ * Default spacings
+ */
+
+/// This is the base for the vertical rhythm.
+/// @type: Length
+$vertical-padding: 1rem;
+
+// This is the margin between page header navigation paths.
+$page-header-path-margin: 0.5rem;
+
+$icon-width: 2rem;
+
+// 2rem for padding between each button, 4rem is for text.
+$dashboard-header-buttons-width: ($icon-width + 2rem + 4rem) * 3;
+
+// 3rem for padding between each button.
+$dashboard-header-buttons-width-only-phone: ($icon-width + 3rem) * 3;
+
+// Registration page dimensions.
+$registration-page-desktop-vertical-margin: 10rem;
+$registration-page-desktop-width: 40rem;
+$registration-page-default-element-margin: 2rem;
+$registration-page-logo-margin: 5rem;
+
+// Advanced config editor modal dimensions.
+$advancedConfigModalCloseMargin: 2rem;
+$advancedConfigModalYMargin: 7.5rem;
+$advancedConfigModalXMargin: 10rem;
+
+// Action Input dimensions.
+$action-input-width: 4rem;
+
+// Monitor configuration pane height needs to be equal monitor visualization height.
+$monitorConfigurationHeight: 65vh;
+
+
+
+///////////////////////////////
+///
+/// These are defined based on the new style guide.
+///
+///////////////////////////////
+
+$standard-corner-radius: 0.5rem;
+$form-input-height: 3.8rem;
+
+$dropdown-font-size: 1.4rem;
+
+$dropdown-tag-lateral-padding: 0.5rem;

@@ -1,0 +1,507 @@
+.adhoc-report-studio {
+  @include span(24);
+
+  .page-header {
+    border-bottom: 1px solid $grey7;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: $black;
+  }
+
+  .footer {
+    margin-bottom: 6rem;
+    clear: both;
+  }
+
+  .report-definition {
+    @include span(16);
+
+    .tab-content {
+      width: 100%;
+      float: left;
+
+      textarea {
+        resize: none;
+      }
+    }
+
+    .tab-content, .underline, .advanced-config-link {
+      padding-bottom: 4rem;
+      border-bottom: .1rem solid $gray10;
+      margin-bottom: 3rem;
+    }
+
+    .schema-selector {
+      background-color: $slateGray;
+
+      .input-block {
+        padding-bottom: 3rem;
+        padding-right: 3rem;
+        margin-left: 3rem;
+      }
+
+      .schema-dropdown-wrapper {
+        width: calc(50% - 1.1rem);
+      }
+
+      .schema-dropdown-title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding-top: 3rem;
+        margin-bottom: .5rem;
+      }
+    }
+
+    .data-selector {
+      margin-bottom: 4rem;
+
+      // The default width of table-selector-dropdown is 36rem.
+      // The default width of table-preview-placeholder is 70rem.
+      .table-selector-dropdown, .table-preview-placeholder {
+        width: 100%;
+      }
+    }
+  }
+
+  .report-preview {
+    @include span(8 last);
+
+    &.expand {
+      position: absolute;
+      @include span(14);
+      right: 0;
+      border-left: $menuBorder;
+      padding-left: 4rem;
+      background-color: $white;
+    }
+
+    .page-header {
+      margin-bottom: 2.5rem;
+
+      .title {
+        display: inline-block;
+      }
+
+      .icon-expand2, .icon-contract, .icon-close-alt {
+        @include clickable;
+        font-size: 2rem;
+        display: inline-block;
+        float: right;
+        &.selected {
+          background-color: $grey4;
+        }
+      }
+    }
+
+    .preview-body {
+      border-bottom: $menuBorder;
+      margin-bottom: 4rem;
+    }
+
+    .preview-render-mixin-body {
+      overflow: hidden;
+    }
+
+    .preview-template-thumbnail {
+      clear: both;
+      width: 100%;
+      height: 20rem;
+      background-color: $slateGray;
+      margin: 3rem 0;
+
+      .thumbnail-icon {
+        color: $grey3;
+        font-size: 13rem;
+        text-align: center;
+        padding-top: 2rem;
+      }
+    }
+
+    .preview-template-type {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .preview-template-category {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .preview-template-description {
+      font-size: 1.2rem;
+      color: $disabledGray;
+    }
+
+    .data-selector-options {
+      display: table;
+      padding: 1.3rem 0;
+      border-top: 0.1rem solid $grey3;
+      min-height: 6rem;
+      width: 100%;
+
+      .vertical-align-wrapper {
+        display: table-cell;
+        vertical-align: middle;
+
+        &.aggregate-visible {
+          padding: 1.5rem 0;
+        }
+      }
+
+      .aggregate-dropdown-wrapper {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 1rem;
+        width: 35%;
+      }
+
+      .column-selected {
+        display: inline-block;
+        width: 50%;
+      }
+
+      .data-selector-apply {
+        float: right;
+      }
+    }
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+
+    &.small {
+      font-size: 1.6rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .chart-parameters {
+    // To ensure the width of each chart parameters to be equal and have a margin
+    // in between, we need to divide the margin by 2 and subtract that from each
+    // chart parameters width.
+    width: calc(50% - 1rem);
+    display: inline-block;
+    vertical-align: top;
+
+    &.left {
+      margin-right: 2rem;
+    }
+
+    .parameter-container {
+      // Set a minimum height to align the different types of parameters.
+      min-height: 9rem;
+    }
+  }
+
+  .chart-constant-parameters {
+    // To ensure the width of each chart parameters to be equal and have a margin
+    // in between, we need to divide the margin by 2 and subtract that from each
+    // chart parameters width.
+    width: calc(30% - 1rem);
+    display: inline-block;
+    vertical-align: top;
+
+    &.left {
+      margin-right: 2rem;
+    }
+    .parameter-container {
+      // Set a minimum height to align the different types of parameters.
+      min-height: 5rem;
+    }
+  }
+
+  .info-title{
+    font-weight: bold;
+    font-size:1.6rem;
+    margin-top: 2rem;
+  }
+  .info-sub-title{
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+  .side-padding {
+    padding: 0 .5rem;
+    font-weight: normal;
+  }
+  .input-block {
+    margin-bottom: 4rem;
+
+    .input-title {
+      font-weight: bold;
+      margin-bottom: 1rem;
+
+      &.section-title {
+        font-weight: normal;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .report-name, .filter-input, .report-description {
+      width: 100%;
+    }
+
+    .dropdown-wrapper, .parameter-input, .browse-templates {
+      width: 50%;
+    }
+
+    .action-input {
+      display: inline-block;
+
+      .action-button{
+        @include clickable;
+        padding-bottom: .6rem;
+
+        &.selected {
+          background-color: $grey2;
+        }
+      }
+    }
+
+    &.data-input {
+      margin-bottom: 0rem;
+      padding-top: 3rem;
+
+      .input-title {
+        font-weight: normal;
+      }
+
+      .filter-title {
+        font-weight: bold;
+        clear: both;
+        vertical-align: middle;
+
+        [class^='icon-'],
+        [class*=' icon-'] {
+          @include clickable;
+          float: right;
+        }
+      }
+
+      .data-input-input-component {
+        .dropdown-wrapper {
+          height: 3.9rem;
+          display: inline-block;
+          vertical-align: middle;
+
+          // Ensure dropdown height and other input heights are the same.
+          .rw-dropdown-list {
+            height: 100%;
+
+            .rw-dropdownlist-picker.rw-select.rw-btn, .rw-input {
+              line-height: 3.9rem;
+            }
+          }
+        }
+
+        .parameter-description {
+          vertical-align: middle;
+          display: inline-block;
+          margin-left: 1.5rem;
+          // 50% - margin-left;
+          width: calc(50% - 1.5rem);
+          color: $disabledGray;
+        }
+
+        .chart-parameter {
+          width: 100%;
+        }
+      }
+    }
+
+    .icon-search {
+      display: inline-block;
+      margin-left: -3rem;
+    }
+  }
+  .flexContainer{
+    display:flex;
+  }
+  .title-info{
+    margin-left: 1rem;
+  }
+  .advanced-configuration-overlay {
+    position: fixed;
+    top: 0;
+    left: $sidebar-width;
+    width: calc(100% - #{$sidebar-width});
+    height: 100%;
+    background-color: rgba($grey2, 0.5);
+
+    .icon-close-alt {
+      position: absolute;
+      font-size: 2rem;
+      top: $advancedConfigModalYMargin + $advancedConfigModalCloseMargin;
+      right: $advancedConfigModalXMargin + $advancedConfigModalCloseMargin;
+    }
+
+    .advanced-configuration-body {
+      background-color: $white;
+      margin: $advancedConfigModalYMargin $advancedConfigModalXMargin;
+      height: calc(100vh - #{$advancedConfigModalYMargin*2});
+      border-radius: .5rem;
+
+      .advanced-configuration-container {
+        padding: 3.5rem;
+        height: 100%;
+
+        .advanced-configuration-title {
+          font-size: 2rem;
+          font-weight: bold;
+          margin-bottom: 2.5rem;
+        }
+
+        .advanced-configuration-subtitle {
+          font-size: 1.4rem;
+          margin-bottom: 1rem;
+        }
+
+        .advanced-configuration-error {
+          font-size: 1.4rem;
+          margin-bottom: 1rem;
+          color: $darkRed;
+        }
+
+        .advanced-configuration-buttons {
+          margin: 3rem 0;
+        }
+
+        .code-mirror-wrapper {
+          height: calc(100% - 15rem);
+
+          .CodeMirror {
+            border: .1rem solid rgba($lightSteel, .5);
+            border-radius: .4rem;
+          }
+        }
+      }
+    }
+  }
+
+  .small-side-padding {
+    padding: 0 .5rem;
+  }
+
+  .icon-question-circle {
+    padding: 0 .1rem 0 .5rem;  // A little padding to the right is necessary.
+    color: $gray60;
+
+    &:hover {
+      color: $black;
+      // TODO: Make the cursor a pointer when we implement our own tooltip.
+    }
+  }
+
+  .configurable, .aggregate {
+    margin-top: 1rem;
+
+    &.disabled {
+      color: $disabledGray;
+    }
+
+    .checkbox-container {
+      margin-right: .5rem;
+    }
+  }
+
+  .list-template {
+    .list-template-title {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .list-template-item {
+      height: 7rem;
+      margin-bottom: 2rem;
+      background-color: $slateGray;
+      @include clickable;
+
+      .list-template-item-icon {
+        font-size: 4rem;
+        display: inline-block;
+        padding: 1.5rem 3.5rem 1.5rem 1.5rem;
+      }
+
+      .list-template-item-content {
+        display: inline-block;
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        // list-template-item-content width is
+        // list-template-item width - (list-template-item-icon width + icon-checkmark-circle width).
+        width: calc(100% - 18.5rem);
+
+        .list-template-item-title {
+          width: 100%;
+          font-weight: bold;
+        }
+
+        .list-template-item-description {
+          width: 100%;
+          color: $disabledGray;
+        }
+      }
+
+      &.selected {
+        background-color: $grey4;
+
+        .icon-checkmark-circle {
+          float: right;
+          display: inline-block;
+          margin: 2.2rem 3rem 0 3.5rem;
+          font-size: 2.5rem;
+          color: $green;
+        }
+      }
+    }
+  }
+
+  .filter-wrapper {
+    padding-top: .5rem;
+    @include span(24);
+
+    .filter-inputs {
+      @include span(12);
+    }
+
+    .filter-instructions {
+      @include span(12 last);
+      margin-top: 5rem;
+
+      .filter-instructions-line {
+        color: $grey2;
+        padding-top: .5rem;
+      }
+    }
+  }
+
+  .related-files-wrapper {
+
+    .related-file-type {
+      display: inline-block;
+      width: 50%;
+    }
+
+    .related-files {
+      padding-top: 2rem;
+    }
+
+    .related-file {
+      float: left;
+      background-color: $blue9;
+      border-radius: .5rem;
+      font-weight: bold;
+      padding: .5rem 1rem;
+      margin: .5rem;
+      color: $black;
+
+      .related-file-name {
+        padding: 0 .5rem;
+      }
+    }
+
+    .file-type-header {
+      font-size: 1.7rem;
+      padding-bottom: 1rem;
+    }
+  }
+}

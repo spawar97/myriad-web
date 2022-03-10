@@ -1,0 +1,32 @@
+
+// Our z-index store: Register all z-index usages here
+// Please be sure to check for conflicts
+
+// Universal z-indexes, ordered by z-index ascending
+$pagination-z-index: 2;
+$dropdown-z-index: 3;
+$phone-modal-z-index: 4;
+$popover-z-index: 5;
+$phone-nav-menu-z-index: 11;
+$dropdown-open-z-index: 7;
+$status-message-underlay-z-index: 8;
+$hover-icon-content-z-index: 9;
+
+$side-bar-z-index: 5;
+$side-bar-tab-z-index: 10;
+$side-bar-tab-badge-z-index: 11;
+$phone-modal-z-index: 30;
+$top-nav-dropdown-z-index: 35;
+$modal-dialog-underlay-z-index: 36;
+$status-message-z-index: 40;
+$toast-error-toast-z-index:100;
+
+// Component Specific z-indexes
+$homepage-tab-active-z-index: 1;
+$search-selector-z-index: 12;
+$search-selector-mobile-z-index: 31;
+$oversight-scorecard-rc-tooltip: 1001;
+$ract-scorecard-rc-tooltip: 5;
+$study-filter-z-index:10;
+$study-filter-dropdown-z-index:10;
+

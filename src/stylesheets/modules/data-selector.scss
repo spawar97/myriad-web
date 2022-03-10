@@ -1,0 +1,110 @@
+.data-selector {
+  .table-dropdown-header {
+    font-size: 1.6rem;
+    font-weight: $semibold;
+    margin-bottom: .8rem;
+    padding-top: 1rem;
+  }
+
+  .table-selector-dropdown {
+    width: 36rem;
+  }
+
+  .table-dropdown-item {
+    word-wrap: break-word;
+
+    .long-name {
+      font-weight: $semibold;
+      padding-right: 1rem;
+      white-space: nowrap;
+    }
+  }
+
+  .sample-data-text {
+    font-size: 1.6rem;
+    margin: 3rem 0 .8rem;
+
+    .bold {
+      font-weight: $semibold;
+      padding-right: 1rem;
+    }
+
+    .disabled {
+      color: $grey6;
+    }
+
+    .select-all {
+      float: right;
+
+      .checkbox {
+        margin-right: .5rem;
+      }
+    }
+  }
+
+  .table-preview-placeholder {
+    height: 29.7rem;
+    background: $emptyState;
+    border: .1rem dashed $grey2;
+    color: $grey2;
+    text-align: center;
+    padding-top: 5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .table-preview {
+    cursor: pointer;
+    border-bottom: .1rem solid $grey4;
+    padding-bottom: .2rem;
+
+    &.disabled {
+      cursor: default;
+    }
+
+    .public_fixedDataTable_main .public_fixedDataTable_header .public_fixedDataTableCell_main {
+      background: none;
+    }
+
+    .column-header-container, .cell-container {
+      position: relative;
+      padding: 0;
+      width: 100%;
+
+      &.highlight:after {
+        content: '';
+        background: rgba($blue4, .3);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .virtual-table {
+        width: 100%;
+      }
+
+      .virtual-table-cell {
+        padding: 0 2rem;
+        height: 4rem;
+      }
+
+      .column-long-name {
+        background: $blue1;
+      }
+
+      .column-short-name {
+        background: $grey2;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+.data-selector-with-input {
+  .data-selector-input-buttons {
+    margin-top: 2.5rem;
+    border-top: $sectionDivider;
+  }
+}

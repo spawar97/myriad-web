@@ -1,0 +1,20 @@
+.file-title-container {
+  display: inline-block;
+
+  .file-title-prefix {
+    padding-right: .5rem;
+  }
+
+  .file-title-text {
+    font-weight: normal;
+  }
+
+  .icon {
+    padding-right: .5rem;
+    line-height: 4rem;
+
+    &.larger {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+/* Style the accordion section */
+.side-bar .accordion__section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.side-bar .accordion {
+  background-color: transparent;
+  color: #444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: background-color 0.6s ease;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.side-bar .active {
+  .icon-accordion-right {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+
+/* Style the accordion content title */
+.side-bar .accordion__title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0rem;
+}
+
+/* Style the accordion chevron icon */
+.side-bar .accordion__icon {
+  color: #fff;
+  margin-left: auto;
+  margin-right: 2rem;
+  transition: transform 0.6s ease;
+}
+
+/* Style to rotate icon when state is active */
+.side-bar .rotate {
+  transform: rotate(90deg);
+}
+
+/* Style the accordion content panel. Note: hidden by default */
+.side-bar .accordion__content {
+  background-color: #304c61;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+/* Style the accordion content text */
+.side-bar .accordion__text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 5px 0;
+  min-height: auto;
+}
+
+.side-bar .accordion__text a {
+  margin: 0px !important;
+}
+
+.side-bar .accordion__section .side-bar-tab.selected {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.side-bar .accordion__section .side-bar-tab.selected:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.side-bar .accordion__section .side-bar-tab-width:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+.side-bar .accordion__section .side-bar-tab {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.side-bar .accordion__section .subMenu .side-bar-tab-contents {
+  padding: 0 0 0 60px;
+}
+
+.side-bar .accordion__section .subMenu .side-bar-tab-contents .side-bar-tab-icon {
+  display: none;
+}
+
+.side-bar .accordion__section .subMenu .side-bar-tab-menu-name {
+  color: #fff;
+}
+
+.side-bar-tab-extended-width .accordionArrow {
+  font-size: 20px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
+
+.arrowColor {
+  color: #fff;
+}
+
+.selected .arrowColor {
+  color: #416783;
+}

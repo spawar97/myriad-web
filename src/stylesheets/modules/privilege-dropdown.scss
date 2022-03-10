@@ -1,0 +1,84 @@
+.privilege-dropdown-underlay {
+  // The following fixes an issue in IE9 for id:8321.
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.privilege-dropdown {
+  position: absolute;
+  right: .3rem;
+  background: $white;
+  border: .1rem solid $grey3;
+  border-radius: .5rem;
+  display: inline-table;
+  font-weight: $semibold;
+  padding: 1rem 0;
+  cursor: default;
+
+  // This applies only to the privilege dropdown that uses the new combobox.
+  &.Select {
+    border: none;
+    padding: 0;
+  }
+
+  &.has-remove-access {
+    padding-bottom: 0;
+  }
+
+  .clickable {
+    @include clickable;
+  }
+
+  .virtual-table-cell {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+
+  .icon-cell {
+    padding-left: 1.5rem;
+
+    // Width specified to handle no privileges case (no checkmarks displayed but consistent whitespace is desired).
+    // Icon width: 1.6rem, cell left padding: 1rem, icon right margin: 1rem.
+    width: 3.6rem;
+  }
+
+  .text-cell {
+    padding-right: 1.5rem;
+  }
+
+  .icon-checkmark-full {
+    font-size: 1.2rem;
+    color: $black !important;
+  }
+
+  .virtual-table-row:not(.spacer-row) {
+    &:hover {
+      background: $blueGray3;
+    }
+  }
+
+  .spacer-row {
+    height: 1rem;
+  }
+
+  .remove-access {
+    .virtual-table-cell {
+      border-top: .2rem solid $grey3;
+    }
+
+    .icon-cell {
+      padding-top: 1.1rem;
+      padding-right: 1.1rem;
+      vertical-align: top;
+    }
+
+    .text-cell {
+      width: .1rem;  // Force word-wrapping.
+      padding-top: 1rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+}

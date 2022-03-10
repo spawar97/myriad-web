@@ -1,0 +1,240 @@
+.studio {
+  @include span(24);
+  .schema-section {
+    margin-top: 1rem;
+
+    .schema-tree-view {
+      margin-top: 1rem;
+
+      .schema-tree-items {
+        border: 1px solid $grey3;
+        border-radius: 4px;
+
+        .depth-0, .depth-1 {
+          .selector {
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+
+  .studio-warning {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 2rem 0;
+
+    .studio-warning-icon {
+      span {
+        color: $yellow;
+        font-size: x-large;
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  .studio-editor, .studio-preview {
+    display: inline-block;
+    margin: 1rem 0;
+
+    input, textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+
+    }
+    input{
+      line-height: 2.8rem;
+      border-color:#d9d9d9 #ccc #d9d9d9;
+    }
+    .title {
+      text-transform: uppercase;
+      color: #000;
+      font-weight: 500;
+      border-bottom: 0.1rem solid #d9d9d9;
+      font-size: 1.8rem;
+      text-transform: capitalize;
+      padding-bottom: 1.5rem;
+      padding-top: 2rem; // to adjust positioning of titles on Dashboard
+    }
+
+    .order-buttons {
+      @include span(24);
+      margin: 1rem 0 1rem 0;
+
+      [class^="icon-"], [class*=" icon-"] {
+        @include clickable;
+        float: right;
+        font-size: 2rem;
+        @include pad(1rem);
+      }
+    }
+    .report-selector-dropdown{
+      z-index: auto !important;
+    }
+
+    .data-review-role-selector-dropdown {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .studio-editor {
+    @include span(12 of 24);
+
+    .public_fixedDataTable_main {
+      margin-top: 2rem;
+    }
+
+    textarea {
+      resize: none;
+    }
+    .reports-table{
+      z-index: 0;
+      position:relative
+    }
+  }
+
+  .studio-preview {
+    @include span(12 of 24 last);
+  }
+
+  .schema-name {
+    padding-left: 1rem;
+  }
+
+  .query-entry {
+    clear: both;
+  }
+
+  .btn {
+    float: right;
+    margin: 1rem;
+
+    &.bottom-btn {
+      margin-bottom: 6rem;
+    }
+  }
+
+  .entry-text {
+    clear: both;
+    color: $black;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    vertical-align: middle;
+
+    [class^="icon-"], [class*=" icon-"] {
+      float: right;
+      padding-left: 1rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  .in-scope-text {
+    white-space: pre-wrap;
+  }
+
+  .icon-remove {
+    @include clickable;
+  }
+
+  .query-input.active, .query-input.active:focus {
+    border-color: $grey2;
+  }
+
+  .add-applied-filter {
+    float: right;
+  }
+
+  .report-type-dropdown-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  .dynamic-filters-tip {
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-title {
+    [class^='icon-'],
+    [class*=' icon-'] {
+      @include clickable;
+      font-size: 1.4rem;
+      float: right;
+    }
+  }
+
+  .add-static-filter {
+    margin: 1rem 0;
+  }
+
+  .applied-filter {
+    & > * {
+      float: left;
+    }
+
+    .applied-filter-type-title {
+      padding: 2rem 1.5rem 1rem 2rem;
+      font-weight: bold;
+    }
+
+    .applied-filter-type {
+      padding: 2rem 0;
+    }
+
+    .filter-type-dropdown {
+      margin-top: 1.2rem;
+      width: 12rem;
+    }
+  }
+
+  .page-header {
+
+    .title {
+      font-size: 2rem;
+      color: $black;
+      line-height: 4rem;
+    }
+  }
+
+  .exec-plan-help-text-opener {
+    @include clickable;
+    margin-top: 2rem;
+    background-color: $black;
+    color: $white;
+
+    .item-opener, .exec-plan-help-text-title {
+      color: $white;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    .item-opener:after {
+      border-left-color: $white;
+    }
+  }
+
+  .code-mirror-help-text {
+    margin-top: 2rem;
+  }
+
+  .modification-note {
+    width: 100%;
+  }
+
+  .reports-table {
+    clear: both;
+  }
+
+  .CodeMirror {
+    // CodeMirror recommended to set height: auto to have the text box wrapped
+    // by its content height instead of a default fixed height scrollable box.
+    height: auto;
+    // Force code mirror to be displayed under combox dropdown options.
+    // Combobox cannot receive option selection on click event, otherwise.
+    z-index: 0;
+  }
+
+  .tag-class {
+    margin-top: 2rem;
+  }
+}

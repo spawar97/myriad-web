@@ -1,0 +1,223 @@
+.site-scorecard-table {
+     width: 100%;
+     overflow: hidden;
+     border-collapse: collapse;
+ }
+ .site-scorecard-table th {
+     padding: 10px 10px;
+     border: 1px solid #E9E9E9;
+ }
+ .site-scorecard-table tfoot  {
+     padding: 10px 10px;
+     border: 0px solid #E9E9E9;
+ }
+ .site-scorecard-table tfoot td {
+     border: 0px solid #E9E9E9;
+     padding: 5px 0px 0px 0px;
+ }
+ .site-scorecard-table td {
+     padding: 5px 5px;
+     border: 1px solid #E9E9E9;
+ }
+ .site-scorecard-table td.sitename {
+     min-width: 220px;
+ }
+ .site-scorecard-table thead tr {
+     background: #34454f;
+     color: white;
+     text-align: left;
+     font-weight: bold;
+ }
+ .site-scorecard-table .center {
+     text-align: center;
+ }
+ .circle {
+     border: 1px solid blue;
+     border-radius: 50%;
+     width: 2rem;
+     height: 2rem;
+     margin: auto;
+     text-align: center;
+ }
+ .drilldown-element .circle {
+    cursor: pointer;
+ }
+ .legend-circle {
+     border: 1px solid blue;
+     border-radius: 50%;
+     width: 1.5rem;
+     height: 1.5rem;
+     margin-right: 5px;
+     display: inline-block;
+ }
+ .c-green {
+     background: #467d15;
+ }
+ .b-yellow {
+     background: #FFD700;
+ }
+ .a-red {
+     background: #dc3b19;
+ }
+ .highchart{
+    height: 100% !important;
+ }
+ .site-scorecard-container {
+     margin-top: 20px;
+     width: 100%;
+     overflow-x: auto;
+     padding: 0px 2px;
+ }
+.site-scorecard-ourner {
+    margin: 0 auto;
+    display: inline-block;
+    padding-right: 5px;
+}
+ .report-filter-notice{
+    width: 100%;
+ }
+ .site-scorecard-title {
+    display: block;
+    color: #333333;
+    font-size: 18px;
+    font-weight: bold;
+    fill: #333333;
+    line-height: 2.5rem;
+    padding-bottom: 15px;
+ }
+ .site-scorecard-legend {
+     margin-top: 2.5rem;
+     margin-bottom: 3.5rem;
+ }
+ .site-scorecard-legend-item {
+     display: -webkit-box;
+     padding:0px;
+     font-size: 1.2rem;
+ }
+ .site-scorecard span {
+     padding-left: 1.5rem;
+     padding-right: 0.5rem;
+     text-shadow: -1px 0px 0px black, 1px 0px 0px black, 0px -1px 0px black, 0px 1px 0px black;
+ }
+ 
+ /* Sort header */
+ .site-scorecard-header .virtual-table-cell {
+     width: 100%;
+     white-space: normal;
+ }
+ .site-scorecard-header .fixed-data-table-header-sorter {
+     padding-left: 10px;
+     
+ }
+ .site-scorecard-header .icon {
+     cursor: pointer;
+ }
+ 
+
+/* Tooltip container */
+
+.site-scorecard-tooltip{
+    color: white;
+    text-align: left;
+    font-size: 14px;
+}
+
+.tooltip-basic {
+    position: relative;
+}
+
+/* Tooltip text */
+.tooltip {
+    position: relative;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 350px;
+    background-color: #4D4F53;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    margin-left: 0;
+    padding: 5px;
+}
+
+.tooltip .tooltiptext-left {
+    visibility: hidden;
+    width: 350px;
+    background-color: #4D4F53;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: -300px;
+    padding: 5px;
+}
+
+.tooltip-basic .tooltiptext-on-left {
+  visibility: hidden;
+  background-color: #4D4F53;
+  color: white;
+  text-align: left;
+  font-size: 14px;
+  padding: 5px;
+  width: 355px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 160%;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 40px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #4D4F53 transparent;
+}
+
+.tooltip .tooltiptext-left::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 20px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #4D4F53 transparent;
+}
+
+.tooltip-basic .tooltiptext-on-left::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 100%; // place arrow to the right of the tooltip
+
+  // size and direction of arrow
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  // location of no-transparent define direction of arrow
+  border-color: transparent transparent  transparent #4D4F53;
+}
+
+.tooltip:hover .tooltiptext, .tooltip:hover .tooltiptext-left, .tooltip-basic:hover .tooltiptext-on-left {
+    visibility: visible;
+    transition: opacity 0.2s ease-in 0s;
+}

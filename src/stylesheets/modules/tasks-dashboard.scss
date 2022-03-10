@@ -1,0 +1,355 @@
+.dashboard-container {
+    height: 100%;
+    position: relative;
+  
+    .dashboard-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      background-color: 'red';
+      border-bottom: 1px solid green;
+      // min-height: 60px;
+      padding: 5px;
+      background: whitesmoke;
+      margin: 0 -20px;
+  
+      .header-inner-container {
+        align-self: center;
+        display: flex;
+        margin-left: 24px;
+  
+        .header-title {
+          font-size: 18px;
+          font-weight: 600;
+          padding-right: 80px;
+          align-self: center;
+        }
+  
+        .header-dropdown {
+          display: flex;
+  
+          .dropdown-title {
+            font-size: 14px;
+            padding-right: 10px;
+            align-self: center;
+            font-weight: 600;
+          }
+  
+          .relationship-selector {
+            width: 135px !important;
+              // height: 20px !important;
+              color: darkblue !important;
+              border-color: orange !important;
+              border-radius: 0px !important;
+              background-color: white !important;
+
+              .Select.Select--single.is-searchable.has-value{
+                // height: 20px;
+                .exposure .Select .Select-control {
+                  border-radius: 0rem;
+                  // height: 20px;
+              }
+              }
+          }
+  
+          .dropdown-indicator {
+            width: 11px;
+            height: 5px;
+            filter: invert(49%) sepia(94%) saturate(874%) hue-rotate(173deg)
+              brightness(88%) contrast(98%);
+          }
+  
+          .dropdown-select-option {
+            font-size: 14px;
+            font-weight: normal;
+            background-color: white !important;
+  
+            &:hover {
+              color: white !important;
+              background-color: darkorange !important;
+            }
+  
+            &.selected {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+  
+      .header-more-menu {
+        align-self: center;
+        align-items: flex-end;
+        margin-right: 24px;
+        display: flex;
+  
+        .header-more-button {
+          padding: 5px;
+          border: none;
+          border-radius: 5px;
+          outline: none;
+          display: flex;
+          background: none;
+    
+          .button-icon {
+            align-self: center;
+            height: 15px;
+            max-width: 20px;
+          }
+    
+          .button-title {
+            font-size: 16px;
+            font-weight: 600;
+          }
+  
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  
+    .dashboard-body {
+      // padding: 10px 0;
+      position: relative;
+  
+      .card-container {
+        padding: 15px;
+        font-family: 'Roboto';
+        // border: 1px solid rebeccapurple;
+  
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+        .table-view-container {
+          .p-tabmenu.p-component .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+            background: #ffffff;
+            /* border-color: #2196F3; */
+            color: #2196F3;
+            border: 1px solid;
+            border-bottom: 1px solid white !important;
+        }
+        }
+      }
+  
+      .toggle-button-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+  
+      .table-view-container {
+        height: 100%;
+        display: flex;
+
+       
+      }
+    }
+
+  }
+  .table-view-container {
+    .p-tabmenu.p-component .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+      background: #ffffff;
+      /* border-color: #2196F3; */
+      color: #2196F3;
+      border: 1px solid;
+      border-bottom: 1px solid white !important;
+  }
+  }
+  .table-view-container {
+    .p-datatable .p-datatable-thead > tr > th {
+      padding: 1rem 0.5rem;
+    }
+    .p-tabmenu .p-tabmenu-nav{
+      margin: 5px;
+      border-width: 0 0 1.3px 0;
+      font-size: 14px;
+      font-family: 'Roboto';
+      .p-tabmenuitem.p-highlight .p-menuitem-link{
+        border: 1px solid #dee2e6;
+        border-bottom: 1px solid white;
+        border-top: 2px solid #2196F3;
+        color: #6c757d;
+      }
+      .p-tabmenuitem .p-menuitem-link{
+        border: unset;
+        color: #2196F3;
+      }
+    }
+    .p-datatable table {
+      font-size: 14px;
+      font-family: 'Roboto';
+     }
+     .taskId{
+       color: #2196F3;
+       cursor: pointer;
+       font-weight: 500;
+     }
+     td.title {
+      font-weight: unset;
+      font-size: unset;
+      }
+      .p-datatable .p-datatable-thead > tr > th {
+        font-weight: 600;
+      }
+      .p-datatable .p-datatable-tbody > tr:hover{
+        background-color: #edf7fe;
+      }
+      .p-datatable .p-datatable-thead > tr > th.panel {
+      width: 30px;
+     }
+     th.p-sortable-column.p-resizable-column.isStarred {
+      width: 50px;
+     }
+
+    th.p-sortable-column.p-resizable-column.assigneeIds {
+      width: 9%;
+  }
+  
+  th.p-sortable-column.p-resizable-column.authorId {
+      width: 9%;
+  }
+  
+  th.p-sortable-column.p-resizable-column.action {
+      width: 8%;
+  }
+  
+  th.p-sortable-column.p-resizable-column.taskState {
+      width: 7%;
+  }
+  
+  .table-view-container .p-datatable .p-datatable-thead > tr > th.dueDate {
+      width: 8%;
+  }
+  
+  th.p-sortable-column.p-resizable-column.updatedAt {
+      width: 8%;
+  }
+  
+  th.p-sortable-column.p-resizable-column.taskType {
+      width: 8%;
+  }
+  
+  th.p-sortable-column.p-resizable-column.priority {
+      width: 7%;
+  }
+  
+  .table-view-container .p-datatable .p-datatable-thead > tr > th.title {
+      font-size: unset;
+      width: 20%;
+  }
+
+    tr.p-datatable-emptymessage td {
+      text-align: center !important;
+      justify-content: center;
+    }
+    .icon-star-full{
+      cursor: pointer;
+    }
+    .taskTitle, .taskAssignee, .taskAuthorId, .taskTypee, .taskUpdatedAt, .taskDueDate, .taskStatee, .taskAction{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-height: 1;
+      max-height: 40px;
+  }
+    td.isStarred .icon-star-full {
+      color: #2196F3;
+      height: 55px;
+      text-align: center;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+    td.isStarred .icon-star-empty {
+      color: #2196F3;
+      height: 55px;
+      text-align: center;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      cursor: pointer;
+    }
+    td.isStarred .disabled {
+      cursor: not-allowed;
+    }
+    td.isStarred .enabled {
+      cursor: pointer;
+    }
+    .icon-arrow-right{
+      color: #2196F3;
+      cursor: pointer;
+      border: 1px solid;
+      border-radius: 50%;
+      font-size: 9px;
+      padding: 3px 0px;
+      text-align: center;
+      margin: 3px;
+      height: 17px;
+      width: 17px;
+    }
+    td.isStarred{
+      padding: 0 !important;
+    }
+   
+    .Urgent{
+     background-color: #AF2452;
+     color: white;
+     width: fit-content;
+     padding: 0 3px;
+     border-radius: 3px;
+    }
+    .High{
+     background-color:  #F84D71;
+     color: white;
+     width: fit-content;
+     padding: 0 3px;
+     border-radius: 3px;
+    }
+    .Medium{
+     background-color: #FFCC56;
+     color: white;
+     width: fit-content;
+     padding: 0 3px;
+     border-radius: 3px;
+    }
+    .Low{
+     background-color: #4BC0C0;
+     color: white;
+     width: fit-content;
+     padding: 0 3px;
+     border-radius: 3px;
+    }
+   
+    .p-datatable .p-datatable-tbody > tr > td {
+      padding: 1rem 0.5rem;
+  }
+  .p-datatable .p-datatable-thead > tr > th {
+  font-weight: 600;
+  }
+  }
+  .exposure .Select .Select-control {
+    border-radius: 0rem;
+    
+  }
+ .Select-value{
+  font-size: 14px;
+  font-family: 'Roboto';
+  }
+
+.loadBtn{
+  border: 1px solid #2196F3;
+  background: #2196F3;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+}
+.summary-title {
+  font-size: 18px;    
+}

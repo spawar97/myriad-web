@@ -1,0 +1,109 @@
+.ractSignOffContainer {
+  width: 768px;
+}
+  
+.signOffHeader {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+  
+.signOffHeaderText {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.signOffContent {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin: 0px 0px 10px 0px;
+  padding-bottom: 10px;
+}
+
+.UserNameSelect {
+  width: 250px;
+}
+
+.UserNameSelect {
+  width: 250px;
+}
+
+.Select.UserNameSelect.Select--single.is-searchable > div {
+  border-radius: unset;
+}
+
+#UserNameLabel{
+  font-weight: 700;
+}
+
+.RoleInputGrid{
+  margin-left: 60px;
+}
+
+.RoleInput {
+  width: 250px;
+  height: 3.8rem;
+  border: 1px solid !important;
+  border-color: #d9d9d9 #ccc #d9d9d9 !important;
+  padding: 10px;
+  display: block;
+}
+
+input.RoleInput::placeholder {
+  padding: 11px;
+}
+
+#RoleLabel{
+  font-weight: 700;
+}
+
+input.RoleInput:disabled {
+  background: #9898981a;
+}
+
+.addRemoveBtnBox {
+  display: flex;
+  margin: 19px 82px;
+}
+
+.AddButtonGrid{
+  margin-left: 27px;
+}
+
+#AddButton {
+  background: white;
+  border-width: 1px;
+  border-color: #0080008a;
+  color: #008000ab;
+  font-weight: 600;
+  width: 30px;
+  height: 27px;
+  cursor: pointer;
+  font-size:1.9rem;
+}
+  
+button#RemoveButton {
+  background: white;
+  border-width: 1px;
+  border-color: #ff000070;
+  color: #ff0000b5;
+  font-weight: 600;
+  width: 30px;
+  height: 27px;
+  cursor: pointer !important;
+  font-size: 1.5rem;
+}
+
+.assignButtonGrid {
+  margin-top: 16px;
+  float: right;
+  margin-bottom: 18px;
+}
+
+.assignButton {
+  background: #1d96dd;
+  width: 70px;
+  height: 34px;
+  color: white;
+  border: unset;
+  cursor: pointer !important;
+}

@@ -1,0 +1,8 @@
+.calendar-wrapper {
+  &.disabled {
+    input[type='text'] {
+      background-color: $grey4;
+      opacity: 0.5;
+    }
+  }
+}

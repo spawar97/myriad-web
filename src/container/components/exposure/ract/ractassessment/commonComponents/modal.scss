@@ -1,0 +1,85 @@
+/* Modal Content/Box */
+.assessment-modal {
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.assessment-modal-body {
+  margin-top: 0.938rem;
+  margin-bottom: 10px;
+}
+#ract-modal-add {
+  font-size: 12px;
+  margin: 0px 7px;
+}
+#fname {
+  width: 100%;
+  padding-bottom: 7px;
+  border-radius: 0px;
+  border: 1px solid #cbcbcb;
+}
+.assessment-modal-content {
+  background-color: #fefefe;
+  margin: 4% auto;
+  padding: 0.938rem;
+  border: 1px solid #888;
+  min-width: 32%;
+  max-width: 37%;
+  margin-top: 13%;
+}
+
+/* The Close Button */
+.modal-close {
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1;
+  border: none;
+  background: none;
+  color: #454545;
+  float: right;
+  &:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  &:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.assessment-modal-header-div {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-left: 0.3rem;
+  font-weight: 600;
+  h2 {
+    margin-right: 20px;
+  }
+}
+
+.modal-input-container {
+  width: 100%;
+}
+
+ul.validation-list {
+  list-style: decimal;
+}
+
+text.add-modal-errors {
+  font-size: 13px;
+  margin-left: 3px;
+  color: red;
+}
+
+table#add-modal-table {
+  width: 100%;
+}

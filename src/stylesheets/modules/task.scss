@@ -1,0 +1,972 @@
+.task-pane {
+  width: 100%;
+  overflow: visible; // Ensures scrollbars don't appear when dropdowns open
+
+  .Select-control {
+    overflow: auto !important;
+  }
+
+  .rdt input[type="text"]:not(.rw-input) {
+    padding-left: 35px !important;
+  }
+
+  .rdt:before {
+    top: 0.9rem;
+  }
+
+  .update-button {
+    position: relative; // Ensures the dropdown doesn't cover this.
+    top: 0.5rem;
+    display: flex;
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+
+  .align-right.icon-remove {
+    font-size: 1.4rem;
+  }
+
+  .align-right-buttons {
+    float: right;
+    display: flex;
+  }
+
+  .tasks-dropdown-wrapper {
+    margin-top: 2rem;
+  }
+
+  .observer-dropdown {
+    margin-bottom: 1rem;
+  }
+
+  .title-text {
+    font-size: 1.6rem;
+    color: $black;
+    padding-top: 1rem;
+
+    .icon-checkmark-full {
+      color: $green;
+      padding-right: 1rem;
+    }
+  }
+
+  .text-input,
+  .Select-control .Select-value-label {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    padding-top: 1rem;
+    border-bottom: 1px solid $gray15;
+    line-height: 2.5rem;
+    color: $black;
+    margin-bottom: 1rem;
+  }
+
+  .snapshot-time {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .snapshot-position {
+    width: 60%;
+    height: 6em;
+    object-fit: cover;
+    border: 1px solid rgba(29, 150, 221, 0.43);
+    cursor: pointer;
+  }
+  .snapshot-icon {
+    cursor: pointer;
+    height: 6.2vw;
+  }
+  .snapshot-spinner {
+    font-size: 4rem;
+  }
+  .snapshot-align-center {
+    text-align: center;
+  }
+
+  .snapshot-view {
+    width: 60%;
+    height: 6em;
+    object-fit: cover;
+    border: 1px solid rgba(29, 150, 221, 0.43);
+    cursor: pointer;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  a.icon-question-circle {
+    margin-left: 5px;
+  }
+
+  .task-error {
+    margin-top: 0.7rem;
+
+    .error-text {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .task-pane-sub-header {
+    width: 100%;
+    border-bottom: 1px solid $gray15;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $black;
+    display: inline-block;
+    margin-bottom: 1rem;
+
+    .item-opener {
+      float: right;
+    }
+  }
+
+  .task-pane-panel {
+    .fixed-task-title {
+      margin: 3rem 0;
+      word-wrap: break-word;
+    }
+
+    .task-pane-text {
+      line-height: 1.8rem;
+      font-size: 1.3rem;
+
+      vertical-align: middle;
+
+      .icon {
+        float: right;
+        font-size: 1.4rem;
+      }
+
+      &.title {
+        margin-top: 2rem;
+      }
+    }
+
+    .comments {
+      color: #333;
+      overflow-x: hidden;
+
+      .history {
+        margin-bottom: 2rem;
+
+        .title {
+          font-size: 1.3rem;
+          margin-bottom: 5px;
+          span {
+            font-weight: bold;
+            padding-right: 1rem;
+          }
+        }
+
+        .text {
+          padding-left: 0.5rem;
+        }
+
+        .audit-list {
+          list-style-type: disc;
+          margin-top: 0.2rem;
+          padding-left: 2rem;
+        }
+      }
+    }
+
+    .task-history-details {
+      margin-bottom: 2rem;
+    }
+
+    .calendar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .calender-condition-wrapper {
+        width: 25%;
+      }
+
+      .calendar-wrapper {
+        margin: 0;
+        width: 70%;
+      }
+
+      .rdtPicker {
+        right: 0;
+      }
+    }
+
+    // Overwrite some scrollbar properties
+    ::-webkit-scrollbar {
+      &:vertical {
+        border-left: 0;
+      }
+    }
+
+    ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 1.6rem $white;
+    }
+
+    .inline {
+      display: inline-block;
+      font-weight: normal;
+
+      &.right {
+        float: right;
+      }
+
+      .is-urgent {
+        display: inline-block;
+        background-color: $black;
+        color: $white;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 4rem;
+        text-align: center;
+        margin: 0 0.5rem;
+      }
+    }
+
+    input {
+      border: none;
+      border-bottom: 1px solid $grey7;
+
+      &:not(.rw-input) {
+        width: 100%;
+        height: 3.5rem;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      resize: none;
+
+      border: 1px solid $grey7;
+      height: auto;
+    }
+
+    .Select {
+      .Select-control {
+        border-radius: 0 !important;
+        border: none;
+        border: 1px solid $grey7;
+
+        input {
+          border: none;
+        }
+      }
+
+      &.is-disabled {
+        .Select-control {
+          background: $grey4;
+        }
+      }
+    }
+
+    .tasks-dropdown-entry {
+      [class^="icon-"] {
+        margin-right: 0.5rem;
+      }
+    }
+
+    .input-block {
+      margin: 0 0 1.5rem 0;
+
+      &.description {
+        margin: 1rem 0 0 0;
+      }
+    }
+
+    .simple-dropdown {
+      margin-bottom: 2rem;
+
+      .text-truncation {
+        margin-left: 1rem;
+      }
+
+      .opener {
+        @include clickable;
+      }
+    }
+
+    .no-fields-class {
+      margin: 0 0 1rem;
+    }
+  }
+
+  .Select.Select--multi .Select-value {
+    border-radius: 0;
+  }
+
+  .btn {
+    margin-bottom: 2rem;
+  }
+
+  .no-task-message {
+    width: 100%;
+    margin: 2rem 0;
+    background: $blue8;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+
+    [class^="icon-"] {
+      padding-top: 1rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .input-checkbox-cloned {
+    display: flex;
+    margin: 1rem 0;
+    .text-cloned {
+      margin: 0 1rem;
+    }
+  }
+
+  .margin-top-history {
+    margin-top: 1rem;
+  }
+}
+.snapshot-footer {
+  margin-top: 1.5rem !important;
+}
+.img-preview {
+  width: 65vw;
+}
+
+// This input field seems to prevent clicking back inside the multiselect for a portion of the area so I made it tiny
+// when it's in non-placeholder mode (the size value is different when it's displaying the placeholder text.
+.rw-multiselect-wrapper > .rw-input[size="2"] {
+  width: 0.2rem;
+  padding: 0;
+}
+
+#task-container {
+  font-size: 1.3rem;
+  font-family: "Roboto";
+  border-radius: 10px;
+
+  .p-dialog-header {
+    border-radius: 10px 10px 0 0;
+    .p-dialog-title {
+      font-size: 1.7rem;
+    }
+  }
+  .p-dialog-footer {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .rdt:before {
+    z-index: 0;
+  }
+
+  .section-title {
+    display: flex;
+    justify-content: space-between;
+    .live-report {
+      &:after {
+        content: '\e621';
+        font-family: 'comprehend' !important;
+        margin-left: 5px;
+      }
+      //font-size: 12px;
+      font-weight: 500;
+      font-size: 13px;
+      color: #2196f3;
+      margin-top: 1px;
+      cursor: pointer;
+      .icon-Pop_out {
+        padding: 0 4px;
+      }
+    }
+  }
+}
+
+
+#tasklist-container {
+  font-size: 1.2rem;
+  font-family: "Roboto";
+
+  .p-dialog-header {
+    border-radius: 10px 10px 0 0;
+    .p-dialog-title {
+      font-size: 1.7rem;
+    }
+  }
+  .p-dialog-footer {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .rdt:before {
+    z-index: 0;
+  }
+  .p-dialog-content {
+    background: #ffffff !important;
+    color: #555 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+.task-list {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  &:hover {
+    background-color: #e7f3fa;
+  }
+}
+.tasklist-sort {
+  background-color: #eceaea;
+  padding: 0.8rem;
+  cursor: pointer;
+  user-select: none;
+}
+.tasklist-modified {
+  background-color: #eceaea;
+  padding: 0.8rem;
+  cursor: pointer;
+  user-select: none;
+}
+.tasklist-realtionship {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.tasklist-icon {
+  color: #0c8eda;
+  font-size: 1.5rem !important;
+}
+
+.tasklist-idisable {
+  color: #9ecae4;
+  font-size: 1.5rem !important;
+}
+
+.task-list-container {
+  background: #ffffff;
+  color: #555;
+  .badge {
+    border-radius: 3px;
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 1.9rem;
+    padding: 2px 5px;
+    color: #fff;
+    margin-right: 0.5rem;
+  }
+}
+
+.task-refrenceid {
+  font-weight: bold;
+  color: #1d96dd;
+  cursor: pointer;
+}
+.task-list-title {
+  margin-top: 0.4rem;
+  font-size: 12px;
+  font-weight: 600;
+  width: 100%;
+  color: #555;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task-assinee {
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  .task-assinee-label {
+    color: #555555;
+    font-weight: 600;
+  }
+  .task-assinee-value {
+    font-size: 12px;
+    color: #666666;
+  }
+}
+
+.task-show {
+  color: rgb(29, 150, 221);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.task-status {
+  font-size: 12px;
+  font-weight: 600;
+  .task-status-label {
+    color: #999999;
+  }
+}
+
+.task-viewtask-btn {
+  font-weight: normal;
+  float: right;
+  color: rgb(29, 150, 221);
+  cursor: pointer;
+  font-size: 12px !important;
+}
+.no-task {
+  text-align: center;
+  padding: 35% 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b2b2b2;
+}
+#task-list-panel {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+// Add Task css Start--------------------------------
+#task-container {
+  width: 340px !important;
+  border-radius: 10px !important;
+  box-shadow: 2px 0px 30px #00000029;
+  .p-dialog-header {
+    z-index: 0;
+    box-shadow: 0 2px 3px #00000029;
+    .p-dialog-title {
+      color: #333333;
+      font-weight: 500;
+    }
+  }
+  input[type="text"]:not(.rw-input) {
+    color: #333;
+  }
+  .task-pane {
+    .task-pane-panel {
+      .Select {
+        .Select-control {
+          border-radius: 3px !important;
+          height: 3.5rem !important;
+          .Select-placeholder {
+            line-height: 3.5rem;
+          }
+        }
+      }
+      input {
+        &:not(.rw-input) {
+          border-radius: 3px !important;
+        }
+      }
+      textarea {
+        color: #555555;
+        border-radius: 3px !important;
+      }
+      .task-pane-text {
+        color: #555555 !important;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+      .no-fields-class {
+        color: #555555 !important;
+      }
+    }
+    .Select-control {
+      .Select-value-label {
+        color: #555555 !important;
+      }
+    }
+    .Select {
+      &.Select--multi {
+        .Select-value {
+          border-radius: 3px !important;
+          background: #e6f3ff !important;
+        }
+      }
+    }
+    .task-pane-sub-header {
+      color: #555555 !important;
+      font-size: 1.3rem !important;
+    }
+    .update-button {
+      margin-left: 10px !important;
+      border-radius: 4px;
+      font-size: 1.5rem;
+    }
+    button.p-button.p-component.update-button.btn.btn-secondary:focus,
+    button.p-button.p-component.update-button.btn.btn-primary:focus {
+      box-shadow: 0 0 0 1px #1d96dd;
+    }
+    .snapshot-icon {
+      height: 4vw !important;
+    }
+  }
+  .Select-arrow {
+    border-color: #1d96dd transparent transparent !important;
+  }
+  .is-open {
+    & > .Select-control {
+      .Select-arrow {
+        top: -2px !important;
+        border-color: transparent transparent #1d96dd !important;
+        border-width: 0 5px 5px !important;
+        &:hover {
+          border-color: transparent transparent #1d96dd !important;
+        }
+      }
+    }
+  }
+  .item-opener {
+    &:after {
+      border-left-color: #1d96dd !important;
+    }
+  }
+}
+#task-container_content {
+  .task-pane {
+    .task-pane-panel {
+      .input-block {
+        margin: 0 0 1rem 0 !important;
+      }
+    }
+  }
+}
+
+#pr_id_6 {
+  box-shadow: 0 3px 6px #00000029 !important;
+  .btn.btn-secondary {
+    border-radius: 4px;
+    margin: 0 0.5rem 0 0 !important;
+  }
+  .btn.btn-primary {
+    border-radius: 4px;
+    margin: 0 0.5rem 0 0 !important;
+  }
+}
+
+#task-container {
+  .p-dialog-header {
+    .p-dialog-header-icon {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .p-dialog-header-close-icon {
+      color: #000;
+      font-size: 13px;
+    }
+  }
+}
+
+#task-container {
+  &:not(.pi-times) {
+    font-family: "Roboto" !important;
+  }
+  .task-pane-panel {
+    margin-top: 5px;
+  }
+  #task-container_content {
+    padding-bottom: 34px;
+  }
+  .align-right-buttons {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    width: 100%;
+    text-align: right;
+    justify-content: right;
+    background: #fff;
+    float: none;
+    box-shadow: 0 -2px 3px #00000029;
+    padding: 5px 27px 8px 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 1;
+  }
+  .required:after {
+    padding-left: 0.3rem;
+  }
+  .snapshot-align-center {
+    > img {
+      &.snapshot-position {
+        box-shadow: 1px 1px 3px #ccc;
+        &:hover {
+          box-shadow: 1px 1px 3px #1d96dd;
+        }
+      }
+    }
+  }
+
+  .align-right-buttons {
+    > .btn {
+      margin-bottom: 0px;
+    }
+  }
+
+  .p-dialog-header:after {
+    content: "\e935";
+    font-family: "comprehend" !important;
+    color: #1d96dd;
+    font-size: 25px;
+    display: block;
+    position: absolute;
+    text-align: center;
+    left: 49%;
+    top: 1%;
+    cursor: move;
+  }
+
+  .Select-control {
+    .Select-multi-value-wrapper {
+      .Select-input {
+        > input {
+          padding: 0px;
+          max-width: 250px;
+        }
+      }
+    }
+  }
+}
+.img-preview {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+}
+// Add Task css end--------------------
+.snapshot-Dialog {
+  border-radius: 10px;
+  .snapshot-header {
+    font-weight: bold;
+  }
+}
+
+//View Task css Start
+.p-dialog-mask.p-component-overlay {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+#tasklist-container {
+  width: 340px !important;
+  box-shadow: 2px 0px 30px #00000029;
+  z-index: 0;
+  border-radius: 10px;
+  .p-dialog-header {
+    color: #333333 !important;
+    padding: 1rem 1rem 0.8rem !important;
+    .p-dialog-title {
+      font-size: 1.6rem !important;
+      font-weight: 500;
+    }
+  }
+  .is-focused > .Select-control{
+    border: 1px solid #ccc !important;
+  }
+  .Select-control {
+    border-radius: 3px;
+    height: 3.5rem !important;
+    .Select-menu-outer{
+      box-shadow: 0 1px 1px #00000029 !important;
+    }
+  }
+  .Select-arrow {
+    border-color: #1d96dd transparent transparent !important;
+  }
+  .is-open > .Select-control .Select-arrow {
+    top: -2px !important;
+    border-color: transparent transparent #1d96dd !important;
+    border-width: 0 5px 5px !important;
+  }
+  .is-open > .Select-control .Select-arrow:hover {
+    border-color: transparent transparent #1d96dd !important;
+  }
+  .tasklist-sort {
+    padding: 0.8rem !important;
+    padding-top: 10px !important;
+    border-radius: 3px;
+    background-color: #f5f5f5;
+    &.active_tab {
+      background-color: #edf9ff !important;
+    }
+  }
+  .tasklist-modified {
+    padding: 0.8rem !important;
+    border-radius: 3px;
+    padding-top: 10px !important;
+    background-color: #f5f5f5;
+    &.active_tab {
+      background-color: #edf9ff !important;
+    }
+  }
+  .tasklist-idisable {
+    color: #c3dae8 !important;
+    vertical-align: bottom;
+    margin-left: 5px;
+  }
+  .tasklist-icon {
+    color: #1d96dd;
+    vertical-align: bottom;
+    margin-left: 5px;
+  }
+  .task-list {
+    line-height: 15px;
+    .task-modified {
+      float: right;
+      font-size: 11px !important;
+      .task-modified-label {
+        color: #555;
+        font-weight: 600;
+        margin-right: 3px;
+      }
+      .task-modified-value {
+        color: #999999;
+      }
+    }
+  }
+  .task-discrip {
+    line-height: 1.8rem;
+    overflow-wrap: break-word;
+  }
+  .tasklist-realtionship {
+    box-shadow: 0 2px 5px #00000029;
+    padding: 0px 10px 8px;
+  }
+  #task-list-panel {
+    padding: 0px 8px 0px;
+  }
+  .icon-arrow-right:before {
+    content: "\e3b1";
+    font-size: 9px !important;
+    margin-left: 5px;
+    padding-right: 0px;
+    vertical-align: middle;
+  }
+  .task-priority-view {
+    margin-top: 5px;
+  }
+  .pi-times:before {
+    font-size: 13px;
+  }
+  .p-dialog-header:after {
+    content: "\e935";
+    font-family: "comprehend" !important;
+    color: #1d96dd;
+    font-size: 25px;
+    display: block;
+    position: absolute;
+    text-align: center;
+    left: 49%;
+    top: 1%;
+    cursor: move;
+  }
+  .p-dialog-header-icon:focus {
+    box-shadow: none !important;
+  }
+}
+
+.task-referance-id{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  font-weight: 600;
+  .task-referance-value{
+    padding: 0 8px;
+  }
+}
+
+// --------Preview popup Start--------------------
+.p-dialog {
+  &.preview-screenshot-popup {
+    * {
+      &:not(.p-dialog-header-close-icon) {
+        font-family: "Roboto";
+      }
+    }
+
+    border-radius: 10px;
+    width: 60vw;
+
+    .p-dialog-header {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom: 1px solid #dfdfdf;
+
+      .p-dialog-header-icons {
+        .p-dialog-header-close-icon {
+          font-size: 13px;
+          color: #000;
+        }
+      }
+      .p-dialog-title {
+        font-size: 1.7rem;
+        color: #333;
+      }
+    }
+    .p-dialog-content {
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      .preview-img-div {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .btn {
+      border-radius: 4px;
+      margin-left: 10px;
+      margin-right: 0;
+    }
+    .p-dialog-footer {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+}
+.p-dialog .p-dialog-header .p-dialog-header-icon:focus {
+  box-shadow: none !important;
+}
+// --------Preview popup End--------------------
+
+// ------Tosta message-----------
+.status-message-containers {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.lsac-status-msg {
+  &.toast-success {
+    background: #d9e8ca;
+    border: 1px solid #64a726;
+    color: #3a6e0a;
+    opacity: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 13rem;
+
+    .status-icon .icon,
+    .status-close-button .icon {
+      color: #3a6e0a;
+    }
+  }
+  &.toast-info {
+    opacity: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 13rem;
+  }
+  &.toast-error {
+    opacity: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 13rem;
+  }
+}
+// -------Tosta message end---------------------
+//*****************CDR Collabration dashboard breadcrum css Start************
+.app-tab-tasks{
+  .dashboard-container{
+    .dashboard-header{
+      border-bottom: 1px solid #ccc !important;
+      background: #fff !important;
+    }
+  }
+  .Select-control{
+    border-radius: 3px !important;
+  }
+}
+//*****************CDR Collabration dashboard breadcrum css end ************
+

@@ -1,0 +1,102 @@
+.quality-agreement-view-container {
+  padding-bottom: 5rem; // Add white space to the bottom of the view
+
+  .quality-agreement-save {
+    float: right;  // Align the save button to the right (consistent with other save button positions
+  }
+
+  .quality-agreement {
+    padding-top: 2rem;  // Spacing between the title & the Study filters
+    padding-bottom: 2rem; // Spacing between the Quality Agreement fields and the save button
+
+    .Select {
+      padding: 1.5rem 0;
+      width: 25%;
+    }
+
+    .input-title {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .table {
+      $dark-color: #f2f2f2;
+      $light-color: #ffffff;
+
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      -ms-flex-wrap: nowrap;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      border: 1px solid $dark-color;
+      margin: 0.5rem;
+      line-height: 1.5;
+
+      // .Table-header
+      &-header {
+        display: none;
+        font-weight: 700;
+        background-color: $dark-color;
+      }
+      // .Table-row
+      &-row {
+        width: 100%;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: row;
+        -ms-flex-wrap: nowrap;
+        flex-flow: row nowrap;
+        // .Table-row-item
+
+        &-item {
+          display: -ms-flexbox;
+          display: block;
+          display: flex; // NOTE - This will be overridden on browsers that support flex, but IE10 will display block so it works appropriately
+          -ms-flex-direction: row;
+          -ms-flex-wrap: nowrap;
+          flex-flow: row nowrap;
+          -ms-flex: 1 0;
+          flex-grow: 1;
+          flex-basis: 0;
+          margin: .5rem;
+          padding: .5rem;
+          word-break: break-word;
+          align-items: center;
+          width: 100%;
+          &:before {
+            content: attr(data-header);
+            width: 30%;
+            font-weight: 700;
+          }
+          border: 1px solid $dark-color;
+          &:before {
+            content: none;
+          }
+
+          .text-input {
+            width: 100%;
+          }
+
+          .toggle-button {
+            height: 2.5rem;
+            align-items: center;
+          }
+        }
+
+        &-item-large {
+          -ms-flex: 4 0;
+          flex-grow: 4;
+        }
+
+        &-item-medium {
+          -ms-flex: 2 0;
+          flex-grow: 2;
+        }
+      }
+      .disabled {
+        background-color: #d3d3d3;
+      }
+    }
+  }
+}

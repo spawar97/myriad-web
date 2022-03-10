@@ -1,0 +1,33 @@
+.tabs {
+  clear: both;
+  border-bottom: $menuBorder;
+  margin-bottom: 4rem;
+
+  .tab {
+    display: inline-block;
+    margin-right: 2.4rem;
+    padding: 1rem 0 .2rem;
+    color: $blue3;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: $semibold;
+    cursor: default;
+
+    &.selected {
+      border-bottom: .4rem solid $comprehendBlue;
+      color: $black;
+    }
+
+    &.disabled {
+      color: $grey2;
+    }
+
+    &:not(&.disabled):not(&.selected) {
+      @include clickable;
+    }
+
+    &:hover:not(&.disabled):not(&.selected) {
+      color: $black;
+    }
+  }
+}

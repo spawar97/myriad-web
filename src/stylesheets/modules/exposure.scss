@@ -1,0 +1,22 @@
+.exposure {
+  height: 100%; // We set height explicitly to ensure that height can be pulled
+                // from the DOM object since the parent container uses vh units.
+}
+
+.embedded-session-refresher {
+  display: none;
+}
+
+.no-report {
+  width: 100%;
+  margin: 1.5rem 0 0.5rem 0;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: $gray;
+}
+
+.no-report-desc {
+  width: 100%;
+  color: $gray;
+}

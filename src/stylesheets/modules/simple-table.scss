@@ -1,0 +1,56 @@
+.simple-table {
+  display: table;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  white-space: nowrap;
+  width: 100%;
+
+  > div {
+    display: table-row;
+
+    > div {
+      display: table-cell;
+    }
+  }
+
+  > div:first-child {
+
+    > div:first-child {
+
+      & > div {
+        display: table;
+        width: 100%;
+
+        > div {
+          display: table-row;
+
+          > div {
+            display: table-cell;
+          }
+
+          > div:first-child {
+            color: black;
+            font-size: 1.6rem;
+            padding: 1.2rem 2rem;
+            width: 100%;
+          }
+
+          .simple-action {
+            padding-right: 2rem;
+          }
+        }
+      }
+    }
+
+    .dropdown-opener:after {
+      border-top-color: $almostGray;
+    }
+  }
+
+  > div:last-child {
+    background: $white;
+  }
+}
+.schema-table-header, .schema-table-row{
+  border-bottom:1px solid $grey7;
+}

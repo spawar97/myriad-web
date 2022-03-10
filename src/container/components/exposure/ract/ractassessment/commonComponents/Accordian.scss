@@ -1,0 +1,70 @@
+.ract-assessment-accordion{
+/* Style the accordion section */
+.accordion__section {
+  display: flex;
+  flex-direction: column;
+  .accordion {
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #EEE;
+    margin-top: 0.938rem;
+    outline: none;
+    transition: background-color 0.6s ease;
+    width: 100%;
+    position: relative;
+    margin-bottom: 0px;
+    &:hover {
+      background-color: #EDF7FD; 
+    }
+    /* Style the accordion content title */
+    .accordion__title {
+      font-weight: 600 ;
+      font-family: 'proxima-nova', 'Helvetica Neue';
+      font-size: 14px;
+      margin: 1.7rem;
+      line-height: 0;
+      margin-left: 0.538rem;
+    }
+  }
+  .active {
+    background-color: #EDF7FD;
+  }
+  /* Style the accordion content panel. Note: hidden by default */
+  .accordion_content {
+    background-color: white;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+    /* Style the accordion content text */
+    .accordion__text {
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+  /* Style the buttons that are used to open and close the accordion panel &
+  Add a background color to the button if it is clicked on (add the .active class with JS),
+  and when you move the mouse over it (hover) */
+  .accordion_content.closed {
+    height: 0px;
+    display: none;
+  }
+  .accordion_content.opened {
+    max-height: auto !important;
+  }
+}
+/* Style the accordion chevron icon */
+.accordion__icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+/* Style to rotate icon when state is active */
+.rotate {
+  transform: rotate(90deg);
+}
+.right-fixed {
+  right: 2rem;
+  position: absolute;
+}
+}

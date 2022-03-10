@@ -1,0 +1,179 @@
+.study-session-filter {
+
+  // Mark this element as a flex container.
+  display: -ms-flexbox;
+  display: flex;
+  // Force contained flex items into a single line.
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  // Align the items to the center of the rows.
+  align-items: center;
+  -ms-flex-align: center;
+  width: 100%;
+  padding:0 0.5rem 0 2.5rem;
+
+  &.mobile {
+    width: 100%;
+    padding: 0 3rem;
+    background-color: $blueGray3;
+    border-top: $studySessionFilterBorder;
+    border-bottom: $studySessionFilterBorder;
+  }
+
+  &.disabled > span {
+    color: $gray20 !important;
+  }
+
+  .title {
+    // Override Safari defaults `flex-shrink: 1` to 0. To ensure
+    // title field won't collapse.
+    flex-shrink: 0;
+  }
+
+  .title, .selected-study {
+    font-weight: $semibold;
+    font-size: 1.6rem;
+    color: $blue1;
+  }
+
+  .selected-study {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 1rem;
+  }
+
+  .study-filter-display-mode {
+    @include clickable;
+    color: $blue5;
+    &:hover {
+      color: $blue7;
+    }
+  }
+
+  .study-filter-action {
+    // Override Safari defaults `flex-shrink: 1` to 0. To ensure
+    // `study-filter-display-mode` text field won't collapse.
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .study-filter-not-applicable {
+    padding-left: 1rem;
+  }
+
+  .study-filter-dropdown-container {
+    margin: 1.4rem 1rem;
+    max-width: 36rem;
+    min-width: 40%;
+    z-index: $top-nav-dropdown-z-index;
+  }
+}
+
+.selected-study-tooltip {
+  margin: 0 $main-content-padding 0 #{$main-content-left-pad + 2rem};
+}
+
+.study-filter-dropdown {
+  height: 3.6rem;
+
+  .study-filter-combobox, .study-selector-content {
+    -webkit-box-shadow: 0px 8px 10px -4px rgba(189,189,189,0.75);
+    -moz-box-shadow: 0px 8px 10px -4px rgba(189,189,189,0.75);
+    box-shadow: 0px 8px 10px -4px rgba(189,189,189,0.75);
+    position: relative;
+    z-index: $study-filter-z-index;
+  }
+  .study-filter-selector {
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
+    width: 27rem;
+
+    .input-container {
+      .Select-menu-outer {
+        display: none;
+      }
+      .Select-value {
+        border: .1rem solid #d9d9d9;
+        padding: 0 0.5rem 0 0;
+        font-weight: $regular;
+        &.is-archived{
+          background-color: $white;
+        }
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    .dropdown-container {
+      position: relative;
+      z-index: $study-filter-dropdown-z-index;
+      .study-selector-content {
+        z-index: $dropdown-open-z-index;
+        position: absolute;
+        width: 36rem;
+        background-color: $white;
+        border: .1rem solid #d9d9d9;
+        padding: 1rem 1rem 1rem 1rem;
+        border-radius: 0 5px 5px 5px;
+
+        .search-input {
+          width: 100%;
+          margin-right: 2rem;
+          background: none transparent;
+          border: 1px solid $grey7;
+        }
+
+        .checkbox {
+          padding-right: 2rem;
+        }
+
+        .selector-options-container {
+          max-height: 50rem;
+          overflow-y: auto;
+          .study-option {
+            cursor: pointer;
+            display: inline-flex;
+            flex-direction: row-reverse;
+            -ms-flex-direction: row-reverse;
+            line-height: 2.0rem;
+            padding: 0 0.5rem;
+            background-color: #cfe8fa;
+            color: #333333;
+            border: .2rem solid #d9d9d9;
+            border-radius: 0.5rem;
+            margin: .2rem;
+            &.is-archived{
+              background-color: $white;
+            }
+            &:hover {
+              opacity: 0.7;
+            }
+            &.is-disabled,
+            &.is-archived.is-disabled {
+              color: $grey1;
+              background-color: $grey2;
+              cursor: not-allowed;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+  .checkbox-container{
+    margin-top: 4px;
+    .checkbox{
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+@media only screen and (max-width:1280px) {
+  .study-filter-selector{
+    width:23rem
+  }
+}

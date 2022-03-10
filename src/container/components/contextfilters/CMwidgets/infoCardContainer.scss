@@ -1,0 +1,19 @@
+span#cm1-header, span#cm2-header, span#cm3-header, span#cm4-header, span#cm7-header,
+span#cm11-header ,span#cm12-header {
+    font-size: 26px;
+    color: #1d96dd !important;
+}
+
+span#cm9-header, span#cm5-header, span#cm10-header, span#cm14-header {
+    font-size: 13px;
+    line-height: 16px;
+    display: -webkit-box;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 15px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+

@@ -1,0 +1,34 @@
+.admin-user-details-page-body {
+  display: flex;
+}
+
+.admin-user-details {
+  width: 50rem;
+  float: left;
+}
+
+.admin-user-details-permissions-pane {
+  width: 100rem;
+  margin-left: 5rem;
+  padding: 0 1rem;
+}
+
+.admin-user-details-buttons {
+  clear: both;
+}
+
+.permissions-dropdown-block {
+  margin-right: 5rem !important;
+}
+
+.oversight-scorecard-options {
+  display: flex;
+
+  .oversight-access-dropdown-block {
+    margin-right: 5rem !important;
+  }
+
+  .oversight-scorecard-edit-default-profile-toggle {
+    margin: 2rem 0;
+  }
+}

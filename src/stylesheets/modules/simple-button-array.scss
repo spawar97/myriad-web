@@ -1,0 +1,43 @@
+.simple-button-array {
+  cursor: default;
+  overflow: auto;
+  white-space: nowrap;
+
+  .virtual-table-cell:first-child {
+    border-left: 1px solid $grey2;
+  }
+
+  .virtual-table-cell {
+    padding: 1rem 2rem;
+    border: 1px solid $grey2;
+    border-left: none;
+    font-weight: $semibold;
+
+    &.active {
+      background: $brandColor;
+      font-weight: bold;
+      color: $white;
+      border-color: $blue1;
+    }
+
+    &[class^='sb-icon-'], &[class*=' sb-icon-'] {
+      padding-left: 3.6rem;
+      position: relative;
+    }
+
+    &[class^='sb-icon-']:before, &[class*=' sb-icon-']:before {
+      font-family: 'comprehend';
+      position: absolute;
+      top: .8rem;
+      left: 1rem;
+    }
+
+    &.sb-icon-add:before {
+      content: '\e35e';
+    }
+
+    &.sb-icon-upload:before {
+      content: '\e2b7';
+    }
+  }
+}

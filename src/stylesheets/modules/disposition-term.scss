@@ -1,0 +1,157 @@
+.disposition-container {
+  width: 90%;
+  .config-content {
+    width: 100%;
+    overflow: auto;
+  }
+  .tab-title {
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #ccc;
+    height: 5rem;
+    line-height: 6rem;
+    padding-bottom: 1rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 1rem 0 1rem 0;
+    max-width: 140rem;
+  }
+
+  @mixin fixed_column_width($width) {
+    width: $width;
+    max-width: $width;
+    min-width: $width;
+  }
+  .event-sequence-column {
+    @include fixed_column_width(10rem);
+  }
+  .customer-event-column {
+    @include fixed_column_width(25rem);
+  }
+  .ui-event-column {
+    @include fixed_column_width(25rem);
+  }
+  .usdm-event-column {
+    @include fixed_column_width(25rem);
+    overflow: visible;
+  }
+  .is-starting-event-column {
+    @include fixed_column_width(10rem);
+  }
+  .state-column {
+    @include fixed_column_width(30rem);
+    padding: 0;
+  }
+  .enabled-event-column {
+    @include fixed_column_width(10rem);
+  }
+  .state-active-column,
+  .state-withdrawn-column,
+  .state-completed-column {
+    @include fixed_column_width(10rem);
+  }
+  .disposition-row {
+    display: flex;
+  }
+  .drag-drop-icon{
+    padding-top: 1rem;
+  }
+  .state-radio-container {
+    display: flex;
+  }
+
+  .usdm-event-selector-dropdown {
+    overflow: visible !important;
+    .Select-menu-outer {
+      z-index: $search-selector-z-index;
+    }
+  }
+
+  .disabled-table {
+    .disabled-table-header {
+      border-top: 1px #34454f dashed;
+    }
+  }
+
+  .delete-disposition {
+    cursor: pointer;
+    padding-right: 2rem;
+    &:hover{
+      color: red;
+      opacity: 0.5;
+    }
+  }
+
+  .table-title {
+    display: flex;
+    cursor: pointer;
+    margin: 1rem;
+    font-size: 2.4rem;
+    font-weight: bold;
+    &:hover{
+      opacity: 0.5;
+    }
+    .expand-button {
+      margin-top: -0.2rem;
+      padding-right: 1rem;
+      &.expanded {
+        transform: translate(-1rem, -0.6rem) rotate(180deg);
+      }
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    thead {
+      tr {
+        display: block;
+        position: relative;
+        border: 0;
+        border-radius: .5rem .5rem 0 0;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      th {
+        background: $blue1;
+        color: $white;
+      }
+    }
+
+    tbody {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 1rem 1rem 1rem 1rem;
+    }
+
+
+    td.state-column {
+      border: 0;
+    }
+    td.state-active-column {
+      border-left: 0;
+    }
+    .state-types td {
+       border-bottom: 0;
+    }
+    td, th {
+      height: 4rem;
+      text-align: center;
+      border: 1px solid $white;
+      padding: 0 1rem 0 1rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      &, div, span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

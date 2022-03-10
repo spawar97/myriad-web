@@ -1,0 +1,52 @@
+.accounts-tab {
+    width: auto !important;
+    padding-left: 8rem;
+    padding-right: 3rem;
+    height: $main-content-height;
+    margin-top: ($minimized-study-filter-height);
+
+
+    .admin-tab-title-bar {
+      overflow: auto;
+      font-size: 1.7rem;
+      height: 5rem;
+      border-bottom: 0.1rem solid $grey7;
+      margin: 0 -30px;
+      padding: 0 30px;
+      background-color: $slateGray;
+      
+      .tab-title {
+        float: left;
+        font-size: 2rem;
+        padding-top: 1.75rem;
+      }
+    }
+
+
+  .text-input, .account-legacy-toggle, .submit-account-button {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 1rem;
+  }
+
+  .account-admin-email {
+    width: 25rem;
+  }
+
+  .submit-account-button {
+    padding: 1rem 2rem;
+  }
+
+  .account-legacy-toggle-label {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 0.8rem;
+    margin-right: 1rem;
+  }
+
+  .open-link {
+    text-decoration: underline;
+    color: $hyperlinkBlue;
+    @include clickable;
+  }
+}

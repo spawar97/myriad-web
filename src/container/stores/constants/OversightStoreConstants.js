@@ -1,0 +1,42 @@
+import keymirror from "keymirror";
+
+export const Key = keymirror({
+  metricDefaults: null,
+  metrics: null,
+  metricsCombined: null,
+  metricGroups: null,
+  results: null,
+  rawResults: null,
+  includedDynamicFilters: null,
+  clientFilters: null,
+  metricIds: null,
+  createdMetric: null,
+  updatedMetric: null,
+  deletedMetricIds: null,
+  oversightMetrics: null,
+  studyDetails: null,
+  siteDetails: null,
+  isLoadingScorecardData: null,
+  loadingFileDrillDownId: null,
+  selectedMetricGroup: null,
+  storeState:null,
+  viewSiteState:null,
+  milestoneLabel: null,
+});
+
+export const RequestKey = keymirror({
+  fetchMetricDefaults: null,
+  fetchMetrics: null,
+  createMetricConfiguration: null,
+  updateMetricConfiguration: null,
+  deleteMetricConfiguration: null,
+  fetchScorecardData: null,
+  fetchScorecardFilterData: null,
+  fetchScorecardMetricIds: null,
+  applyDrillDownStudies: null,
+  fetchMetricGroups: null,
+  addMetricGroup: null,
+  editMetricGroup: null,
+  deleteMetricGroup: null,
+  fetchMilestoneLabel: null,
+});

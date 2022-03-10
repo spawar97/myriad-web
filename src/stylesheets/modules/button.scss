@@ -1,0 +1,66 @@
+$button-min-height: 4rem;
+
+// Basic Comprehend button styles.
+.btn {
+  border: .1rem solid transparent;
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  padding: 0.7rem 1.3rem;
+
+  &:not(.btn-disabled) {
+    @include clickable;
+  }
+
+  &.btn-primary {
+    background: $brandColor;
+    color: $white;
+
+    &:hover:not(.btn-disabled) {
+      background: $blue8;
+    }
+  }
+
+  &.btn-loading {
+    color: $comprehendBlue;
+
+    &:hover:not(.btn-disabled) {
+      background: $comprehendBlue;
+    }
+  }
+
+  &.btn-secondary {
+    background: $white;
+    border-color: $brandColor;
+    color: $brandColor;
+
+    &:hover:not(.btn-disabled) {
+      background: $blue8;
+    }
+  }
+
+  &.btn-disabled {
+    background: $grey3;
+    border-color: $grey2;
+    color: $disabledGray;
+  }
+
+  // Icons nested inside a button need to be positioned correctly.
+  [class^='icon-'],
+  [class*=' icon-'] {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-right: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .btn-spinner-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+}

@@ -1,0 +1,224 @@
+.data-review-view-container {
+  @include container(100vw);
+  width: 100%;
+
+  &.show-filters {
+    .filters {
+      display: block;
+      @include span(6);
+    }
+
+    .data-diff-summary-container {
+      @include span(18 last);
+
+      .data-diff-begin-review {
+        display: -ms-flexbox;
+        display: flex;
+        padding-top: 2rem;
+      }
+    }
+
+    .toggle-filters {
+      color: $comprehendBlue;
+
+      &:hover {
+        color: $blue3;
+      }
+    }
+  }
+
+  &.show-tasks {
+    .data-review-view {
+      width: 74%;
+      float: left;
+    } 
+  }
+
+  .toggle-filters {
+    display: inline-block;
+    clear: none;
+    @include pad(2rem 0);
+
+    &:hover {
+      color: $grey1;
+    }
+  }
+
+
+  .filters {
+    position: relative;
+
+    .filter-title {
+      font-weight: $semibold;
+      font-size: 1.4rem;
+    }
+
+    .toggle-button {
+      float: right;
+    }
+  }
+
+  .icon-question-circle {
+    cursor: pointer;
+    color: $gray50;
+    margin: 0 0.5rem;
+    display: inline-block;
+  }
+
+  .sub-tab-header {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    font-weight: $semibold;
+    padding-bottom: 1rem;
+    border-bottom: $subHeaderUnderline;
+
+    .close-button {
+      float: right;
+    }
+
+    .filter-sub-header{
+      margin-top: 10px;
+    }
+  }
+
+  .data-diff-summary {
+    .header-text {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+    .data-diff-summary-row {
+      margin: auto;
+      padding: 10px;
+
+      .data-diff-summary-key {
+        width: 10%;
+        float: left;
+        font-weight: bold;
+      }
+
+      .data-diff-summary-value {
+        margin-left: 10%;
+      }
+    }
+  }
+
+  .data-diff-kpi-summary {
+    .report-title {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  .data-diff-details-container {
+    .data-diff-detail-wrapper {
+      overflow-x: scroll;
+    }
+
+    .data-diff-detail-header {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th {
+      white-space: nowrap; // Don't wrap column names
+    }
+
+    th, td {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    tr {
+      max-height: 50px;
+      white-space: pre; // Only wrap on line breaks in data (preserve line breaks)
+    }
+
+    .data-diff-table-row-new {
+      background-color: $rowAdded !important; // Set the row color of the data diff table to important to override any cell level colors
+    }
+
+    .data-diff-table-row-deleted {
+      background-color: $rowDeleted !important; // Set the row color of the data diff table to important to override any cell level colors
+    }
+
+    .data-diff-table-cell-updated {
+      background-color: $rowUpdated;
+    }
+
+    .data-diff-table-cell-diff-values {
+      .data-diff-table-cell-current-value {
+        white-space: nowrap;
+      }
+
+      .data-diff-table-cell-previous-value {
+        padding-top: 1rem;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .data-diff-message {
+    color: $secondaryBodyText;
+    padding-top: 1.5rem;
+
+    .data-diff-export-message-container {
+      display: -ms-flexbox;
+      display: flex;
+
+      .data-diff-export-message-icon {
+        span {
+          color: $yellow;
+          font-size: x-large;
+          padding-right: 1rem;
+        }
+      }
+
+      .data-diff-export-message-wrapper {
+        margin-top: 0.3rem;
+      }
+    }
+  }
+
+  #dataReviewInput {
+    display: none;
+  }
+}
+
+.studio {
+
+  .studio-editor {
+
+    .roles-list {
+      padding-inline-start: 1rem;
+    }
+
+    .role-item {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+    .close-button {
+      padding-left: 1rem;
+    }
+
+  }
+
+}
+
+.data-review-transaction-modal {
+  width: 50% !important;
+  height: 50% !important;
+}

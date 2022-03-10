@@ -1,0 +1,347 @@
+.builtin-view-container {
+  // Copied from report-detail-panel.scss
+  .open-link {
+    text-decoration: underline;
+    color: $hyperlinkBlue;
+    @include clickable;
+  }
+
+  .builtin-tasks-kpi {
+    display: flex;
+    flex-flow: row nowrap;
+
+    &:not(.show-filters) {
+      width: 100%;
+
+      .kpi-wrapper {
+        width: 100%;
+      }
+    }
+  }
+
+  .builtin-tasks-kpi, .builtin-data-monitor-kpi-1, .builtin-site-cro-scorecard {
+    @include container(100vw);
+    width: 100%;
+
+    &.show-filters {
+      .filters {
+        display: inline-table;
+        @include span(6);
+      }
+
+      .kpi-wrapper {
+        @include span(18 last);
+      }
+    }
+
+    .kpi-wrapper {
+      .spinner-container-placeholder {
+        //height: $builtinConfigurationHeight;
+
+        .spinner-container {
+          position: relative;
+          //height: $builtinConfigurationHeight;
+        }
+      }
+    }
+    .viz-pane-container {
+      position: relative;
+    }
+
+    .viz-container {
+      .preview-menu {
+        float: right;
+
+        .toggle-preview {
+          display: inline-block;
+          padding-right: 1.5rem;
+        }
+      }
+    }
+
+    .icon-question-circle {
+      cursor: pointer;
+      color: $gray50;
+      margin: 0 0.5rem;
+      display: inline-block;
+    }
+
+    .sub-tab-header {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      font-weight: $semibold;
+      padding-bottom: 1rem;
+      //border-bottom: $builtinTabUnderline;
+
+      .close-button {
+        float: right;
+      }
+    }
+
+    .history {
+      .sub-tab-header {
+        margin-bottom: 2rem;
+      }
+
+      .link-container > div {
+        float: left;
+        padding-right: .5rem;
+      }
+
+      .icon {
+        color: $comprehendBlue;
+      }
+
+      .btn {
+        position: relative;
+        bottom: .5rem;
+        float: right;
+      }
+    }
+
+    .filters {
+      //border-bottom: $menuBorder;
+      // To ensure `.overview-and-config` only cover `.filters`.
+      position: relative;
+
+      .filter-title {
+        font-weight: $semibold;
+        font-size: 1.4rem;
+
+        .toggle-button {
+          float: right;
+        }
+      }
+
+      .builtin-filter {
+        padding: 3rem 0 4rem;
+      }
+    }
+
+    .builtin-viz {
+      margin-bottom: 2rem;
+
+      .highcharts-range-selector {
+        // These styles override the highcharts style for the date range inputs
+        // with the effect of removing the outline when the input is selected.
+        border: 0 !important;
+        top: 1.1rem !important;
+        background-color: $white !important;
+        margin-left: .1rem !important;
+      }
+
+      .empty-content {
+        width: 100%;
+        height: 50rem;
+      }
+
+      .text-link {
+        padding: 0 .5rem;
+      }
+
+      .viz-header {
+        margin: 2.5rem 0 2rem;
+
+        .viz-title {
+          font-size: 1.6rem;
+          font-weight: $semibold;
+          display: inline-block;
+          text-align: center;
+          width: 100%;
+        }
+
+        .legend {
+          display: inline-block;
+          float: right;
+          margin-right: 1.4rem;
+          // For some reason, IE9/10 doesn't like -2rem.
+          // If we really care about 2px, we could look into this later.
+          margin-top: -1.8rem;
+
+          // Override the standard menu item behavior since the legend items
+          // aren't really clickable.
+          .Menu__MenuOption {
+            cursor: default;
+
+            &:hover {
+              background: $white;
+              cursor: default;
+            }
+          }
+
+          .legend-opener-text {
+            padding-right: 1rem;
+          }
+
+          .react-menu-icon:not(.icon-diagonals):before {
+            padding-right: 1.3rem;
+          }
+
+          .legend-options {
+            color: $black;
+            right: -.5rem;
+
+            .icon-viz-threshold:before, .icon-dashed-line:before {
+              font-size: 1rem;
+              color: $red;
+            }
+
+            .option-breach:before {
+              font-size: 1rem;
+              color: $darkRed;
+            }
+
+            .option-non-breach:before {
+              font-size: 1rem;
+              color: $gray;
+            }
+          }
+        }
+      }
+    }
+
+    .overview-and-config {
+      // To ensure `.container-overlay` only cover overview-and-config.
+      position: relative;
+      border-bottom: $sectionDivider;
+      padding-bottom: 3rem;
+      position: relative;
+
+      .toggle-tabs-container {
+        height: 4.5rem;
+        width: 100%;
+        margin-top: 0.4rem;
+      }
+
+      input, textarea {
+        width: 100%;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      // Overwrite some scrollbar properties
+      // TODO: re-enable setting the height of the overview/configuration panes.
+      ::-webkit-scrollbar {
+        &:vertical {
+          border-left: 0;
+        }
+      }
+
+      ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 1.6rem $white;
+      }
+
+    }
+  }
+
+  .mobile-builtin {
+    display: inline-block;
+    width: 100%;
+
+    .mobile-builtin-view {
+      margin: 2rem 0 2.5rem;
+
+      .header {
+        font-weight: $semibold;
+      }
+
+      .builtin-description {
+        word-wrap: break-word;
+      }
+    }
+
+    .user-alert {
+      position: relative;
+      background: $blue9;
+      padding: 1.5rem 2rem;
+
+      .icon-info {
+        font-size: 3.2rem;
+        color: $blue8;
+        margin-right: 2rem;
+      }
+
+      .message {
+        position: absolute;
+        top: 50%;
+      }
+
+      .mobile-message {
+        margin-top: -1.5rem;
+      }
+    }
+  }
+
+  // Similar to the css in portfolio oversight.
+  .data-monitor-viz-1-table {
+    width: 100%;
+    overflow: hidden;
+    border-radius: .8rem;
+    border-collapse: collapse;
+
+    .header {
+      background: $blue1;
+      color: white;
+    }
+
+    thead > tr {
+      text-align: center;
+    }
+
+    tr:not(.header):nth-child(odd) {
+      background: $gray10;
+    }
+
+    td {
+      border: thin solid white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .td-circle {
+      width: 5.8rem;
+      padding-left: 2rem;
+    }
+
+    .result {
+
+      &:not(&.circle):after {
+        font-weight: $semibold;
+        // &mdash.
+        content: '\2014';
+      }
+
+      &.circle {
+        height: 2rem;
+        width: 2rem;
+        margin: auto;
+        border-radius: 50%;
+
+        a {
+          @include clickable;
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+
+        &.no-breach {
+          background: $green;
+        }
+
+        &.low {
+          background: $yellow;
+        }
+
+        &.medium {
+          background: $lightOrange;
+        }
+
+        &.high {
+          background: $lightRed;
+        }
+      }
+    }
+  }
+}

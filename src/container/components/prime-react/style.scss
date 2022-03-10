@@ -1,0 +1,434 @@
+tr.div-comp + tr {
+  height: 44px !important;
+}
+
+table.t-component {
+  table-layout: auto;
+}
+
+.t-component-wrapper {
+  overflow: auto;
+  table-layout: auto;
+  background: #f2f2f2;
+}
+
+table.t-internal-table td {
+  min-width: 169px;
+}
+
+.p-input-icon-left > input.p-inputtext.p-component {
+  border-color: #1D96DD;
+  height: 30px;
+  border-radius: 5px;
+  width: 98%;
+}
+
+.pi-chevron-down:before {
+  color: #1D96DD;
+}
+
+.pi-chevron-right:before {
+  color: #1D96DD;
+}
+
+.p-treetable-tbody {
+  font-size: 1.2rem;
+}
+
+.p-treetable-thead {
+  font-size: 1.3rem;
+}
+
+.p-treetable .p-treetable-tbody > tr > td .p-treetable-toggler:enabled {
+  border: 1px solid #1D96DD;
+}
+
+.p-treetable .p-treetable-tbody > tr > td .p-treetable-toggler:enabled:hover {
+  border: 1px solid #1D96DD !important;
+}
+
+.blue-highlight {
+  background: #1e77b2 !important;
+  color: #fff !important;
+}
+
+.light-highlight {
+  background: #cfe7fa !important;
+  color: #2a2f32 !important;
+}
+
+.p-treetable .p-treetable-tbody > tr.blue-highlight > td .p-treetable-toggler:enabled {
+  color: #495057;
+  border-color: transparent;
+  background: #e9ecef;
+}
+
+.divided-td {
+  background: #f2f2f2;
+}
+
+.sub-table {
+  width: 10%;
+  text-align: center;
+  border-right: 1px solid #cccccc;
+}
+
+.p-treetable-scrollable-body-table {
+  width: 100% !important;
+}
+
+.collapse-button {
+  margin-right: 10px;
+  width: 95px;
+}
+
+div.table-container > .collapse-button {
+  margin: 13px 0 0 31%;
+  position: absolute;
+  z-index: 1;
+  font-weight: 600;
+  width: 7%;
+  font-size: 1.2rem;
+  height: 26px
+}
+
+.p-dropdown-label.p-inputtext {
+  padding: 2px;
+  font-size: 1.3rem;
+}
+
+.p-multiselect-label.p-multiselect-items-label {
+  font-size: 1.2rem;
+}
+ 
+li.p-multiselect-item.p-highlight > span {
+  font-size: 1.2rem !important;
+  font-weight: 600;
+  width: 100%;
+}
+
+// paginator
+.p-paginator {
+  font-size: 1.3rem;
+} 
+.p-paginator-next {
+  font-size: 1.3rem;
+}
+.p-paginator-page {
+  font-size: 1.3rem;
+}
+.p-paginator-last {
+  font-size: 1.3rem;
+}
+.p-paginator-prev {
+  font-size: 1.3rem;
+} 
+.p-inputtext.p-component.p-filled.p-ml-1 {
+  font-size: 1.3rem;
+}
+
+// Tooltip
+
+	
+.primetooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.primetooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.primetooltip:hover .tooltiptext {
+  visibility: visible;
+}		
+    
+.toolLeft {
+  top: -5px;
+  right: 105%;
+}					
+    
+.toolRight {
+  top: -5px;
+  left: 105%;
+}
+    
+.toolTop {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+    
+.toolBottom {
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.hover-container:hover .tooltip, .hover-container:hover .tooltip-right {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  padding: 3px;
+  position: absolute;
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  padding: 0.695rem 12px;
+  z-index: 14;
+  border-radius: 0.5rem;
+  width: 229px !important;
+  right: 24px !important;
+  top: -10px !important;
+  word-break: break-word;
+}
+
+.hover-container:hover .tooltip:before, .hover-container:hover .tooltip-right:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #FFF;
+  right: -8px;
+  top: 1rem !important;
+}
+
+.tooltip-container.prime-react {
+  position: absolute;
+  float: left;
+}
+
+// Freeze column css
+th.freeze-column.p-sortable-column.p-resizable-column {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+td.freeze-column {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: inherit;
+}
+
+.freeze-widget-container {
+  width: 100% !important;
+  display: flex;
+
+  .freeze-label {
+    width: 32%;
+    font-size: 1.3rem;
+    text-align: initial;
+  }
+
+  .freeze-dropdown {
+    width: 220px;
+    height: 29px;
+  }
+}
+
+.show-hide-container {
+  float: left;
+  display: flex;
+  margin-top: 5px;
+
+  .freeze-label {
+    font-size: 1.3rem;
+    margin-right: 12px;
+  }
+
+  .show-hide-dropdown {
+    width: 220px;
+  }
+}
+
+.cog-container {
+  width: 50px !important;
+  margin-left: auto;
+  text-align: center !important;
+  margin-top: 0px;
+  cursor: pointer;
+  .pi.pi-cog, .pi.pi-sort-alt {
+    font-size: 2rem;    
+    margin-right: 5px
+  }
+}
+
+.create-ract-template.custom-risk-subcategory-modal.modal.prime-table-config {
+  width: 36rem;
+  height: auto;
+  right: 2rem;
+  display: block;
+}
+
+.p-multiselect-label.p-multiselect-items-label {
+  font-size: 1.2rem;
+  width: 100% !important;
+}
+.p-treetable-header {
+  display: flex;
+  width: 100%;
+  font-size: 1.3rem;
+  div{
+      label {
+        margin-right: 10px;
+      }
+  }
+  div.p-text-right {
+    .p-input-icon-left, .p-input-icon-right {
+      max-width: 200px;
+    }
+  }
+  .table-headers-components{
+    display: flex;
+    width: 100%;
+  }
+  div#prime-collapse {
+    width: auto;
+    display: flex;
+    margin-left: 13%;
+  }
+  div#prime-toggle-header {
+    width: 31%;
+  }
+}
+.collapse-button {
+  width: 9rem;
+  font-size: 1.2rem;
+  height: 3rem;
+  font-family: 'proxima-nova', 'Helvetica Neue' !important;
+  font-weight: 500;
+}
+
+.custom-header-comp {
+  width: 50%;
+}
+
+// column header
+.p-treetable .p-treetable-thead > tr > th {
+  background: #DEE2E6;
+}
+
+.p-treetable-scrollable-body {
+  position: relative;
+}
+
+.p-treetable-resizable .p-treetable-thead > tr > th, .p-treetable-resizable .p-treetable-tfoot > tr > td, .p-treetable-resizable .p-treetable-tbody > tr > td {
+  cursor: auto;
+}
+
+tr.light-highlight > td > a.prime-drilldown {
+  color: #1E96DE; 
+}
+
+// scroll arrows
+div.scroll-top-bottom {
+  position: fixed;
+  top: 132px;
+  right: 5px;
+  color: #2196F3;
+  cursor: pointer;
+}
+
+// 6.3.2 changes
+.p-treetable-resizable > .p-treetable-wrapper {
+	position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.prime-hidden-column{
+  display: none !important;
+}
+
+// To display tooltip when column is freezed
+.p-treetable-resizable .p-treetable-thead > tr > th, .p-treetable-resizable .p-treetable-tfoot > tr > td, .p-treetable-resizable .p-treetable-tbody > tr > td.freeze-column {
+  overflow: visible;
+}
+
+.p-dropdown-panel.p-component.p-connected-overlay-enter-done {
+  z-index: 5 !important;
+}
+
+.p-multiselect-panel.p-component.p-connected-overlay-enter-done {
+  z-index: 5 !important;
+}
+
+.p-treetable .p-paginator-bottom {
+  position: relative;
+}
+
+.loading {
+  position: absolute;
+  left: 14px;
+}
+
+.loading::after {
+  content: ' . . .';
+  animation: dots 1s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    color: rgba(0,0,0,0);
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);}
+  40% {
+    color: white;
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);}
+  60% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 rgba(0,0,0,0);}
+  80%, 100% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 white;}
+}
+
+.p-filter-column:nth-of-type(1) {
+  display: none;
+}
+
+colgroup.p-treetable-scrollable-colgroup {
+  display: none;
+}
+colgroup.p-treetable-scrollable-colgroup {
+  display: none;
+}
+
+.select-all-checkbox{
+  margin-bottom: 5px !important;
+  margin-top: 5px;
+  color: #347bb3;
+  font-weight: normal;
+}
+
+th.freeze-column {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+.load-more-content {
+  height: 35px;
+  margin: 5px 0 0 -5px;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  padding: 4px 0 0 32px;
+}

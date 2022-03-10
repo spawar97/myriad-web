@@ -1,0 +1,41 @@
+/**
+ * These are the override for react-datetime's css. Its main CSS is imported inside Calendar.js.
+ */
+
+.rdt {
+  .text-input {
+    padding: 0.5rem 1rem 0.5rem 3.5rem;
+  }
+
+  input {
+    background-color: transparent;  // Allows the icon to be visible.
+
+    &:focus {
+      background-color: transparent !important;
+    }
+  }
+
+  // Calendar icon
+  &:before {
+    font-family: comprehend;
+    content: '\e115';
+    position: absolute;
+    left: 1rem;
+    font-size: 1.8rem;
+    top: 0.4rem;
+    z-index: -1;  // Ensures that clicks on the icon are captured by the input.
+    color: $placeholderGray;
+  }
+
+  .prev > button, .next > button {
+    font-size: 3rem;
+    margin-top: -0.7rem;
+
+    // TP#9972.
+    // In native tablet browsing the previous and next buttons were getting 3rem padding
+    // left and right. This made the first and last columns of the calendar widget look off.
+    // Explicitly set their padding here to match the other browsers.
+    padding-left: .6rem;
+    padding-right: .6rem;
+  }
+}

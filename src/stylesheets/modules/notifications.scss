@@ -1,0 +1,130 @@
+$dropdownItemSideMargins: 3rem;
+
+.notifications {
+
+  .simple-dropdown-contents {
+    color: $bodyText; // Overrides .mobile-nav-header color
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .simple-dropdown .badge {
+    width: inherit;
+    right: inherit !important; // Overrides .mobile-nav-header .notifications .badge right.
+    left: 0.9rem;
+    top: -1rem;
+    border-radius: 3px;
+    background: $darkRed;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: $white;
+  }
+
+  .notifications-header {
+    margin: 0 3rem;
+    padding-bottom: 2rem;
+    border-bottom: $relatedReportsBorder;
+  }
+
+  .simple-button-array {
+    margin: 1.5rem 3rem 2rem 3rem;
+    border-color: $lightGray;
+
+    .active {
+      background-color: $blue1;
+      border-color: $lightGray;
+      color: $white;
+    }
+  }
+
+  .task {
+    @include clickable;
+    padding: 1.5rem $dropdownItemSideMargins;
+    // Maximum allowing length of 60 characters, minimum at 30 characters.
+    // 30.4 = 24.4 + 6.
+    // 24.4rem = The width of 30 digital characters of bold style, and at size 1.4rem.
+    // 6rem = two padding of 3rem.
+    min-width: 30.4rem;
+
+    .description {
+      font-weight: bold;
+    }
+
+    .with-urgency{
+      display: flex;
+      .description{
+        margin-left: 0.3rem;
+      }
+
+      .icon-WarningCircle{
+        color: red;
+      }
+    }
+
+    .task-type-title{
+      display: flex;
+    }
+
+    &:hover:not(.item-list-header):not(.disabled) {
+      background: $lightSteel10;
+    }
+  }
+
+  .notifications-title {
+    font-weight: bold;
+    vertical-align: top;
+    margin-left: 0.3rem;
+  }
+
+  .no-notification {
+    cursor: initial;
+    padding-top: 2rem;
+    margin-left: 3rem;
+    font-size: 1.4rem;
+    color: $gray30;
+    font-weight: $semibold;
+    line-height: 1.8rem;
+  }
+
+  .notifications-icon {
+    vertical-align: text-bottom;
+  }
+
+  .simple-dropdown-items {
+    margin: 2rem 0 0.5rem 0 !important;
+
+    .item-name {
+      padding: 0;
+    }
+  }
+}
+
+.mobile-notifications-container {
+  position: absolute;
+  top: $mobile-nav-header-top-padding + $mobile-nav-header-icon-top-padding;
+  right: 6rem;
+  font-size: 2rem;
+  float: right;
+
+  .icon {
+    font-size: 2.2rem;  // Forces icon size in header.
+  }
+
+  * {
+    font-size: 1.4rem;  // Forces default size for everything else
+  }
+}
+
+.mobile-notifications-header-line {
+  height: 3rem;
+  display: none;
+}
+
+.mobile-notifications-count {
+  display: none;
+}
+
+.notifications-tabs-separator {
+  margin: 1rem $dropdownItemSideMargins;
+}

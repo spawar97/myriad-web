@@ -1,0 +1,28 @@
+input#reviewApprove {
+  border: 1px solid #cccccc8f;
+  border-radius: 0px;
+  width: 424px;
+  height: 102px;
+  &:focus {
+    border-color: #cccccc8f !important;
+  }
+}
+input#reviewReject {
+  border: 1px solid #cccccc8f;
+  border-radius: 0px;
+  width: 424px;
+  height: 102px;
+}
+textarea#reviewReject {
+  &:focus {
+    border-color: #cccccc8f !important;
+  }
+}
+.Review-Modal {
+  .modal-dialog-footer {
+    text-align: right !important;
+  }
+}
+.review-modal-errors{
+  color:red;
+}

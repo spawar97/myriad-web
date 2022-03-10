@@ -1,0 +1,66 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "amd": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "comprehend": "writable",
+    "$": "readonly"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "sourceType": "module",
+      "allowImportExportEverywhere": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "rules": {
+    "comma-dangle": ["warn", "always-multiline"],
+    "consistent-return": "warn",
+    "eqeqeq": ["warn", "always", {"null": "never"}],
+    "max-len": ["warn", { "code": 100}],
+    "no-alert": "error",
+    "no-console": "off",
+    "no-empty-function": "warn",
+    "no-multi-spaces": ["warn", { "ignoreEOLComments": true }],
+    "no-var": "warn",
+    "no-unused-vars": "warn",
+    "react/no-find-dom-node": "warn",
+    "react/no-string-refs": "warn",
+    "react/display-name": "warn",
+    "semi": ["warn", "always"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect"
+    },
+    "propWrapperFunctions": [
+      "forbidExtraProps"
+    ],
+    "linkComponents": [
+      {
+        "name": "Link",
+        "linkAttribute": "to"
+      }
+    ]
+  }
+}

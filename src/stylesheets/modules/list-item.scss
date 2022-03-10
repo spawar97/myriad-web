@@ -1,0 +1,33 @@
+.list-item {
+  clear: both;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  vertical-align: middle;
+
+  > [class^='icon-'],
+  > [class*=' icon-'] {
+    @include clickable;
+    float: right;
+  }
+
+  .list-item-content > div {
+    display: inline-block;
+  }
+
+  .non-desktop-tag {
+    padding: 1.5rem .5rem;
+
+    .icon-info {
+      padding-right: 2rem;
+      font-size: 3.2rem;
+      color: $blue6;
+    }
+
+    .text {
+      vertical-align: middle;
+      font-weight: normal;
+      white-space: normal;
+    }
+  }
+}

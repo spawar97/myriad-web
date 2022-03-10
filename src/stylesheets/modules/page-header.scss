@@ -1,0 +1,170 @@
+.page-header {
+  // Mark this element as a flex container.
+  display: -ms-flexbox;
+  display: flex;
+
+  // Force contained flex items into a single line.
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+
+  // Distribute empty space between the contained flex items.
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  // Align the contained flex items to the cross end (bottom) of the container.
+  -ms-flex-align: end;
+  align-items: flex-end;
+  height: 5rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid #ccc;
+
+  // Generic title styling.
+  // Applicable inside and outside of breadcrumbs.
+  .title {
+    font-size: 2rem;
+    line-height: 4rem;
+  }
+
+  .oversight-title {
+    display: inherit;
+    line-height: 1.4rem;
+  }
+
+  .oversight-breadcrumb-margin {
+    margin: 0 0.8rem;
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  .breadcrumbs {
+    // This flex item should grow in width as the page grows.
+    -ms-flex: 1;
+    flex-grow: 1;
+    font-size: 2rem;
+    line-height: 4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+
+    .breadcrumb-path {
+      text-decoration: none;
+      color: $blue5;
+      @include clickable;
+      font-weight: normal;
+      font-size: 2rem;
+
+      &:hover {
+        color: $blue7;
+        text-decoration: underline;
+      }
+
+      // Very weird behavior, Router.Link seems to add a span to
+      // the end of the title adding ~5 px. Remove it.
+      span:last-of-type {
+        display: none
+      }
+    }
+
+    .breadcrumb-separator {
+      margin-left: 15px;
+      margin-right: 15px;
+      display: inline-block;
+      font-size: 1.4rem;
+      color: $gray60;
+      line-height: 4rem;
+    }
+
+    .title {
+      display: inline-flex;
+      font-size: 1.8rem;
+      line-height: 4rem;
+      font-weight: normal;
+      // This needs to be specified so that it overrides the font-weight in file-title.scss.
+      .file-title-text {
+        font-weight: normal;
+      }
+    }
+    .bot-left-Nav{
+      display: inline-flex;
+      font-size: 1.6rem;
+      line-height: 1.4rem;
+      color:$brandColor;
+      position: relative;
+      padding-right: 15px;
+      margin-right:10px;
+      cursor: pointer;
+      
+      &:after{
+        content: "";
+        position: absolute;
+        height: 30px;
+        border-right:1px solid $grey7;
+        right: 0;
+        top:-5px;
+      }
+    }
+    .icon-arrow-left{
+      display: inline-flex;
+      font-size: 1.4rem;
+      margin-right: 8px;
+      color:$brandColor;
+    }
+    .bot-breadcrumbText{
+      display: inline-flex;
+      line-height: 2rem;
+      width: 68%;
+      white-space: normal;
+      word-break: break-word !important;
+    }
+    .breadcrumbText{
+      display: inline-flex;
+      color:$gray60;
+      font-style: italic;
+      &:after{
+        content: '"';
+      }
+      &:before{
+        content: '"';
+      }
+    }
+  }
+
+  .header-buttons {
+    // This flex item should not grow in width as the page grows.
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+
+    // Mark this element as a flex container.
+    display: -ms-flexbox;
+    display: flex;
+
+    // The items within this container should be aligned to the main end (right) of the container.
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    text-align: right;
+
+    .toggle-tasks, .toggle-filters {
+      &:hover {
+        color: $grey1;
+      }
+    }
+
+    // Spread out the buttons.
+    // Set padding-left to 0 to override anywhere that we set padding instead of margin.
+    > div {
+      padding-left: 0;
+      margin-left: 2rem;
+    }
+  }
+  .Menu__MenuTrigger{
+    background: transparent;
+  }
+}
+
+.breadcrumb-tooltip {
+  // Ensure that the tooltip doesn't take up the whole width of the page.
+  // Mostly impacts mobile.
+  margin-left: 5%;
+  margin-right: 5%;
+}

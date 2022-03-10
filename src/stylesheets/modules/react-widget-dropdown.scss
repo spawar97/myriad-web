@@ -1,0 +1,76 @@
+.tasks {
+  // Using child selector to mimic the plugin's built-in selector
+  .rw-multiselect-taglist > li {
+    background-color: $blue9;
+    border: none;
+  }
+}
+
+// The following are global react-widget styling overrides. The !importants
+// are necessary to combat the fact that react-widget styles are applied
+// multiple times and anything we set here would be overidden without them.
+
+// Bring colors in line with style guide.
+.rw-widget {
+  border: .1rem solid $grey2 !important;
+
+  &.invalid-input {
+    border: $errorBorder !important;
+  }
+}
+
+// Make sure that there is a line to the left of the dropdown triangle.
+.rw-dropdown-list > .rw-select,
+.rw-dropdown-list > .rw-select.rw-rtl {
+  border-left: .1rem solid $grey2 !important;
+}
+
+// Round the corners of the dropdown contents container and remove interior padding.
+.rw-popup.rw-widget {
+  border-radius: .5rem !important;
+  padding: 0;
+}
+
+ul.rw-list, .rw-selectlist {
+  padding: 0 !important;
+}
+
+// Remove the squared bottom corners on opened dropdown selectors.
+.rw-open.rw-widget,
+.rw-open > .rw-multiselect-wrapper {
+  border-radius: .5rem !important;
+}
+
+// Style selected list items per styleguide.
+ul.rw-list > li.rw-list-option.rw-state-selected,
+.rw-selectlist > li.rw-list-option.rw-state-selected {
+  background-color: $blue1 !important;
+  border: .1rem solid $blue1 !important;
+  border-radius: 0 !important;
+  color: $white !important;
+}
+
+ul.rw-list > li.rw-list-option,
+ul.rw-selectlist > li.rw-list-option {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+ul.rw-list > li.rw-list-option:hover,
+ul.rw-selectlist > li.rw-list-option:hover {
+  background-color: $grey4 !important;
+}
+
+// Adjust the coloring of a selected element.
+.rw-widget {
+  &.rw-state-focus,
+  &.rw-state-focus:hover {
+    box-shadow: 0 0 .2rem 0 rgba(77, 102, 120, 1) !important;
+    border: .1rem solid $grey2 !important;
+  }
+}
+
+// On IE9 if there was horizontal overflow, hovering over the list would cause it to grow in height indefinitely
+ul.rw-list {
+  overflow-x: hidden !important;
+}

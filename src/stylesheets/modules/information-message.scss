@@ -1,0 +1,52 @@
+.information-message {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  border: $notificationBorder;
+  background-color: $gray2;
+  font-size: 2.1rem;
+  height: 70vh;
+  line-height: 2.2rem;
+
+  .information-message-text-holder {
+    width: 56rem;
+    margin: 0 auto;
+    position: relative;
+    top: 14rem;
+    transform: translateY(-50%);
+    text-align: center;
+
+    .information-message-header {
+      margin-bottom: .4rem;
+
+      .information-message-icon {
+        font-size: 2.3rem;
+        padding-right: 1rem;
+
+        &.icon-information_solid {
+          color: $orange;
+        }
+
+        &.icon-WarningCircle {
+          color: $darkRed;
+        }
+      }
+
+      .information-message-title {
+        font-size: 1.8rem;
+        font-weight: $semibold;
+        position: relative;
+        bottom: .3rem;
+      }
+    }
+
+    .information-message-details {
+      color: $gray60;
+      font-size: 1.6rem;
+      // Disable hyphenation of words in the body of the message.
+      // See https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+    }
+  }
+}

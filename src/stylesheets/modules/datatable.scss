@@ -1,0 +1,434 @@
+.datatable {
+  @include disable-user-select();
+  position: relative;
+  display: block;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  border: .1rem solid $lightGray;
+
+  .thead, .tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .t-row, .th-row {
+    display: table-row;
+
+    .td-cell, .th-cell {
+      display: table-cell;
+      border-bottom: .1rem solid $lightGray;
+      padding: .8rem;
+    }
+
+    .dimmed {
+      color: $lightGray;
+      background-color: $almostWhite;
+    }
+
+    .td-cell div {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .table-col-resize {
+      cursor: col-resize;
+      display: table-cell;
+      border-bottom: .1rem solid $lightGray;
+      border-right: .1rem solid $lightGray;
+      min-width: .5rem;
+      width: .5rem;
+      margin: 0;
+      padding: 0;
+
+      &.disabled {
+        cursor: inherit;
+      }
+    }
+  }
+
+  .thead {
+    position: relative;
+    .th-row {
+      background: $slateGray;
+    }
+
+    .th-cell {
+      &:not(.no-sort) {
+        cursor: pointer;
+
+        &:hover {
+          opacity: .8;
+        }
+      }
+
+      .status-header {
+        display: table;
+
+        > div {
+          display: table-row;
+
+          > div {
+            display: table-cell;
+            padding-right: .5rem;
+
+            > div {
+              width: 1.4rem;
+            }
+          }
+        }
+      }
+
+      .data-type-header {
+        width: 100%;
+        display: table;
+
+        > div {
+          display: table-row;
+
+          > span {
+            width: 100%;
+            color: $lightSteel50;
+          }
+
+          > div {
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+
+            > div {
+              display: table;
+
+              > div {
+                display: table-row;
+
+                > div {
+                  display: table-cell;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.long-name {
+        display: table-cell;
+
+        > div {
+          display: table;
+          width: 100%;
+
+          > div {
+            display: table-row;
+
+            > div {
+              display: table-cell;
+              vertical-align: middle;
+              width: 100%;
+
+              > div {
+                display: table;
+
+                > div {
+                  display: table-row;
+
+                  > div {
+                    display: table-cell;
+
+                    .simple-dropdown {
+                      > div:nth-child(3) > div {
+                        > div:not(disabled) {
+                          color: $black
+                        }
+
+                        > div:nth-child(4) {
+                          border-bottom: .1rem solid $lightSteel20;
+                        }
+                      }
+
+                      .opener {
+                        height: 1.7rem;
+                        width: 1.3rem;
+
+                        &:not(.disabled) {
+                          color: $lightSteel;
+                        }
+                      }
+
+                      .dropdown-opener:after {
+                        border-top-color: $slateGray;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            > div:first-child > div > div > div:first-child > div {
+              display: table;
+
+              > div {
+                padding: 0;
+                display: table-row;
+
+                > div {
+                  color: $lightSteel50;
+                  display: table-cell;
+                  font-size: 1.2rem;
+                  font-weight: 200;
+                }
+              }
+
+              > div:first-child {
+                font-weight: bold;
+                font-size: 1.4rem;
+                height: 2.1rem;
+
+                > div input {
+                  margin: 0;
+                  padding: 0;
+                  height: 100%;
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      span {
+        margin-top: .2rem;
+        vertical-align: middle;
+        float: left;
+        font-weight: bold;
+      }
+
+      .table-arrow-up, .table-arrow-down {
+        width: 0;
+        height: 0;
+        border-left: 1.1rem solid transparent;
+        border-right: 1.1rem solid transparent;
+        position: relative;
+        float: left;
+        margin-left: .5rem;
+
+        span {
+          color: $white;
+          font-size: 0.7rem;
+          position: relative;
+          right: .3rem;
+          text-align: center;
+          font-weight: normal;
+        }
+      }
+
+      .table-arrow-up {
+        border-bottom: 1.8rem solid $powderBlue;
+        &.ordered {
+          border-bottom: 1.8rem solid $comprehendBlue;
+        }
+        span {
+          top: .4rem;
+        }
+      }
+
+      .table-arrow-down {
+        margin-top: .3rem;
+        border-top: 1.8rem solid $powderBlue;
+        &.ordered {
+          border-top: 1.8rem solid $comprehendBlue;
+        }
+        span {
+          bottom: 1.7rem;
+        }
+      }
+    }
+  }
+
+  .tbody .t-row:nth-of-type(even) {
+    background: $slateGray;
+  }
+
+  &.has-action-path .tbody .t-row {
+    cursor: pointer;
+
+    &.highlight {
+      background: rgba($comprehendBlue, .1);
+    }
+
+    &:not(.highlight):hover {
+      background: rgba($comprehendBlue, .05);
+    }
+  }
+}
+
+.table-pagination {
+  text-align: center;
+  margin-top: 1.2rem;
+  margin-bottom: .5rem;
+
+  span {
+    display: inline-block;
+
+    &:first-child {
+      text-align: right;
+      width: 4rem;
+      margin-right: 1rem;
+    }
+
+    &.slash {
+      margin: 0 .5rem;
+    }
+
+    &:last-child {
+      text-align: left;
+      width: 4rem;
+      margin-left: 1rem;
+    }
+  }
+
+  input {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+
+    color: $lightSteel;
+    font-size: 1.2rem;
+
+    // disable default Foundation style
+    &, &:focus, &:active {
+      background-color: $white;
+
+      border-style: none;
+      border-bottom: .1rem solid $powderBlue;
+      border-radius: 0;
+
+      text-align: right;
+    }
+  }
+
+  .table-page-up-arrow, .table-page-down-arrow {
+    width: 0;
+    height: 0;
+    border-left: .6rem solid transparent;
+    border-right: .6rem solid transparent;
+    margin-top: .4rem;
+    display: inline-block;
+  }
+
+  .table-page-up-arrow {
+    border-bottom: 1rem solid $powderBlue;
+    margin-right: .6rem;
+
+    &:hover, &:active {
+      border-bottom: 1rem solid $comprehendBlue;
+    }
+  }
+
+  .table-page-down-arrow {
+    border-top: 1rem solid $powderBlue;
+    margin-left: .6rem;
+
+    &:hover, &:active {
+      border-top: 1rem solid $comprehendBlue;
+    }
+  }
+
+  .text-subheading {
+    margin: 0;
+    color: $lightSteel;
+  }
+
+  .table-records {
+    display: inline-block;
+    position: relative;
+    left: 2rem;
+    color: $paleGray;
+  }
+}
+
+.tbody-wrapper {
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* make IE hide the scrollbar */
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  &.scroll-x {
+    overflow-x: scroll;
+  }
+}
+
+// Global overrides to the basic fixed-data-table scss.
+.public_fixedDataTable_main {
+  border: 0;
+  border-radius: .5rem;
+  overflow: hidden;
+
+  // This fixes an issue in webkit where `overflow: hidden` is not respected.
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+
+  .public_fixedDataTable_header .public_fixedDataTableCell_main, .highchart .header {
+    background: $grey8;
+    color: $gray80;
+  }
+  .highchart td,th {
+    color: $gray80;
+    border-right:none;
+    text-align: left;
+  }
+  .highchart tr:not(.header):nth-child(2n+1) {
+    background: transparent;
+  }
+  .highchart tr:not(header) {
+    border-bottom: 1px solid $grey7;
+  }
+  .public_fixedDataTableCell_main {
+    border-right: .1rem solid $white;
+  }
+
+  .public_fixedDataTableRow_highlighted .public_fixedDataTableCell_main {
+    background-color: $white;
+  }
+
+  .public_fixedDataTableCell_cellContent {
+    padding: 0 2rem;
+    text-align: left;
+    &.icon-pencil{
+      color: $brandColor;
+    }
+    &.icon-arrow-right{
+      color: $brandColor;
+    }
+  }
+
+  .public_Scrollbar_main {
+    @include clickable;
+  }
+
+  .fixedDataTableRow_fixedColumnsDivider, .fixedDataTable_hasBottomBorder {
+    border: 0;
+  }
+
+  .fixed-data-table-header-sorter {
+    @include clickable;
+  }
+}
+
+.virtual-table-cell{
+  .icon-menu, .icon-ascending-alt, .icon-descending-alt{
+    color: $brandColor;
+  }
+  .icon-checkbox-checked{
+    color: $brandColor;
+  }
+  .icon-star-full{
+    color: $brandColor;
+  }
+}
+
+.fixedDataTableCellGroupLayout_cellGroup{
+  border-bottom:1px solid $grey7;
+}

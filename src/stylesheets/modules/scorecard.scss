@@ -1,0 +1,133 @@
+.cro-table {
+  width: 100%;
+  /* overflow: hidden;*/
+  border-radius: 8px;
+  border-collapse: collapse;
+}
+
+.cro-table td, .cro-table th {
+  border: thin solid white;
+  padding: 1rem;
+}
+
+.cro-table thead tr {
+  background: #34454f;
+  color: white;
+}
+.cro-table tr td {
+    text-align: center;
+}
+.cro-table tr:nth-child(even) {
+    background-color: #e5e5e5;
+}
+.circle {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin: auto;
+}
+.green {
+  background: #467d15;
+}
+.red {
+  background: #dc3b19;
+}
+.yellow {
+  background: #FFD700;
+}
+
+/* Tooltip container */
+.cro-table .tooltip {
+    position: relative;
+}
+
+/* Tooltip text */
+.cro-table .tooltip {
+    position: relative;
+}
+
+.cro-table .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 350px;
+    background-color: #4D4F53;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    margin-left: 0;
+    padding: 5px;
+}
+
+.cro-table .tooltip .tooltiptext-left {
+    visibility: hidden;
+    width: 350px;
+    background-color: #4D4F53;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    right: 0px;
+    left: auto;
+    padding: 5px;
+}
+
+.cro-table .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 56px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #4D4F53 transparent;
+}
+
+.cro-table .tooltip .tooltiptext-left::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 70px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #4D4F53 transparent;
+}
+
+.cro-table .tooltip:hover .tooltiptext, .tooltip:hover .tooltiptext-left {
+    visibility: visible;
+    transition: opacity 0.2s ease-in 0s;
+}
+
+.separator {
+  margin-top: 40px;
+  height: 1px;
+  border: 1px dashed black;
+  width: 100%
+}
+
+.kpis-container {
+  width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .kpis-container .kpis-col {
+    width: 100%;
+    float: left;
+  }
+}
+@media (min-width: 1024px) {
+  .kpis-container .kpis-col {
+    width: 50%;
+    float: left;
+    padding-left: 50px;
+  }
+}

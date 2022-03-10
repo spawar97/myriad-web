@@ -1,0 +1,37 @@
+.numeric-input-box {
+  .numeric-input-container {
+    display: inline-block;
+    float: right;
+    text-align: center;
+    width: 8rem;
+    margin: 0 1rem;
+
+    .is-editing, .is-editing:focus {
+      color: $comprehendBlue;
+      border-color: $comprehendBlue;
+    }
+
+    .original-value {
+      color: #939598;
+      padding: 0.5rem 0 0 1.1rem;
+      text-align: left;
+    }
+  }
+
+  .step-button {
+    background: #8b939f;
+    border-radius: .4rem;
+    color: $white;
+    cursor: pointer;
+    float: right;
+    height: 3rem;
+    font-size: 2.1rem;
+    padding: 0.6rem 0;
+    text-align: center;
+    width: 3.5rem;
+
+    &:hover {
+      background: #5d6a72;
+    }
+  }
+}

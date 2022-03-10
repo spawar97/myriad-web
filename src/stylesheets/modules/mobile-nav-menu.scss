@@ -1,0 +1,126 @@
+.mobile-nav-menu {
+  @include span(24);
+  height: 100%;
+  font-size: 2.4rem;
+  padding: 0;
+  overflow-y: auto;
+  // Ensure the nav menu will open over any modals.
+  z-index: $phone-nav-menu-z-index !important;
+
+  // display: none is overidden in phone mode in _breakpoints.scss.
+  display: none;
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    height: 4.3rem;
+  }
+
+  .mobile-nav-menu-item {
+    color: $black;
+    position: relative;
+
+    @include clickable;
+
+    [class^="icon-"], [class*=" icon-"] {
+      @include span(3);
+      padding-left: 1rem;
+      margin: 0;
+    }
+
+    .mobile-nav-menu-item-text {
+      @include span(21 last);
+      position: relative;
+      top: -1.8rem;
+    }
+
+    .badge {
+      position: absolute;
+      left: 2.5rem;
+      top: -1rem;
+    }
+  }
+
+  .mobile-nav-switch-account-item {
+    color: $black;
+    vertical-align: middle;
+    padding: 2rem 0;
+    @include clickable;
+
+    .mobile-nav-switch-account-item-text {
+      // We use width calculation here to have text wrapped and to ensure the padding
+      // between text and checkmark icon doesn't depend on the screen width.
+      width: calc(100% - 4rem);
+      display: inline-block;
+    }
+
+    .icon-checkmark-full {
+      display: inline-block;
+      margin-bottom: .5rem;
+      float: right;
+    }
+
+    &.selected {
+      font-weight: bold;
+    }
+  }
+
+  .mobile-nav-menu-header, .mobile-nav-switch-account-header {
+    @include span(24);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $bodyText;
+    padding-bottom: 0.8rem;
+    border-bottom: $pageHeaderUnderline;
+  }
+
+  .mobile-nav-switch-account-header {
+    margin-bottom: 2rem;
+  }
+
+  .mobile-nav-heavy-hr {
+    border-bottom: 0.2rem solid $bodyText;
+    height: 0.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .mobile-nav-light-hr {
+    margin-bottom: 2rem;
+    border-bottom: 0.1rem solid $grey2;
+    height: 3.0rem;
+  }
+}
+
+.mobile-back-button {
+  @include clickable;
+  @include span(12);
+  position: relative;
+  top: .7rem;
+  vertical-align: middle;
+  font-size: 1.6rem;
+  margin: 0;
+
+  > span {
+    position: relative;
+    padding-left: .5rem;
+    bottom: .2rem;
+  }
+}
+
+.multiTab__content {
+  overflow: hidden;
+  transition: max-height .6s ease;
+}
+
+.multiTab-grid.active {
+    padding: 0px 0px 4px;
+}
+
+.MultiTab-Text {
+    margin-bottom: 15px;
+    margin-left: 18px;
+    margin-top: 7px;
+    height: 2rem;
+}

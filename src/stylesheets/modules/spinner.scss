@@ -1,0 +1,85 @@
+// Pure CSS spinner adapted from http://css-spinners.com/#/spinner/spinner/
+
+/** :not(:required) somehow prevents the spinner from looking like
+  * https://github.com/comprehend/myriad/pull/767/files#r17284525
+  */
+.spinner:not(:required) {
+  @include animation(spinner 1500ms infinite linear);
+
+  @include border-radius(0.5em);
+
+  @include box-shadow($gray20 1.5em 0 0 0, $gray20 1.1em 1.1em 0 0, $gray20 0 1.5em 0 0, $gray20 -1.1em 1.1em 0 0, $gray20 -1.5em 0 0 0, $gray20 -1.1em -1.1em 0 0, $gray20 0 -1.5em 0 0, $gray20 1.1em -1.1em 0 0);
+
+  font-size: 1rem;
+  width: 1em;
+  height: 1em;
+
+  // position the spinner at the center
+  position: absolute;
+  margin: auto;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  // hide all children
+  & * {
+    visibility: hidden;
+  }
+}
+
+.compact-spinner:not(:required) {
+  @include animation(spinner 1500ms infinite linear);
+
+  @include border-radius(0.5em);
+
+  @include box-shadow($gray20 1em 0 0 0, $gray20 .7em .7em 0 0, $gray20 0 1em 0 0, $gray20 -.7em .7em 0 0, $gray20 -1em 0 0 0, $gray20 -.7em -.7em 0 0, $gray20 0 -1em 0 0, $gray20 .7em -.7em 0 0);
+
+  font-size: 1rem;
+  width: .5em;
+  height: .5em;
+
+  // Position the spinner at the center.
+  position: absolute;
+  margin: auto;
+  margin-top: .6rem;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  // Hide all children.
+  & * {
+    visibility: hidden;
+  }
+}
+
+.content-placeholder {
+  background-color: $gray2;
+  width: 100%;
+  border: dashed 0.1rem;
+  border-color: $gray20;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+
+  .spinner-with-text-wrapper {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -4.9rem;  // Half of the height of spinner + text.
+    margin-left: -3.9rem;  // Half of the width of spinner + text.
+
+    .spinner-with-text {
+      color: $blue1;
+      font-size: 1.8rem;
+      font-weight: 600;
+      position: absolute;
+
+      .spinner-text {
+        margin-bottom: 8rem;
+      }
+    }
+  }
+}

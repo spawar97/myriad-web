@@ -1,0 +1,76 @@
+.simple-list {
+  margin: 0;
+}
+
+.simple-list-item {
+  padding: .3rem .6rem .5rem 2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.clickable:hover {
+    background: $white !important;
+  }
+
+  &.unclickable:hover {
+    cursor: default;
+  }
+
+  .icon {
+    font-size: 1.6rem;
+    &:before {
+      color: $comprehendBlue;
+    }
+  }
+}
+
+.widget-menu-content-content {
+  .simple-list {
+    padding: 1.2rem 0;
+  }
+  .simple-list-item {
+    padding: .3rem 2rem;
+  }
+}
+
+.simple-list-title .icon,
+.simple-list-item .icon {
+  width: 2.4rem;
+  height: 1.3rem;
+  display: inline-block;
+  margin-top: -1.3rem;
+}
+
+.simple-list-title {
+  padding-left: 2rem;
+  margin-bottom: .4rem;
+  text-transform: none;
+}
+
+.simple-list-title-dot {
+  background: $lightSteel;
+  height: .4rem;
+  width: .4rem;
+  border-radius: 50%;
+  margin: .3rem 1.2rem;
+  display: inline-block;
+}
+
+.simple-list-item-button {
+  margin-right: -4rem !important;
+
+  &:first-child button {
+    margin-top: .5rem;
+  }
+
+  &:last-child button {
+    margin-bottom: .5rem;
+  }
+}
+
+.simple-list-item-link {
+  color: $hyperlinkBlue;
+
+  .icon:before {
+    color: $hyperlinkBlue;
+  }
+}

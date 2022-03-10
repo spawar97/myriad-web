@@ -1,0 +1,32 @@
+.audit-trail-manager {
+  .page-header {
+    border-bottom: 1px solid $grey7;
+
+    .title {
+      font-size: 2rem;
+      color: $black;
+      font-weight: $regular;
+    }
+  }
+
+  .audit-trail-reports {
+    .report-link {
+      text-decoration: underline;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  .info {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 2rem 0;
+
+    .info-icon {
+      span {
+        font-size: x-large;
+        padding-right: 1rem;
+      }
+    }
+  }
+}

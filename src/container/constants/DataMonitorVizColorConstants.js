@@ -1,0 +1,19 @@
+module.exports = {
+  BREACH_FILL: '#b33930',
+  CHANGES_LINE: 'rgba(128, 128, 128, .5)',  // gray60.
+  ERROR_POINT_FILL: '#d9d9d9',
+  ERROR_FILL: 'rgba(256, 256, 256, .9)',
+  ERROR_STROKE: 'rgba(128, 128, 128, .4)',
+  NON_BREACH_FILL: '#808080',
+  PREVIEW_PLOT_BAND_STROKE: 'rgba(128, 128, 128, .4)',
+  SELECTED_HALO_FILL: '#f2f2f2',
+  SELECTED_HALO_STROKE: '#dcddde',
+  THRESHOLD_FILL: 'hsla(354, 92%, 39%, 0.13)',
+  THRESHOLD_HIGH: [0xD3, 0x58, 0x4A],
+  THRESHOLD_LOW: [0xFF, 0xDE, 0xA3],
+  THRESHOLD_LINE: '#c1081a',
+  TOOLTIP_BACKGROUND: '#585858',
+  TOOLTIP_TEXT: 'white',
+  TRANSPARENT: 'transparent',
+  WHAT_TRENDLINE: '#7f7f7f'
+};

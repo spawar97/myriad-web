@@ -1,0 +1,47 @@
+$editor-padding: 2rem;
+
+$content-margin: $button-min-height + $editor-padding * 2;
+
+.json-editor {
+  background: $white;
+  border-radius: .5rem;
+  height: 100%;
+  padding: $editor-padding;
+
+  .json-editor-header {
+    background: $white;
+    padding: 0 0 1rem;
+  }
+
+  .json-editor-content {
+    height: calc(100% - #{$content-margin});
+
+    .CodeMirror {
+      border: .1rem solid rgba($lightSteel, .5);
+      @include border-radius(.4rem);
+    }
+  }
+
+  .json-editor-controls {
+    margin-top: 1rem;
+
+    // This should be a global state style in the future.
+    .error {
+      color: $red;
+      display: inline-block;
+    }
+  }
+}
+
+// This is a layout style used to position the above json-editor. It could be swapped
+// for a general modal layout style in the future.
+.json-editor-modal {
+  position: fixed;
+  top: 0;
+  left: $sidebar-width;
+  @include span(24);
+  height: 100%;
+  background: rgba($lightSteel, .5);
+  padding: $editor-padding;
+  width: calc(100% - #{$sidebar-width})
+}

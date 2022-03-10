@@ -1,0 +1,611 @@
+.admin {
+  background: $white;
+  color: $black;
+  width: 100%;
+  height: 100%;
+  float: left;
+
+  // This will capture all immediate children that aren't the sidebar, or a modal underlay.
+  // This is compensating for the sidebar being in fixed position and thus not affecting
+  // layout. The modal underlay also should not have any margin as it should cover the entire screen.
+
+  // Override the margin setting from the strange selector above.
+  .status-message-containers {
+    margin-left: 0 !important;
+  }
+
+  .spinner-container {
+    background: $white;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: calc(100% - .2rem);  // Account for border edges in parent container.
+    height: 6rem;
+  }
+
+  .dotted-hr {
+    width: 100%;
+    border-top: dotted .1rem ;
+    background: $white;
+
+    &.dark {
+      color: $grey2;
+    }
+
+    &.light {
+      color: $grey3;
+    }
+  }
+
+  .admin-tab {
+    width: auto !important;
+    padding-left: 8rem;
+    padding-right: 3rem;
+    height: $main-content-height;
+    margin-top: ($minimized-study-filter-height);
+
+    .admin-tab-title-bar {
+      font-size: 1.7rem;
+      height: 5rem;
+      border-bottom: 0.1rem solid $grey7;
+      background-color: $slateGray;
+      padding:0 30px;
+      margin:0 -30px;  
+
+      .tab-title {
+        float: left;
+        font-size: 2rem;
+        padding-top: 1.75rem;
+      }
+
+      .btn, .simple-action {
+        float: right;
+        line-height: 2.2rem;
+        margin-top:0.6rem;
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+      }
+    }
+    .page-header {
+      padding:0 30px;
+      margin:0 -30px;
+      background-color:$slateGray;
+
+      .title{
+        font-size: 2rem;
+        padding-top: 1.75rem;
+        font-weight: normal;
+        line-height: 4rem;
+      }
+    }
+    // TODO: Change to grid layout.
+    .admin-tab-edit-schema-title-bar {
+      display: table;
+      line-height: 2rem;
+
+      > div {
+        display: table-row;
+
+        > div {
+          display: table-cell;
+          vertical-align: middle;
+          padding-left: 1rem;
+        }
+
+        .tab-title {
+          font-size: 1.8rem;
+          padding: .5rem 0;
+          width: 100%;
+        }
+
+        > div:nth-child(2) > div {
+          width: 15rem;
+        }
+
+        input {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          width: 50%;
+        }
+
+        .simple-dropdown {
+          .open {
+            z-index: 4;
+          }
+
+          .selected-item-prefix {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+
+  .admin-tab.user-management-tab {
+    .user-management-mode-buttons {
+      margin: 1rem 0 1rem 0;
+
+      .virtual-table{
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .sso-user-toggle, .api-access-toggle {
+      margin: 2rem 0;
+    }
+
+    .table-header {
+      width: 100%;
+      padding: 0 !important;
+
+      .first-row, .second-row {
+        height: 5rem;
+        white-space: nowrap;
+      }
+
+      .first-row {
+        background: $grey4;
+        color: $black;
+      }
+
+      .virtual-table-cell {
+        padding: 0 2rem;
+      }
+    }
+
+    .cell-contents-container {
+      padding: 0 2rem;
+      height: 100%;
+      width: 100%;
+    }
+
+    .legacy-users .public_fixedDataTable_bodyRow {
+      .checkbox {
+        margin: 0 2rem;
+      }
+    }
+  }
+
+  .user-management-single-group, .data-review-role-editor, .user-management-user-detail {
+    .input-block {
+      display: inline-block;
+      width: 50%;
+
+      .input-title {
+        font-weight: bold;
+      }
+
+      .text-input {
+        width: 70%;
+      }
+    }
+
+    .edit-group-inputs {
+      padding-top: 1rem;
+    }
+
+    .section-header {
+      clear: left;
+      font-weight: bold;
+      font-size: 1.7rem;
+      padding-top: 3rem;
+      border-bottom: 0.3rem solid;
+      margin-bottom: 1rem;
+    }
+
+    .icon-remove {
+      display: inline-block;
+      float: right;
+    }
+
+    .edit-group-users-dropdown-header {
+      font-weight: bold;
+      padding-top: 1.5rem;
+    }
+
+    .edit-group-users-dropdown {
+      width: 35%;
+    }
+
+    .group-users-dropdown {
+      z-index: $dropdown-z-index;
+    }
+
+    .group-user-dropdown-first-name {
+      padding-right: 1rem;
+    }
+
+    .edit-group-users-table-header {
+      margin-top: 2rem;
+      margin-bottom: 1.2rem;
+    }
+    .group-permissions {
+      display: flex;
+    }
+  }
+
+  .admin-tab-schema {
+    overflow-y: auto;
+  }
+
+  .admin-edit-schema {
+    // Adjust available height to account for the admin-tab-title-bar.
+    width: 100%;
+
+    .schema-tree-view .schema-tree-items .tree-name {
+      @include clickable;
+    }
+
+    .schema-tree-view-db-select-dropdown {
+      margin: 1.5rem 2rem 0 2rem;
+    }
+
+    .admin-edit-schema-main {
+      overflow-y: auto;
+      padding-left: 2rem;
+      display: inline-block;
+
+      .dyn-text-box {
+        display: inline-block;
+        width: 100%;
+
+        .icon-question-circle {
+          display: inline-block;
+          padding-right: .5rem;
+        }
+
+        &.top {
+          padding: 0 0 2rem 2rem;
+          font-weight: bold;
+        }
+
+        &.bottom {
+          padding: 0 0 6rem 2rem;
+        }
+      }
+
+      .table-container {
+        padding-bottom: 8rem;
+      }
+
+      > div {
+        display: table;
+        width: 100%;
+
+        > div {
+          display: table-row;
+          width: 100%;
+
+          > div {
+            display: table-cell;
+            padding-top: .8rem;
+
+            .control-panel {
+              display: table;
+              width: 100%;
+
+              > div {
+                display: table-row;
+
+                > div {
+                  display: table-cell;
+
+                  > div {
+                    display: table;
+                    vertical-align: middle;
+
+                    > span {
+                      vertical-align: text-top;
+                    }
+
+                    > div {
+                      display: table-row;
+
+                      > div {
+                        display: table-cell;
+                      }
+
+                      input {
+                        margin: 0;
+                        padding: .3rem .6rem;
+                        height: 100%;
+                        font-size: 1.6rem;
+                      }
+
+                      > div > div {
+                        &.dimmed, &.icon-eye-blocked {
+                          color: $lightSteel50;
+                        }
+
+                        &.icon-eye-blocked {
+                          padding-left: 1rem;
+                        }
+                      }
+
+                      > div:first-child {
+                        line-height: 2.3rem;
+
+                        > div > div {
+                          &.dimmed, &.icon-eye-blocked {
+                            color: $lightSteel50;
+                          }
+
+                          &.icon-eye-blocked {
+                            padding-left: 1rem;
+                          }
+                        }
+                      }
+
+                      .icon-search {
+                        height: 3rem;
+                      }
+                    }
+
+                    > div:first-child {
+                      line-height: 2.3rem;
+                    }
+
+                    > div:nth-child(2) {
+                      font-size: 1.2rem;
+                      text-transform: none;
+
+                      > div {
+                        color: $lightSteel50;
+                        padding-top: .5rem;
+                      }
+                    }
+                  }
+                }
+
+                > div:first-child {
+                  width: 85rem;
+                }
+
+                > div:nth-child(2) {
+                  > span {
+                    vertical-align: text-top;
+                  }
+                }
+
+                .search-bar {
+                  vertical-align: middle;
+
+                  > div {
+                    margin-left: auto;
+
+                    > div > div * {
+                      float: left;
+                    }
+                  }
+
+                  input {
+                    border-radius: .4rem 0 0 .4rem;
+                    border-right-width: 0;
+                  }
+
+                  .icon {
+                    background: $black;
+                    border: .3rem solid $lightGray;
+                    border-left-width: 0;
+                    border-radius: 0 .4rem .4rem 0;
+                    color: $white;
+                    padding: .3rem .5rem .4rem;
+                  }
+                }
+              }
+
+              input {
+                background: transparent;
+              }
+            }
+
+            .batch-edit-control-panel {
+              > div {
+                > div:nth-child(2) {
+                  width: 12rem;
+                }
+
+                > div:nth-child(3) {
+                  width: 2.5rem;
+                }
+              }
+            }
+
+            .table {
+              border: 0;
+            }
+
+            .schema-batch-edit-table {
+              overflow: visible;
+              margin-bottom: 1rem;
+
+              > div {
+                display: table;
+
+                .batch-table-entry {
+                  display: table-row;
+                  height: 2.4rem;
+
+                  > div {
+                    display: table-cell;
+                    vertical-align: middle;
+
+                    .batch-table-name {
+                      color: $lightSteel60;
+                      overflow: hidden;
+                      padding: .4rem .5rem;
+                      text-overflow: ellipsis;
+
+                      .tree-short-name {
+                        color: $lightSteel20;
+                        font-size: 1.3rem;
+                        margin-left: .5rem;
+                      }
+
+                      &.dimmed {
+                        color: $lightSteel60;
+                      }
+                    }
+                  }
+
+                  > div:nth-child(2) {
+                    width: 2rem;
+                  }
+                }
+              }
+            }
+
+            .summary-schema {
+
+              > div {
+                padding: 1rem 2rem 2rem;
+
+                > div {
+                  display: table;
+                  margin-top: 1.5rem;
+
+                  > div {
+                    display: table-row;
+                    height: 2rem;
+
+                    > div {
+                      display: table-cell;
+                      padding-right: 1rem;
+
+                      > div {
+                        display: table;
+
+                        > div {
+                          display: table-row;
+
+                          > div {
+                            display: table-cell;
+                            padding-right: 1rem;
+
+                            .icon-loop2 {
+                              border: $table-border;
+                              font-size: 1rem;
+                              border-radius: .4rem;
+                              padding: .4rem .8rem;
+                            }
+
+                            .icon-info {
+                              font-size: 1.4rem;
+                            }
+                          }
+                        }
+                      }
+
+                      .related-list {
+                        display: table;
+
+                        > div {
+                          display: table-row;
+
+                          > div {
+                            display: table-cell;
+                            padding-right: .3rem;
+
+                            &:not([class^="icon-"]) {
+                              text-decoration: underline;
+                            }
+                          }
+                        }
+
+                        .opener {
+                          color: $black;
+                          height: 2rem;
+                          text-decoration: underline;
+                        }
+                      }
+
+                      .edge-item {
+                        height: 2rem;
+
+                        span {
+                          color: $lightSteel90;
+                        }
+
+                        span:nth-child(2) {
+                          color: $black;
+                        }
+                      }
+                    }
+
+                    > div:first-child {
+                      font-weight: bold;
+                      min-width: 19rem;
+                    }
+
+                    .simple-dropdown {
+                      > div:first-child > div > div:first-child {
+                        padding-right: 0;
+                      }
+
+                      > div:nth-child(3) {
+                        padding-right: 0;
+
+                        > div:first-child {
+                          background-color: #f5f5fa;
+
+                          > div > div {
+                            padding: .5rem 4rem .5rem 2rem;
+                          }
+
+                          .item-list-header > div {
+                            color: $black;
+                            background-color: $white;
+                            border-bottom: $table-border;
+                            padding: .5rem 2rem;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                > div:first-child {
+                  width: 100%;
+                  border-bottom: .1rem solid $lightSteel50;
+
+                  > div > div:first-child {
+                    font-weight: normal;
+                    width: 100%;
+                    font-size: 1.6rem;
+                    padding-bottom: .8rem;
+                  }
+
+                  .item-opener {
+                    padding-right: 1.5rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > .overlay {
+    background: rgba($white, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+.data-review-role-editor {
+  .data-review-role-buttons {
+    padding-top: 2rem;
+  }
+}
+
+.cache-refresher {
+  display: none;
+}

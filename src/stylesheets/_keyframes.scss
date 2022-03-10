@@ -1,0 +1,22 @@
+// Globally accessible keyframes for animations
+// usage example: `@include animation(fade-out 3s ease 3s);`
+
+@include keyframes(fade-out) {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframes(spinner)
+{
+  0% {
+    @include transform(rotate(0deg));
+  }
+
+  100% {
+    @include transform(rotate(360deg));
+  }
+}

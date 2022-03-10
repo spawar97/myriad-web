@@ -1,0 +1,176 @@
+/* Pulled out breakpoints to _breakpoints.scss */
+.external-template {
+  height: 100%;
+  width: 100%;
+  background-color: $blue1;
+
+  .external-template-body {
+    height: 100%;
+    background-color: $background;
+    margin-left: auto;
+    margin-right: auto;
+    width: $registration-page-desktop-width + $registration-page-desktop-vertical-margin * 2;
+    position: fixed;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    padding-bottom: 3.2rem;
+
+    &.short-inner-box {
+      height: 54rem;
+      // Center the box vertically.
+      top: calc(50% - 27rem);
+      width: 80%;
+      max-width: 60rem;
+    }
+
+    .inner-content {
+      margin: 0 $registration-page-desktop-vertical-margin;
+      margin-top: -5rem;
+      background-color: rgba(242, 242, 242, 0.85);
+      padding: 25px;
+      &.short-content {
+
+        &.center {
+          text-align: center;
+        }
+
+        .icon-WarningCircle, .icon-checkmark-circle {
+          font-size: 3.6rem;
+          margin: 1.5rem auto 3rem auto;
+        }
+
+        .icon-WarningCircle {
+          color: $orange;
+        }
+
+        .icon-checkmark-circle {
+          color: $green;
+        }
+
+        .btn {
+          margin: 0;
+        }
+
+        .status {
+          font-size: 1.6rem;
+          line-height: 2rem;
+          margin-bottom: 4rem;
+        }
+
+        .explanation {
+          font-size: 1.2rem;
+          color: $placeholderGray;
+        }
+
+        .get-started-btn {
+          text-align: center;
+        }
+
+        .reset-password-btn {
+          margin-top: 4rem;
+          text-align: center;
+        }
+      }
+
+      .all-fields-required {
+        padding-left: .3rem;
+        font-weight: $semibold;
+      }
+
+      .an-acceptance-is-required {
+        margin-left: -5rem;
+        font-weight: $semibold;
+      }
+
+      .terms-of-use-header {
+        padding-left: .3rem;
+        font-weight: $semibold;
+      }
+
+      .terms-of-use-version {
+        padding-left: .6rem;
+        font-weight: $semibold;
+      }
+
+      .terms-and-conditions {
+        overflow-y: scroll;
+        height: 550px;
+        width: 130%;
+        border: 1px solid #DDD;
+        padding: 10px;
+        margin-left: -5rem;
+        margin-top: .5rem;
+      }
+
+      .content-title {
+        font-weight: bold;
+        font-size: 2rem;
+        margin-bottom: 3.5rem;
+      }
+
+      .password-fields, .text-input {
+        width: 100%;
+
+        .password-input-block, .confirm-password-input-block {
+          width: ($registration-page-desktop-width - $registration-page-default-element-margin) / 2;
+          display: inline-block;
+          vertical-align: top;
+        }
+
+        .password-input-block {
+          margin-right: $registration-page-default-element-margin;
+        }
+      }
+
+      .reset-password-fields {
+        .password-input-block, .confirm-password-input-block {
+          width: 100%;
+        }
+      }
+
+      .input-block {
+        margin-top: $registration-page-default-element-margin;
+      }
+
+      .input-title {
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .sign-up-btn, .save-password-btn, .agree-btn {
+        width: 100%;
+        margin-top: 3rem;
+        text-align: center;
+      }
+
+      .checkbox-agreement {
+        margin-top: 2rem;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+
+    }
+
+    hr {
+      margin-bottom: 6.5rem;
+    }
+
+    img {
+      margin: $registration-page-logo-margin auto;
+      vertical-align: middle;
+      width: 100%;
+      max-width: 100%;
+      height: 10rem;
+      -ms-interpolation-mode: bicubic;
+      border: 0;
+    }
+  }
+
+  .password-requirements-list {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-bottom: 0;
+  }
+}

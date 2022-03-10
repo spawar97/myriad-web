@@ -1,0 +1,55 @@
+.report-filter-notice {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: .5rem;
+  border: $notificationBorder;
+  background-color: $gray2;
+  font-size: 2.1rem;
+  height: 70vh;
+  line-height: 2.2rem;
+
+  .wizard-title {
+    font-size: 1.8rem;
+    font-family:'proxima-nova', 'Helvetica Neue';
+    padding: 10px 0 0 10px;
+  }
+
+  .report-filter-notice-text-holder {
+    margin: 0 auto;
+    position: relative;
+    top: 14rem;
+    transform: translateY(-50%);
+    text-align: center;
+
+    .report-filter-notice-header {
+      margin-bottom: .4rem;
+
+      .icon-information_solid {
+        font-size: 2.3rem;
+        color: $orange;
+        padding-right: 1rem;
+      }
+
+      .report-filter-notice-text {
+        font-size: 1.8rem;
+        font-weight: $semibold;
+        position: relative;
+        bottom: .3rem;
+      }
+    }
+
+    .report-filter-notice-sub-text {
+      color: $gray60;
+      font-size: 1.6rem;
+      // Disable hyphenation of words in the body of the message.
+      // See https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+
+      .report-filter-notice-text {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
